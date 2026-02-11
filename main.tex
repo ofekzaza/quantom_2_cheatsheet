@@ -75,6 +75,10 @@ Given Hilbert space with basis $\{|ab\rangle\}$ of $J^2, J_0$ with eigenvalues $
 
 \subsection*{Thm 3.1.2 Ops equal within phase}
 $A = e^{i\theta} B \iff |\langle a|A|b\rangle| = |\langle a|B|b\rangle|$.
+\textit{Proof "$\Leftarrow$":} $A|b_j\rangle = e^{i\theta_j} B|b_j\rangle$. Apply to $|b_1\rangle + |b_2\rangle$.
+$A(|b_1\rangle+|b_2\rangle) = e^{i\theta_{12}} B(|b_1\rangle+|b_2\rangle) = e^{i\theta_1} B|b_1\rangle + e^{i\theta_2} B|b_2\rangle$.
+Linearity $\implies B(e^{i\theta_{12}} - e^{i\theta_1})|b_1\rangle + B(e^{i\theta_{12}} - e^{i\theta_2})|b_2\rangle = 0$.
+Inner product with $B|b_i\rangle \implies e^{i\theta_1} = e^{i\theta_2}$. Phase is global.
 
 \subsection*{Thm 3.1.3 Scalar Product Preserving}
 If $T: \mathcal{V} \to \mathcal{V}$ preserves scalar product magnitude $|\langle \phi | \psi \rangle| = |\langle T\phi | T\psi \rangle|$, then $T$ is unitary or anti-unitary. (Wigner's Theorem).
@@ -156,7 +160,8 @@ Energy: $E_{nl} = \frac{\hbar^2 k_{nl}^2}{2m}$ where $k_{nl} = x_{nl}/R$ ($x_{nl
 \subsection*{Permutation Group Representations ($S_3$)}
 Matrices for basis vectors (possibly defining specific rep):
 $T(123) = \begin{pmatrix} 0 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0 \end{pmatrix}$, $T(12) = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}$.
-Finding eigenvalues/eigenvectors for these ops.
+Eigenvalues of $T(123)$: $\det(T - \lambda I) = -\lambda^3 + 1 = 0 \implies \lambda = 1, e^{\pm i 2\pi/3}$.
+Vectors: $|1\rangle = \frac{1}{\sqrt{3}}(1,1,1)^T$ (invariant).
 
 \subsection*{Spin in Magnetic Field (Rabi)}
 $H = -\gamma \mathbf{S} \cdot \mathbf{B}$. Let $\mathbf{B} = B_0 \hat{z} + B_1 (\cos\omega t \hat{x} + \sin\omega t \hat{y})$.
@@ -177,6 +182,9 @@ $(x \pm i y)^2 \propto Y_{2,\pm 2}$.
 Selection rules for matrix elements $\langle l', m' | V | l, m \rangle$:
 If $V$ transforms like $T_k^q$ (here $k=2, q=\pm 2$), then $m' = m + q$.
 So $\Delta m = \pm 2$.
+Matrix form example:
+$V \doteq \begin{pmatrix} 0 & 0 & \alpha \\ 0 & 0 & 0 \\ \alpha^* & 0 & 0 \end{pmatrix}$ in basis corresponding to $m$ values ordered.
+$\alpha = \langle 2, 1 | x^2-y^2 | 2, -1 \rangle$.
 
 \subsection*{Time-Dependent Perturbation (HO)}
 $V(t) = F_0 x (0 < t < T)$.
@@ -195,6 +203,14 @@ Total $\Psi$ must be:
 Spin States:
 - Triplet ($S=1$): Symmetric. Requires Antisym spatial (Fermions) or Sym spatial (Bosons).
 - Singlet ($S=0$): Antisymmetric. Requires Sym spatial (Fermions) or Antisym spatial (Bosons).
+
+\subsection*{3 Particles in Harmonic Oscillator}
+Hamiltonian $H = \sum_{i=1}^3 \frac{p_i^2}{2m} + \frac{1}{2}m\omega x_i^2$.
+Energy $E = \hbar\omega(n_1+n_2+n_3 + \frac{3}{2})$.
+Example: 3 identical fermions ($s=1/2$, polarized spin). Spatial part must be totally antisymmetric.
+Ground State: distinct $n$'s required. $n_1=0, n_2=1, n_3=2$.
+$E_0 = \hbar\omega(0+1+2+\frac{3}{2}) = \frac{9}{2}\hbar\omega$.
+$\Psi_{GS} = \frac{1}{\sqrt{3!}} \det | \psi_{n_i}(x_j) |$.
 
 \subsection*{Slater Determinant}
 N-fermion state:

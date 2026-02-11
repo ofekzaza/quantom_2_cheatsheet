@@ -140,6 +140,30 @@ Apply $J_- = J_{1-} + J_{2-}$ to find lower $m$ states.
 
 % Page 3 Content
 
+\subsection*{Two Body Problem}
+System of 2 particles with potential $V(|\mathbf{r}_1 - \mathbf{r}_2|)$.
+Separation into Center of Mass ($\mathbf{R}$) and Relative ($\mathbf{r}$) motion.
+$\mathbf{R} = \frac{m_1\mathbf{r}_1+m_2\mathbf{r}_2}{m_1+m_2}, \quad \mathbf{r} = \mathbf{r}_1-\mathbf{r}_2$.
+Total Mass $M = m_1+m_2$, Reduced Mass $\mu = \frac{m_1m_2}{m_1+m_2}$.
+Hamiltonian separates: $H = H_{CM} + H_{rel}$.
+\important{H_{CM} = \frac{\mathbf{P}^2}{2M}, \quad H_{rel} = \frac{\mathbf{p}^2}{2\mu} + V(r)}
+$\Psi(\mathbf{R}, \mathbf{r}) = e^{i\mathbf{K}\cdot\mathbf{R}} \psi(\mathbf{r})$. $E_{tot} = E_{CM} + E_{rel}$.
+$H_{rel}$ is effectively a 1-body problem with mass $\mu$.
+
+\subsection*{Hydrogen Atom Solution}
+\important{\Psi_{nlm} = N \rho^l e^{-\rho/2} L_{n-l-1}^{2l+1}(\rho) Y_{lm}(\theta,\phi), \quad E_n = - \frac{Z^2 \mu e^4}{32\pi^2\epsilon_0^2\hbar^2 n^2}}
+\textbf{1. Separation:} $\Psi(\mathbf{r}) = R(r)Y_{lm}(\Omega)$. Radial eq for $u(r) = rR(r)$.
+\textbf{2. Radial Eq:} Dimensionless $\rho = \frac{2Z}{na_0}r$, $a_0 = \frac{4\pi\epsilon_0\hbar^2}{\mu e^2}$.
+\important{u''(\rho) + \left[ \frac{n}{\rho} - \frac{1}{4} - \frac{l(l+1)}{\rho^2} \right] u(\rho) = 0}
+\textbf{3. Asymptotics:} $\rho \to 0: u \sim \rho^{l+1}$. $\rho \to \infty: u \sim e^{-\rho/2}$.
+\textbf{4. Ansatz:} $u(\rho) = \rho^{l+1} e^{-\rho/2} w(\rho)$.
+Kummer's Eq for $w(\rho)$: $\rho w'' + (2l+2-\rho)w' + (n-l-1)w = 0$.
+\textbf{5. Series Solution:} $w(\rho) = \sum a_k \rho^k$. Recurrence relation:
+\important{a_{k+1} = \frac{k+l+1-n}{(k+1)(k+2l+2)} a_k}
+\textbf{6. Quantization:} Series must terminate for normalizable solution.
+Numerator vanishes at $k = p_{max} \implies p_{max} + l + 1 = n$ (integer).
+Result: Associated Laguerre Polynomials $L_{n-l-1}^{2l+1}(\rho)$.
+
 \subsection*{Hydrogen-like Half-Space}
 $V(z) = -Ze^2/z (z>0), \infty (z<0)$.
 Solving SE gives Rydberg states for odd parity (wavefunc must vanish at $z=0$).
@@ -214,19 +238,3 @@ Zero if two particles in same state (Pauli exclusion).
 \end{multicols*}
 
 \end{document}
-
-% new content
-
-\subsection*{Hydrogen Atom Solution}
-\important{\Psi_{nlm} = N \rho^l e^{-\rho/2} L_{n-l-1}^{2l+1}(\rho) Y_{lm}(\theta,\phi), \quad E_n = - \frac{Z^2 \mu e^4}{32\pi^2\epsilon_0^2\hbar^2 n^2}}
-\textbf{1. Separation:} $\Psi(\mathbf{r}) = R(r)Y_{lm}(\Omega)$. Radial eq for $u(r) = rR(r)$.
-\textbf{2. Radial Eq:} Dimensionless $\rho = \frac{2Z}{na_0}r$, $a_0 = \frac{4\pi\epsilon_0\hbar^2}{\mu e^2}$.
-\important{u''(\rho) + \left[ \frac{n}{\rho} - \frac{1}{4} - \frac{l(l+1)}{\rho^2} \right] u(\rho) = 0}
-\textbf{3. Asymptotics:} $\rho \to 0: u \sim \rho^{l+1}$. $\rho \to \infty: u \sim e^{-\rho/2}$.
-\textbf{4. Ansatz:} $u(\rho) = \rho^{l+1} e^{-\rho/2} w(\rho)$.
-Kummer's Eq for $w(\rho)$: $\rho w'' + (2l+2-\rho)w' + (n-l-1)w = 0$.
-\textbf{5. Series Solution:} $w(\rho) = \sum a_k \rho^k$. Recurrence relation:
-\important{a_{k+1} = \frac{k+l+1-n}{(k+1)(k+2l+2)} a_k}
-\textbf{6. Quantization:} Series must terminate for normalizable solution.
-Numerator vanishes at $k = p_{max} \implies p_{max} + l + 1 = n$ (integer).
-Result: Associated Laguerre Polynomials $L_{n-l-1}^{2l+1}(\rho)$.

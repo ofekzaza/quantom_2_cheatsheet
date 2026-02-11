@@ -8,3 +8,14 @@ wheels/
 
 # Virtual environments
 .venv
+tirguls/**
+./solutions.txt
+./Qm2_book.pdf
+./book.txt
+./main.pdf
+solution.txt
+Qm2_book.pdf
+book.txt
+tirguls/**.pdf
+main.pdf
+main.log

@@ -1,14 +1,206 @@
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\documentclass[10pt,landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{multicol}
+\usepackage[margin=0.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{enumitem}
+\usepackage{physics}
+\usepackage{xcolor}
+\usepackage{titlesec}
 
-\title{quantom_2_cheatsheet}
-\author{ofek.eshet }
-\date{February 2026}
+% Compact spacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\columnsep}{0.5cm}
+
+% Reduce section spacing
+\titlespacing*{\section}{0pt}{2pt}{2pt}
+\titlespacing*{\subsection}{0pt}{2pt}{1pt}
+
+% Small text for cheat sheet
+\footnotesize
 
 \begin{document}
 
-\maketitle
+\begin{multicols*}{3}
 
-\section{Introduction}
+\section*{Quantum Mechanics II Cheat Sheet}
+
+% Page 1 Content
+
+\subsection*{Ritz Theorem}
+$R[\psi] = \frac{\langle \psi | H | \psi \rangle}{\langle \psi | \psi \rangle}$.
+\textbf{Step 1: Expand $|\psi\rangle$ in energy eigenbasis}.
+$|\psi\rangle = \sum_n c_n |n\rangle, \quad c_n = \langle n | \psi \rangle$.
+Then $\langle \psi | \psi \rangle = \sum_n |c_n|^2$.
+Using $H|n\rangle = E_n |n\rangle$, $\langle \psi | H | \psi \rangle = \sum_{n,m} c_m^* c_n \langle m | H | n \rangle = \sum_n |c_n|^2 E_n$.
+So $R[\psi] = \frac{\sum_n |c_n|^2 E_n}{\sum_n |c_n|^2}$.
+\textbf{Step 2: Prove $R[\psi] \ge E_0$}.
+Since $E_n \ge E_0$, $\sum_n |c_n|^2 E_n \ge E_0 \sum_n |c_n|^2$.
+$R[\psi] \ge E_0$.
+
+\subsection*{Thm 3.3.2 Schur's Lemma for Hermitian Ops}
+Let $T$ be an IRREP of a finite group $G$ on $V$. If Hermitian operator $C: V \to V$ implies $\forall g \in G, T(g)C = C T(g)$, then $C \propto I$, i.e., $C = \lambda I, \lambda \in \mathbb{C}$.
+\textit{Proof:} $C$ Hermitian $\implies \exists$ eigenstate $v \in V$ s.t. $Cv = \lambda v$.
+Subspace $span\{T(g)v\}$ is invariant. Since $T$ is IRREP, must be $V$.
+$\forall w \in V$, $Cw = C \sum a_g T(g)v = \sum a_g T(g) C v = \lambda w$. Thus $C = \lambda I$.
+
+\subsection*{Thm 4.2.1 Spectrum of Hamiltonian}
+$H = -\frac{\hbar^2}{2m} \nabla^2 - \frac{a}{r^s}$ with $a>0, s>2$ is unbounded from below.
+\textit{Proof:} Scaled state $\Psi(\mathbf{r}) = N e^{-r^2/r_0^2}$.
+Expectation values: $\langle T \rangle \sim \frac{\hbar^2}{2mr_0^2}, \langle V \rangle \sim -\frac{a}{r_0^s}$.
+$E(r_0) \approx \frac{\alpha}{r_0^2} - \frac{\beta}{r_0^s}$. For $s>2$, as $r_0 \to 0$, $E \to -\infty$.
+
+\subsection*{Thm 3.1.1 Operators equal iff expectations equal}
+$\langle a | A | a \rangle = \langle a | B | a \rangle \forall |a\rangle \iff A=B$.
+\textit{Proof:} Use $|\psi\rangle = |a\rangle + |b\rangle$ and $|\psi\rangle = |a\rangle + i|b\rangle$ to show $\langle a|A|b\rangle = \langle a|B|b\rangle$.
+
+\subsection*{Thm 4.1.1 Ritz Theorem}
+$E = \frac{\langle \Psi | H | \Psi \rangle}{\langle \Psi | \Psi \rangle} \ge E_1$. Equality iff $\Psi$ is ground state.
+
+\subsection*{Thm 4.1.2 Generalized Ritz}
+Expectation value of $H$ is stationary in neighborhood of eigenvalues.
+$\delta E(\Psi) = 0 \iff H\Psi = E\Psi$.
+
+\subsection*{Thm 4.1.3 Variance Theorem}
+$\sigma^2 = \frac{\langle \Psi | (H-E)^2 | \Psi \rangle}{\langle \Psi | \Psi \rangle} = \langle H^2 \rangle - E^2$.
+There is at least one eigenval in $[E-\sigma, E+\sigma]$.
+
+\subsection*{Thm 5.4.1 Upper bound on $j_0$}
+Given Hilbert space with basis $\{|ab\rangle\}$ of $J^2, J_0$ with eigenvalues $a,b$. If $a \ge b^2$.
+\textit{Proof:} $J^2 = J_0^2 + \frac{1}{2}(J_- J_+ + J_+ J_-) \implies a - b^2 \ge 0$.
+
+\subsection*{Thm 3.1.2 Ops equal within phase}
+$A = e^{i\theta} B \iff |\langle a|A|b\rangle| = |\langle a|B|b\rangle|$.
+
+\subsection*{Thm 3.1.3 Scalar Product Preserving}
+If $T: \mathcal{V} \to \mathcal{V}$ preserves scalar product magnitude $|\langle \phi | \psi \rangle| = |\langle T\phi | T\psi \rangle|$, then $T$ is unitary or anti-unitary. (Wigner's Theorem).
+
+\subsection*{Thm 4.2.2 For $s<2$ spectrum of H}
+$H = -\frac{\hbar^2}{2m}\nabla^2 - \frac{a}{r^s}$ ($a>0$) contains infinite bound states.
+\textit{Proof:} Trial $\Psi(r) = N e^{-(r-r_0)^2/\beta^2 r_0^2}$.
+For large $r_0$, $E < 0$ is possible.
+
+\subsection*{Thm 8.2.2 Triangular Rule}
+Admissible $j$ are $|j_1-j_2| \le j \le j_1+j_2$.
+
+
+
+% Page 2 Content
+
+\subsection*{Thm 12.3.1 Ops S and A}
+Operators $\mathcal{S}$ and $\mathcal{A}$ satisfy:
+(a) $\mathcal{S}^\dagger = \mathcal{S}, \mathcal{A}^\dagger = \mathcal{A}$.
+(b) Commute with $P_g$ for all $g \in S_N$.
+$P_g \mathcal{S} = \mathcal{S} P_g = \mathcal{S}$, $P_g \mathcal{A} = \mathcal{A} P_g = \text{sign}(g) \mathcal{A}$.
+(c) Orthogonal projectors of $\mathcal{H}_{so}$. $\mathcal{S}^2=\mathcal{S}, \mathcal{A}^2=\mathcal{A}, \mathcal{S}\mathcal{A}=\mathcal{A}\mathcal{S}=0$.
+\textit{Proof:} $\mathcal{S} = \frac{1}{N!} \sum_{g} P_g$. $\mathcal{A} = \frac{1}{N!} \sum_{g} \text{sign}(g) P_g$.
+$P_g \mathcal{A} = \text{sign}(g) \mathcal{A}$.
+
+\subsection*{Landau Levels Derivation (Handwritten)}
+$H = \frac{1}{2m}(\mathbf{p} - q\mathbf{A})^2$. $B = B\hat{z}$. Gauge $\mathbf{A} = (-By, 0, 0)$.
+$H = \frac{1}{2m}((p_x + qBy)^2 + p_y^2 + p_z^2)$.
+$[p_x, H] = 0 \implies p_x \to \hbar k$.
+$H = \frac{p_y^2}{2m} + \frac{1}{2}m \omega_c^2 (y - y_0)^2 + \frac{\hbar^2 k_z^2}{2m}$.
+Harmonic oscillator centered at $y_0 = -\frac{\hbar k}{qB}$. $\omega_c = \frac{qB}{m}$.
+$E = \hbar\omega_c (n + \frac{1}{2}) + \frac{\hbar^2 k_z^2}{2m}$.
+
+\subsection*{Thm 13.9.1 Optical Theorem}
+$\sigma_{tot}(k) = \frac{4\pi}{k} \text{Im} f_k(0)$.
+\textit{Proof:} $f_k(\theta) = f(k,k') = -\frac{m}{2\pi\hbar^2} (2\pi\hbar)^3 \langle \mathbf{k} | T | \mathbf{k} \rangle$.
+Use Lippmann-Schwinger: $\text{Im}\langle \mathbf{k}|T|\mathbf{k}\rangle = \text{Im}\langle \mathbf{k}|V|\Psi_\mathbf{k}^{in}\rangle$.
+Principal value integral contour (semicircle over pole).
+$\frac{1}{E - H_0 + i\epsilon} = \text{Pr}\frac{1}{E-H_0} - i\pi \delta(E-H_0)$.
+Result: $\text{Im} f_k(0) = \frac{k}{4\pi} \int d\Omega' |f_k(\theta')|^2 = \frac{k}{4\pi} \sigma_{tot}$.
+
+\subsection*{Thm 8.5.2 Eigenstates of $J^2, J_0$}
+If $\{|\Phi_{a j m}\rangle\}$ and $\{|\Psi_{\beta j m}\rangle\}$ are basis states of subspace $V$ (eigenstates of $J^2, J_0$), then transformation matrix elements only depend on $a, \beta$ (independent of $j,m$).
+$|\Psi_{\beta j m}\rangle = \sum_a \langle \Phi_{a j m} | \Psi_{\beta j m} \rangle |\Phi_{a j m}\rangle$.
+Elements $\langle \Phi_{a j m} | \Psi_{\beta j m} \rangle = \delta_{jj'} \delta_{mm'} \langle \Phi_{a j} || \Psi_{\beta j} \rangle$. (Reduced matrix element).
+
+\subsection*{CG Coefficients Example (Handwritten)}
+Addition of angular momentum $J = J_1 + J_2$.
+Max $m = j_1 + j_2$ is unique: $|j_1 j_2; j_1+j_2, j_1+j_2\rangle = |j_1, j_1\rangle |j_2, j_2\rangle$.
+Apply $J_- = J_{1-} + J_{2-}$ to find lower $m$ states.
+Example calculation: $|j_1 j_2; j, m\rangle = \alpha |\dots\rangle + \beta | \dots \rangle$.
+Orthogonality used to find other states (like $j=j_1+j_2-1$).
+Condition $\alpha^2 + \beta^2 = 1$.
+Values like $\alpha = \sqrt{\frac{j_1}{j_1+j_2}}, \beta = -\sqrt{\frac{j_2}{j_1+j_2}}$.
+
+% Page 3 Content
+
+\subsection*{Hydrogen-like Half-Space}
+$V(z) = -Ze^2/z (z>0), \infty (z<0)$.
+Solving SE gives Rydberg states for odd parity (wavefunc must vanish at $z=0$).
+$E_n = -\frac{Z^2 e^4 m}{2\hbar^2 n^2}$ (Same as H-atom).
+
+\subsection*{Spin-Orbit Coupling}
+$H = \frac{\alpha}{\hbar^2} \mathbf{L} \cdot \mathbf{S} = \frac{\alpha}{2\hbar^2}(J^2 - L^2 - S^2)$.
+Energy shift: $\Delta E = \frac{\alpha}{2} (j(j+1) - l(l+1) - s(s+1))$.
+Splitting between states $j = l \pm 1/2$.
+
+\subsection*{Angular Momentum Operators}
+$L_z |l,m\rangle = \hbar m |l,m\rangle, \quad L^2 |l,m\rangle = \hbar^2 l(l+1) |l,m\rangle$.
+$L_\pm |l,m\rangle = \hbar \sqrt{l(l+1) - m(m\pm 1)} |l, m\pm 1\rangle$.
+$L_x = \frac{1}{2}(L_+ + L_-), \quad L_y = \frac{1}{2i}(L_+ - L_-)$.
+
+\subsection*{Infinite Spherical Well}
+$V(r) = 0 (r<R), \infty (r>R)$.
+Radial eq becomes spherical Bessel eq.
+Sol: $R_{nl}(r) = A j_l(k_n r)$. Boundary $j_l(k_n R) = 0$.
+Energy: $E_{nl} = \frac{\hbar^2 k_{nl}^2}{2m}$ where $k_{nl} = x_{nl}/R$ ($x_{nl}$ is $n$-th zero of $j_l$).
+
+\subsection*{Permutation Group Representations ($S_3$)}
+Matrices for basis vectors (possibly defining specific rep):
+$T(123) = \begin{pmatrix} 0 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0 \end{pmatrix}$, $T(12) = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}$.
+Finding eigenvalues/eigenvectors for these ops.
+
+\subsection*{Spin in Magnetic Field (Rabi)}
+$H = -\gamma \mathbf{S} \cdot \mathbf{B}$. Let $\mathbf{B} = B_0 \hat{z} + B_1 (\cos\omega t \hat{x} + \sin\omega t \hat{y})$.
+Rotating frame approx.
+Transition probability (Rabi formula):
+$P(t) = \frac{\Omega^2}{\Omega^2 + \Delta^2} \sin^2\left( \frac{\sqrt{\Omega^2+\Delta^2}t}{2} \right)$.
+Where $\Delta = \omega - \omega_0$ (detuning), $\Omega = \gamma B_1$ (Rabi freq).
+Spin precession: $\frac{d\langle \mathbf{S} \rangle}{dt} = \gamma \langle \mathbf{S} \rangle \times \mathbf{B}$.
+
+% Page 4 Content
+
+\subsection*{Tensor Operators Example}
+Consider $V \propto (x^2 - y^2)$.
+Commutators: $[L_z, z^2]=0$.
+Rewrite $x, y$ using $L_\pm$? No, using spherical harmonics.
+$x \pm i y \propto Y_{1,\pm 1}$.
+$(x \pm i y)^2 \propto Y_{2,\pm 2}$.
+Selection rules for matrix elements $\langle l', m' | V | l, m \rangle$:
+If $V$ transforms like $T_k^q$ (here $k=2, q=\pm 2$), then $m' = m + q$.
+So $\Delta m = \pm 2$.
+
+\subsection*{Time-Dependent Perturbation (HO)}
+$V(t) = F_0 x (0 < t < T)$.
+First order amp: $c_n^{(1)}(t) = -\frac{i}{\hbar} \int_0^t dt' \langle n | V(t') | i \rangle e^{i\omega_{ni}t'}$.
+For HO $x \propto (a + a^\dagger)$. Selection: $\langle n | x | m \rangle \neq 0$ only if $n = m \pm 1$.
+Transition $0 \to 1$:
+$c_1^{(1)}(t) = -\frac{i}{\hbar} F_0 \sqrt{\frac{\hbar}{2m\omega}} \int_0^t dt' e^{i\omega t'}$.
+Result involves $\frac{e^{i\omega t}-1}{i\omega}$.
+
+\subsection*{Identical Particles}
+Two particles in 1D box. $E = \frac{\hbar^2\pi^2}{2mL^2}(n_1^2 + n_2^2)$.
+Wavefunc $\Psi(x_1, x_2) = \frac{1}{\sqrt{2}} [\psi_{n_1}(x_1)\psi_{n_2}(x_2) \pm \psi_{n_1}(x_2)\psi_{n_2}(x_1)] \chi_{spin}$.
+Total $\Psi$ must be:
+- Symmetric for Bosons.
+- Antisymmetric for Fermions.
+Spin States:
+- Triplet ($S=1$): Symmetric. Requires Antisym spatial (Fermions) or Sym spatial (Bosons).
+- Singlet ($S=0$): Antisymmetric. Requires Sym spatial (Fermions) or Antisym spatial (Bosons).
+
+\subsection*{Slater Determinant}
+N-fermion state:
+$\Psi(1,\dots,N) = \frac{1}{\sqrt{N!}} \begin{vmatrix} \psi_1(1) & \dots & \psi_1(N) \\ \vdots & \ddots & \vdots \\ \psi_N(1) & \dots & \psi_N(N) \end{vmatrix}$.
+Zero if two particles in same state (Pauli exclusion).
+
+\end{multicols*}
 
 \end{document}

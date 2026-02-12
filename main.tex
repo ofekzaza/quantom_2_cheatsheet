@@ -3,7 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{multicol}
-\usepackage[margin=0.5cm, a4paper]{geometry}
+\usepackage[left=0.5cm, right=0.5cm, top=1.3cm, bottom=0.5cm, a4paper]{geometry}
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{enumitem}
@@ -11,6 +11,13 @@
 \usepackage{xcolor}
 \usepackage{titlesec}
 \usepackage{empheq}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all fields
+\fancyhead[C]{\thepage} % Centered page number
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headsep}{0.0001cm} % Space between header and text
 
 \newcommand{\important}[1]{\begin{empheq}[box=\fbox]{align*}#1\end{empheq}}
 

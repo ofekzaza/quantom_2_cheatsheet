@@ -238,6 +238,9 @@ Zero if two particles in same state (Pauli exclusion).
 \section*{Mathematical Preliminaries (T1)}
 
 \subsection*{Operators Definitions}
+\textbf{Linear:} $A(c_1\psi + c_2\phi) = c_1 A\psi + c_2 A\phi$.
+\textbf{Anti-linear:} $A(c_1\psi + c_2\phi) = c_1^* A\psi + c_2^* A\phi$.
+
 \textbf{Hermitian:} $X = X^\dagger$. Real eigenvalues, orthogonal eigenstates.
 Property: $\langle \alpha | X | \beta \rangle^* = \langle \beta | X^\dagger | \alpha \rangle$.
 If Hermitian: $\langle \alpha | X | \beta \rangle^* = \langle \beta | X | \alpha \rangle$.
@@ -247,19 +250,58 @@ If Hermitian: $\langle \alpha | X | \beta \rangle^* = \langle \beta | X | \alpha
 Form: $U = e^{iX}$ where $X$ is Hermitian.
 
 \textbf{Anti-Unitary:} Operator $A$ is anti-unitary if:
-1. \textbf{Anti-linear}: $A(c_1|\psi\rangle + c_2|\phi\rangle) = c_1^* A|\psi\rangle + c_2^* A|\phi\rangle$.
-2. Preserves propability (conjugate inner product):
-\important{\langle A\phi | A\psi \rangle = \langle \phi | \psi \rangle^*}
+1. \textbf{Anti-linear}. 2. Preserves probability: $|\langle A\phi | A\psi \rangle| = |\langle \phi | \psi \rangle|$.
+Identity: $\langle A\phi | A\psi \rangle = \langle \phi | \psi \rangle^*$.
 
-\textbf{Anti-Hermitian:} $X^\dagger = -X$. (Implied).
+\subsection*{Commutator Identities}
+$[A, BC] = [A, B]C + B[A, C]$.
+$[AB, C] = A[B, C] + [A, C]B$.
+Jacobi: $[A, [B, C]] + [B, [C, A]] + [C, [A, B]] = 0$.
+\textbf{Canonical:} $[x_i, p_j] = i\hbar \delta_{ij}$.
+\textbf{Angular Momentum:}
+$[L_i, x_j] = i\hbar \epsilon_{ijk} x_k, \quad [L_i, p_j] = i\hbar \epsilon_{ijk} p_k$.
+$[L^2, L_i] = 0, \quad [L^2, \mathbf{x}] = 0$ (Scalar op? No, vector).
+Actually $[L^2, V_q] \neq 0$. But $[L_i, r^2] = 0, [L_i, p^2] = 0$.
+\textbf{BCH Formula:} $e^A e^B = e^{A+B+\frac{1}{2}[A,B] + \dots}$
+Hadamard: $e^A B e^{-A} = B + [A,B] + \frac{1}{2!}[A,[A,B]] + \dots$
+
+\subsection*{Pauli Matrices ($\sigma$)}
+$\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$.
+\important{\sigma_i \sigma_j = \delta_{ij} I + i\epsilon_{ijk} \sigma_k}
+Commutator: $[\sigma_i, \sigma_j] = 2i\epsilon_{ijk} \sigma_k$.
+Anti-commutator: $\{\sigma_i, \sigma_j\} = 2\delta_{ij} I$.
+Identity: $(\vec{\sigma}\cdot\vec{a})(\vec{\sigma}\cdot\vec{b}) = (\vec{a}\cdot\vec{b})I + i\vec{\sigma}\cdot(\vec{a}\times\vec{b})$.
+Rotation: $e^{-i\frac{\theta}{2}\hat{n}\cdot\vec{\sigma}} = I\cos\frac{\theta}{2} - i(\hat{n}\cdot\vec{\sigma})\sin\frac{\theta}{2}$.
+
+\subsection*{Position \& Momentum}
+Fourier: $\psi(x) = \frac{1}{\sqrt{2\pi\hbar}} \int dp \phi(p) e^{ipx/\hbar}$.
+\textbf{Harmonic Oscillator Ladder Ops:}
+$a = \sqrt{\frac{m\omega}{2\hbar}} (x + \frac{i}{m\omega}p), \quad a^\dagger = \sqrt{\frac{m\omega}{2\hbar}} (x - \frac{i}{m\omega}p)$.
+\important{x = \sqrt{\frac{\hbar}{2m\omega}}(a + a^\dagger), \quad p = i\sqrt{\frac{m\hbar\omega}{2}}(a^\dagger - a)}
+$[a, a^\dagger] = 1, \quad H = \hbar\omega(a^\dagger a + 1/2)$.
 
 
 
 \section*{Tirgul Summaries (T2-T3)}
 
 \subsection*{Symmetry \& Conservation (T2)}
-\textbf{Noether's Theorem:} Symmetry of action $S \implies$ Conserved quantity.
+\textbf{Noether's Theorem:} Continuous symmetry $\implies$ conservation.
+- Time Translation ($t \to t+\epsilon$) $\implies$ Energy ($H$) cons.
+- Space Translation ($\mathbf{r} \to \mathbf{r}+\mathbf{a}$) $\implies$ Momentum ($\mathbf{p}$) cons.
+- Rotation ($\hat{n}, \theta$) $\implies$ Angular Momentum ($\mathbf{L}$) cons.
 If $S$ invariant under $q_i \to q_i + \epsilon \mathcal{F}_i$, conserved charge $Q = \sum \frac{\partial \mathcal{L}}{\partial \dot{q}_i} \mathcal{F}_i$.
+
+
+\subsection*{Discrete Symmetries}
+\textbf{Parity ($\pi$ or $P$):} Unitary, $\pi^\dagger = \pi^{-1} = \pi$.
+Action: $\mathbf{r} \to -\mathbf{r}, \quad \mathbf{p} \to -\mathbf{p}$.
+$\mathbf{L} = \mathbf{r} \times \mathbf{p} \to (-\mathbf{r}) \times (-\mathbf{p}) = \mathbf{L}$ (Pseudovector).
+Spin $\mathbf{S} \to \mathbf{S}$.
+Eigenvalues $\pm 1$. Limits: $\pi |l,m\rangle = (-1)^l |l,m\rangle$.
+\textbf{Time Reversal ($\Theta$ or $T$):} Anti-unitary ($T i T^{-1} = -i$).
+Action: $t \to -t, \quad \mathbf{r} \to \mathbf{r}, \quad \mathbf{p} \to -\mathbf{p}$.
+$\mathbf{L} \to -\mathbf{L}, \quad \mathbf{S} \to -\mathbf{S}$.
+Kramers Degeneracy: For half-integer $j$, $T^2 = -1 \implies$ degeneracy.
 
 \textbf{Rotation Group $SO(3)$:} 
 

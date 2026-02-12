@@ -36,11 +36,11 @@
 % Page 1 Content
 
 \subsection*{Ritz Theorem}
-\important{R[\psi] = \frac{\langle \psi | H | \psi \rangle}{\langle \psi | \psi \rangle} \ge E_0}
+\important{R[\psi] = \frac{\langle \psi | \mathcal{H} | \psi \rangle}{\langle \psi | \psi \rangle} \ge E_0}
 \textbf{Step 1: Expand $|\psi\rangle$ in energy eigenbasis}.
 $|\psi\rangle = \sum_n c_n |n\rangle, \quad c_n = \langle n | \psi \rangle$.
 Then $\langle \psi | \psi \rangle = \sum_n |c_n|^2$.
-Using $H|n\rangle = E_n |n\rangle$, $\langle \psi | H | \psi \rangle = \sum_{n,m} c_m^* c_n \langle m | H | n \rangle = \sum_n |c_n|^2 E_n$.
+Using $\mathcal{H}|n\rangle = E_n |n\rangle$, $\langle \psi | \mathcal{H} | \psi \rangle = \sum_{n,m} c_m^* c_n \langle m | \mathcal{H} | n \rangle = \sum_n |c_n|^2 E_n$.
 So $R[\psi] = \frac{\sum_n |c_n|^2 E_n}{\sum_n |c_n|^2}$.
 \textbf{Step 2: Prove $R[\psi] \ge E_0$}.
 Since $E_n \ge E_0$, $\sum_n |c_n|^2 E_n \ge E_0 \sum_n |c_n|^2$.
@@ -53,7 +53,7 @@ Subspace $span\{T(g)v\}$ is invariant. Since $T$ is IRREP, must be $V$.
 $\forall w \in V$, $Cw = C \sum a_g T(g)v = \sum a_g T(g) C v = \lambda w$. Thus $C = \lambda I$.
 
 \subsection*{Thm 4.2.1 Spectrum of Hamiltonian}
-\important{H = -\frac{\hbar^2}{2m} \nabla^2 - \frac{a}{r^s}}
+\important{\mathcal{H} = -\frac{\hbar^2}{2m} \nabla^2 - \frac{a}{r^s}}
 with $a>0, s>2$ is unbounded from below.
 \textit{Proof:} Scaled state $\Psi(\mathbf{r}) = N e^{-r^2/r_0^2}$.
 Expectation values: $\langle T \rangle \sim \frac{\hbar^2}{2mr_0^2}, \langle V \rangle \sim -\frac{a}{r_0^s}$.
@@ -64,14 +64,14 @@ $E(r_0) \approx \frac{\alpha}{r_0^2} - \frac{\beta}{r_0^s}$. For $s>2$, as $r_0 
 \textit{Proof:} Use $|\psi\rangle = |a\rangle + |b\rangle$ and $|\psi\rangle = |a\rangle + i|b\rangle$ to show $\langle a|A|b\rangle = \langle a|B|b\rangle$.
 
 \subsection*{Thm 4.1.1 Ritz Theorem}
-$E = \frac{\langle \Psi | H | \Psi \rangle}{\langle \Psi | \Psi \rangle} \ge E_1$. Equality iff $\Psi$ is ground state.
+$E = \frac{\langle \Psi | \mathcal{H} | \Psi \rangle}{\langle \Psi | \Psi \rangle} \ge E_1$. Equality iff $\Psi$ is ground state.
 
 \subsection*{Thm 4.1.2 Generalized Ritz}
 Expectation value of $H$ is stationary in neighborhood of eigenvalues.
-\important{\delta E(\Psi) = 0 \iff H\Psi = E\Psi}
+\important{\delta E(\Psi) = 0 \iff \mathcal{H}\Psi = E\Psi}
 
 \subsection*{Thm 4.1.3 Variance Theorem}
-\important{\sigma^2 = \frac{\langle \Psi | (H-E)^2 | \Psi \rangle}{\langle \Psi | \Psi \rangle} = \langle H^2 \rangle - E^2}
+\important{\sigma^2 = \frac{\langle \Psi | (\mathcal{H}-E)^2 | \Psi \rangle}{\langle \Psi | \Psi \rangle} = \langle \mathcal{H}^2 \rangle - E^2}
 There is at least one eigenval in $[E-\sigma, E+\sigma]$.
 
 \subsection*{Thm 5.4.1 Upper bound on $j_0$}
@@ -92,7 +92,7 @@ If $T: \mathcal{V} \to \mathcal{V}$ preserves scalar product magnitude
 then $T$ is unitary or anti-unitary. (Wigner's Theorem).
 
 \subsection*{Thm 4.2.2 For $s<2$ spectrum of H}
-$H = -\frac{\hbar^2}{2m}\nabla^2 - \frac{a}{r^s}$ ($a>0$) contains infinite bound states.
+$\mathcal{H} = -\frac{\hbar^2}{2m}\nabla^2 - \frac{a}{r^s}$ ($a>0$) contains infinite bound states.
 \textit{Proof:} Trial $\Psi(r) = N e^{-(r-r_0)^2/\beta^2 r_0^2}$.
 For large $r_0$, $E < 0$ is possible.
 
@@ -114,8 +114,8 @@ Operators $\mathcal{S}$ and $\mathcal{A}$ satisfy:
 \important{\mathcal{S}^2=\mathcal{S}, \quad \mathcal{A}^2=\mathcal{A}, \quad \mathcal{S}\mathcal{A}=\mathcal{A}\mathcal{S}=0}
 
 \subsection*{Landau Levels Derivation (Handwritten)}
-$H = \frac{1}{2m}(\mathbf{p} - q\mathbf{A})^2$. $B = B\hat{z}$. Gauge $\mathbf{A} = (-By, 0, 0)$.
-$H = \frac{p_y^2}{2m} + \frac{1}{2}m \omega_c^2 (y - y_0)^2 + \frac{\hbar^2 k_z^2}{2m}$.
+$\mathcal{H} = \frac{1}{2m}(\mathbf{p} - q\mathbf{A})^2$. $B = B\hat{z}$. Gauge $\mathbf{A} = (-By, 0, 0)$.
+$\mathcal{H} = \frac{p_y^2}{2m} + \frac{1}{2}m \omega_c^2 (y - y_0)^2 + \frac{\hbar^2 k_z^2}{2m}$.
 Harmonic oscillator centered at $y_0 = -\frac{\hbar k}{qB}$. $\omega_c = \frac{qB}{m}$.
 \important{E = \hbar\omega_c (n + \frac{1}{2}) + \frac{\hbar^2 k_z^2}{2m}}
 
@@ -124,7 +124,7 @@ Harmonic oscillator centered at $y_0 = -\frac{\hbar k}{qB}$. $\omega_c = \frac{q
 \textit{Proof:} $f_k(\theta) = f(k,k') = -\frac{m}{2\pi\hbar^2} (2\pi\hbar)^3 \langle \mathbf{k} | T | \mathbf{k} \rangle$.
 Use Lippmann-Schwinger: $\text{Im}\langle \mathbf{k}|T|\mathbf{k}\rangle = \text{Im}\langle \mathbf{k}|V|\Psi_\mathbf{k}^{in}\rangle$.
 Principal value integral contour (semicircle over pole).
-$\frac{1}{E - H_0 + i\epsilon} = \text{Pr}\frac{1}{E-H_0} - i\pi \delta(E-H_0)$.
+$\frac{1}{E - \mathcal{H}_0 + i\epsilon} = \text{Pr}\frac{1}{E-\mathcal{H}_0} - i\pi \delta(E-\mathcal{H}_0)$.
 Result: $\text{Im} f_k(0) = \frac{k}{4\pi} \int d\Omega' |f_k(\theta')|^2 = \frac{k}{4\pi} \sigma_{tot}$.
 
 \subsection*{Thm 8.5.2 Eigenstates of $J^2, J_0$}
@@ -144,10 +144,10 @@ System of 2 particles with potential $V(|\mathbf{r}_1 - \mathbf{r}_2|)$.
 Separation into Center of Mass ($\mathbf{R}$) and Relative ($\mathbf{r}$) motion.
 $\mathbf{R} = \frac{m_1\mathbf{r}_1+m_2\mathbf{r}_2}{m_1+m_2}, \quad \mathbf{r} = \mathbf{r}_1-\mathbf{r}_2$.
 Total Mass $M = m_1+m_2$, Reduced Mass $\mu = \frac{m_1m_2}{m_1+m_2}$.
-Hamiltonian separates: $H = H_{CM} + H_{rel}$.
-\important{H_{CM} = \frac{\mathbf{P}^2}{2M}, \quad H_{rel} = \frac{\mathbf{p}^2}{2\mu} + V(r)}
+Hamiltonian separates: $\mathcal{H} = \mathcal{H}_{CM} + \mathcal{H}_{rel}$.
+\important{\mathcal{H}_{CM} = \frac{\mathbf{P}^2}{2M}, \quad \mathcal{H}_{rel} = \frac{\mathbf{p}^2}{2\mu} + V(r)}
 $\Psi(\mathbf{R}, \mathbf{r}) = e^{i\mathbf{K}\cdot\mathbf{R}} \psi(\mathbf{r})$. $E_{tot} = E_{CM} + E_{rel}$.
-$H_{rel}$ is effectively a 1-body problem with mass $\mu$.
+$\mathcal{H}_{rel}$ is effectively a 1-body problem with mass $\mu$.
 
 \subsection*{Hydrogen Atom Solution}
 \important{\Psi_{nlm} = N \rho^l e^{-\rho/2} L_{n-l-1}^{2l+1}(\rho) Y_{lm}(\theta,\phi)}
@@ -162,7 +162,8 @@ Kummer's Eq for $w(\rho)$: $\rho w'' + (2l+2-\rho)w' + (n-l-1)w = 0$.
 \important{a_{k+1} = \frac{k+l+1-n}{(k+1)(k+2l+2)} a_k}
 \textbf{6. Quantization:} Series must terminate for normalizable solution.
 Numerator vanishes at $k = p_{max} \implies p_{max} + l + 1 = n$ (integer).
-Result: Associated Laguerre Polynomials $L_{n-l-1}^{2l+1}(\rho)$.
+\textbf{Definitions:} $Z$ = Atomic number (Nucleus charge $+Ze$).
+$L_q^p(x)$ = Assoc. Laguerre Polys: $L_q^p(x) = \frac{x^{-p} e^x}{q!} \frac{d^q}{dx^q}(e^{-x} x^{p+q})$.
 
 \subsection*{Hydrogen-like Half-Space}
 $V(z) = -Ze^2/z (z>0), \infty (z<0)$.
@@ -170,7 +171,7 @@ Solving SE gives Rydberg states for odd parity (wavefunc must vanish at $z=0$).
 \important{E_n = -\frac{Z^2 e^4 m}{2\hbar^2 n^2}}
 
 \subsection*{Spin-Orbit Coupling}
-$H = \frac{\alpha}{\hbar^2} \mathbf{L} \cdot \mathbf{S} = \frac{\alpha}{2\hbar^2}(J^2 - L^2 - S^2)$.
+$\mathcal{H} = \frac{\alpha}{\hbar^2} \mathbf{L} \cdot \mathbf{S} = \frac{\alpha}{2\hbar^2}(J^2 - L^2 - S^2)$.
 Energy shift:
 \important{\Delta E = \frac{\alpha}{2} (j(j+1) - l(l+1) - s(s+1))}
 Splitting between states $j = l \pm 1/2$.
@@ -192,7 +193,7 @@ Eigenvalues of $T(123)$: $\det(T - \lambda I) = -\lambda^3 + 1 = 0 \implies \lam
 Vectors: $|1\rangle = \frac{1}{\sqrt{3}}(1,1,1)^T$ (invariant).
 
 \subsection*{Spin in Magnetic Field (Rabi)}
-$H = -\gamma \mathbf{S} \cdot \mathbf{B}$. Let $\mathbf{B} = B_0 \hat{z} + B_1 (\cos\omega t \hat{x} + \sin\omega t \hat{y})$.
+$\mathcal{H} = -\gamma \mathbf{S} \cdot \mathbf{B}$. Let $\mathbf{B} = B_0 \hat{z} + B_1 (\cos\omega t \hat{x} + \sin\omega t \hat{y})$.
 Transition probability (Rabi formula):
 \important{P(t) = \frac{\Omega^2}{\Omega^2 + \Delta^2} \sin^2\left( \frac{\sqrt{\Omega^2+\Delta^2}t}{2} \right)}
 Where $\Delta = \omega - \omega_0$ (detuning), $\Omega = \gamma B_1$ (Rabi freq).
@@ -224,7 +225,7 @@ Spin States:
 - Singlet ($S=0$): Antisymmetric. Requires Sym spatial (Fermions) or Antisym spatial (Bosons).
 
 \subsection*{3 Particles in Harmonic Oscillator}
-Hamiltonian $H = \sum_{i=1}^3 \frac{p_i^2}{2m} + \frac{1}{2}m\omega x_i^2$.
+Hamiltonian $\mathcal{H} = \sum_{i=1}^3 \frac{p_i^2}{2m} + \frac{1}{2}m\omega x_i^2$.
 Energy $E = \hbar\omega(n_1+n_2+n_3 + \frac{3}{2})$.
 Example: 3 identical fermions ($s=1/2$, polarized spin). Spatial part must be totally antisymmetric.
 Ground State: $n_1=0, n_2=1, n_3=2$.
@@ -285,7 +286,7 @@ Fourier: $\psi(x) = \frac{1}{\sqrt{2\pi\hbar}} \int dp \phi(p) e^{ipx/\hbar}$.
 \textbf{Harmonic Oscillator Ladder Ops:}
 $a = \sqrt{\frac{m\omega}{2\hbar}} (x + \frac{i}{m\omega}p), \quad a^\dagger = \sqrt{\frac{m\omega}{2\hbar}} (x - \frac{i}{m\omega}p)$.
 \important{x = \sqrt{\frac{\hbar}{2m\omega}}(a + a^\dagger), \quad p = i\sqrt{\frac{m\hbar\omega}{2}}(a^\dagger - a)}
-$[a, a^\dagger] = 1, \quad H = \hbar\omega(a^\dagger a + 1/2)$.
+$[a, a^\dagger] = 1, \quad \mathcal{H} = \hbar\omega(a^\dagger a + 1/2)$.
 
 
 
@@ -293,7 +294,7 @@ $[a, a^\dagger] = 1, \quad H = \hbar\omega(a^\dagger a + 1/2)$.
 
 \subsection*{Symmetry \& Conservation (T2)}
 \textbf{Noether's Theorem:} Continuous symmetry $\implies$ conservation.
-- Time Translation ($t \to t+\epsilon$) $\implies$ Energy ($H$) cons.
+- Time Translation ($t \to t+\epsilon$) $\implies$ Energy ($\mathcal{H}$) cons.
 - Space Translation ($\mathbf{r} \to \mathbf{r}+\mathbf{a}$) $\implies$ Momentum ($\mathbf{p}$) cons.
 - Rotation ($\hat{n}, \theta$) $\implies$ Angular Momentum ($\mathbf{L}$) cons.
 If $S$ invariant under $q_i \to q_i + \epsilon \mathcal{F}_i$, conserved charge $Q = \sum \frac{\partial \mathcal{L}}{\partial \dot{q}_i} \mathcal{F}_i$.
@@ -331,7 +332,7 @@ Parity: $Y_l^m(\pi-\theta, \phi+\pi) = (-1)^l Y_l^m(\theta, \phi)$.
 
 \subsection*{Heisenberg Picture (T4)}
 States fixed, operators evolve: $O_H(t) = U^\dagger(t) O_S U(t)$.
-\important{\frac{d}{dt} O_H = \frac{i}{\hbar} [H, O_H] + \left(\frac{\partial O}{\partial t}\right)_H}
+\important{\frac{d}{dt} O_H = \frac{i}{\hbar} [\mathcal{H}, O_H] + \left(\frac{\partial O}{\partial t}\right)_H}
 Example: Free particle $\dot{x} = p/m, \dot{p} = 0$. $x(t) = x(0) + p(0)t/m$.
 
 \subsection*{Spherical Potentials (T5)}
@@ -344,10 +345,10 @@ $l=0$ states: $j_0(x) = \sin(x)/x \implies \sin(kR)=0 \implies k_n = n\pi/R$.
 $\mathcal{H} = \frac{1}{2m}(\mathbf{p} + e\mathbf{A})^2 - e\phi$. 
 
 Gauge $\mathbf{A} = \frac{1}{2}\mathbf{B} \times \mathbf{r}$.
-$\mathcal{H} \approx H_0 + H_P + H_D$.
+$\mathcal{H} \approx \mathcal{H}_0 + \mathcal{H}_P + \mathcal{H}_D$.
 
-\textbf{Paramagnetic (Zeeman):} $H_P = -\frac{e}{2m} \mathbf{L} \cdot \mathbf{B} = \mu_B \mathbf{L} \cdot \mathbf{B} / \hbar$.
-\textbf{Diamagnetic:} $H_D = \frac{e^2}{8m} (\mathbf{r} \times \mathbf{B})^2$. Important if $B$ large or $n$ large.
+\textbf{Paramagnetic (Zeeman):} $\mathcal{H}_P = -\frac{e}{2m} \mathbf{L} \cdot \mathbf{B} = \mu_B \mathbf{L} \cdot \mathbf{B} / \hbar$.
+\textbf{Diamagnetic:} $\mathcal{H}_D = \frac{e^2}{8m} (\mathbf{r} \times \mathbf{B})^2$. Important if $B$ large or $n$ large.
 
 \subsection*{Addition of Angular Momentum (T8)}
 $J = J_1 + J_2$. Basis $|j_1 j_2; m_1 m_2\rangle \to |j_1 j_2; j m\rangle$.
@@ -368,14 +369,14 @@ Reduced Matrix Element $\langle || \rangle$ is independent of $m, m', q$.
 \subsection*{Perturbation Theory (T10-T11)}
 \textbf{Time-Independent Non-Degenerate} 
 
-$H = H_0 + \lambda V$.
+$\mathcal{H} = \mathcal{H}_0 + \lambda V$.
 $E_n^{(1)} = V_{nn}$.
 
 $|n^{(1)}\rangle = \sum_{k \neq n} \frac{V_{kn}}{E_n^{(0)} - E_k^{(0)}} |k^{(0)}\rangle$
 
 $E_n^{(2)} = \sum_{k \neq n} \frac{|V_{kn}|^2}{E_n^{(0)} - E_k^{(0)}}$
 
-\textbf{Time-Dependent:} $H(t) = H_0 + V(t)$. $c_n(t) = \langle n | \psi(t) \rangle e^{iE_n t/\hbar}$.
+\textbf{Time-Dependent:} $\mathcal{H}(t) = \mathcal{H}_0 + V(t)$. $c_n(t) = \langle n | \psi(t) \rangle e^{iE_n t/\hbar}$.
 \important{\dot{c}_n(t) = -\frac{i}{\hbar} \sum_k V_{nk}(t) e^{i\omega_{nk}t} c_k(t)}
 First Order: $c_n^{(1)}(t) = -\frac{i}{\hbar} \int_{t_0}^t \langle n | V(t') | i \rangle e^{i\omega_{ni}t'} dt'$.
  Fermi's Golden Rule (Transition Rate $i \to f$):
@@ -385,7 +386,7 @@ First Order: $c_n^{(1)}(t) = -\frac{i}{\hbar} \int_{t_0}^t \langle n | V(t') | i
 \textbf{Symmetry:} Bosons (Sym), Fermions (Anti-Sym).
 Helium Atom: 
 
-$H = \frac{p_1^2}{2m} + \frac{p_2^2}{2m} - \frac{2e^2}{r_1} - \frac{2e^2}{r_2} + \frac{e^2}{r_{12}}$.
+$\mathcal{H} = \frac{p_1^2}{2m} + \frac{p_2^2}{2m} - \frac{2e^2}{r_1} - \frac{2e^2}{r_2} + \frac{e^2}{r_{12}}$.
 
 Treat $e^2/r_{12}$ as perturbation.
 Ground State ($1s^2$): Singlet ($S=0$, anti-sym spin) $\implies$ Sym spatial.

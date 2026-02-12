@@ -213,7 +213,8 @@ Selection rules for matrix elements $\langle l', m' | V | l, m \rangle$:
 If $V$ transforms like $T_k^q$ (here $k=2, q=\pm 2$), then $m' = m + q$.
 \important{\Delta m = \pm 2}
 Matrix form example:
-$V \doteq \begin{pmatrix} 0 & 0 & \alpha \\ 0 & 0 & 0 \\ \alpha^* & 0 & 0 \end{pmatrix}$.
+
+$V \doteq \begin{pmatrix} 0 & 0 & \alpha \\ 0 & 0 & 0 \\ \alpha^* & 0 & 0 \end{pmatrix}$
 
 \subsection*{Time-Dependent Perturbation (HO)}
 $V(t) = F_0 x (0 < t < T)$.
@@ -242,60 +243,6 @@ Ground State: $n_1=0, n_2=1, n_3=2$.
 N-fermion state:
 \important{\Psi(1,\dots,N) = \frac{1}{\sqrt{N!}} \det(\psi_i(j))}
 Zero if two particles in same state (Pauli exclusion).
-
-\section*{Mathematical Preliminaries (T1)}
-
-\subsection*{Operators Definitions}
-\textbf{Linear:} $A(c_1\psi + c_2\phi) = c_1 A\psi + c_2 A\phi$.
-\textbf{Anti-linear:} $A(c_1\psi + c_2\phi) = c_1^* A\psi + c_2^* A\phi$.
-
-Preserves probability: $|\langle A\phi | A\psi \rangle| = |\langle \phi | \psi \rangle|$.
-Identity: $\langle A\phi | A\psi \rangle = \langle \phi | \psi \rangle^*$.
-
-\textbf{Hermitian:} $X = X^\dagger$. Real eigenvalues, orthogonal eigenstates.
-Property: $\langle \alpha | X | \beta \rangle^* = \langle \beta | X^\dagger | \alpha \rangle$.
-If Hermitian: $\langle \alpha | X | \beta \rangle^* = \langle \beta | X | \alpha \rangle$.
-
-\textbf{Unitary:} $U^\dagger U = U U^\dagger = I$. Preserves inner product.
-\important{\langle U\psi | U\phi \rangle = \langle \psi | \phi \rangle}
-Form: $U = e^{iX}$ where $X$ is Hermitian.
-
-\textbf{Anti-Unitary:} Operator $A$ is anti-unitary if:
-1.
-
-\subsection*{Commutator Identities}
-$[A, BC] = [A, B]C + B[A, C]$.
-$[AB, C] = A[B, C] + [A, C]B$.
-Jacobi: $[A, [B, C]] + [B, [C, A]] + [C, [A, B]] = 0$.
-
-
-\textbf{BCH:} $e^A e^B = e^{A+B+\frac{1}{2}[A,B] + \dots}$
-
-Hadamard: $e^A B e^{-A} = B + [A,B] + \frac{1}{2!}[A,[A,B]] + \dots$
-
-\textbf{Canonical:} $[x_i, p_j] = i\hbar \delta_{ij}$.
-
-\textbf{Angular Momentum:}
-$[L_i, x_j] = i\hbar \epsilon_{ijk} x_k, \quad [L_i, p_j] = i\hbar \epsilon_{ijk} p_k$.
-$[L^2, L_i] = 0, \quad [L^2, \mathbf{x}] = 0$ (Scalar op? No, vector).
-Actually $[L^2, V_q] \neq 0$. But $[L_i, r^2] = 0, [L_i, p^2] = 0$.
-
-\subsection*{Pauli Matrices ($\sigma$)}
-$\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$.
-\important{\sigma_i \sigma_j = \delta_{ij} I + i\epsilon_{ijk} \sigma_k}
-Commutator: $[\sigma_i, \sigma_j] = 2i\epsilon_{ijk} \sigma_k$.
-Anti-commutator: $\{\sigma_i, \sigma_j\} = 2\delta_{ij} I$.
-Identity: $(\vec{\sigma}\cdot\vec{a})(\vec{\sigma}\cdot\vec{b}) = (\vec{a}\cdot\vec{b})I + i\vec{\sigma}\cdot(\vec{a}\times\vec{b})$.
-Rotation: $e^{-i\frac{\theta}{2}\hat{n}\cdot\vec{\sigma}} = I\cos\frac{\theta}{2} - i(\hat{n}\cdot\vec{\sigma})\sin\frac{\theta}{2}$.
-
-\subsection*{Position \& Momentum}
-Fourier: $\psi(x) = \frac{1}{\sqrt{2\pi\hbar}} \int dp \phi(p) e^{ipx/\hbar}$.
-\textbf{Harmonic Oscillator Ladder Ops:}
-$a = \sqrt{\frac{m\omega}{2\hbar}} (x + \frac{i}{m\omega}p), \quad a^\dagger = \sqrt{\frac{m\omega}{2\hbar}} (x - \frac{i}{m\omega}p)$.
-\important{x = \sqrt{\frac{\hbar}{2m\omega}}(a + a^\dagger), \quad p = i\sqrt{\frac{m\hbar\omega}{2}}(a^\dagger - a)}
-$[a, a^\dagger] = 1, \quad \mathcal{H} = \hbar\omega(a^\dagger a + 1/2)$.
-
-
 
 \section*{Tirgul Summaries (T2-T3)}
 
@@ -417,6 +364,68 @@ $|\psi\rangle = |\phi\rangle + G_0^+ V |\phi\rangle + \dots$
 $f(\theta, \phi) = -\frac{m}{2\pi\hbar^2} \int d^3r e^{-i\Delta\mathbf{k}\cdot\mathbf{r}} V(\mathbf{r}) = -\frac{m}{2\pi\hbar^2} \tilde{V}(\mathbf{q})$
 where $\mathbf{q} = \mathbf{k}' - \mathbf{k}$ is momentum transfer. $|q| = 2k\sin(\theta/2)$.
 Valid if potential is weak or energy high.
+
+
+\section*{Mathematical Preliminaries}
+
+\subsection*{Operators Definitions}
+\textbf{Linear:} $A(c_1\psi + c_2\phi) = c_1 A\psi + c_2 A\phi$.
+\textbf{Anti-linear:} $A(c_1\psi + c_2\phi) = c_1^* A\psi + c_2^* A\phi$.
+
+Preserves probability: $|\langle A\phi | A\psi \rangle| = |\langle \phi | \psi \rangle|$.
+Identity: $\langle A\phi | A\psi \rangle = \langle \phi | \psi \rangle^*$.
+
+\textbf{Hermitian:} $X = X^\dagger$. Real eigenvalues, orthogonal eigenstates.
+Property: $\langle \alpha | X | \beta \rangle^* = \langle \beta | X^\dagger | \alpha \rangle$.
+If Hermitian: $\langle \alpha | X | \beta \rangle^* = \langle \beta | X | \alpha \rangle$.
+
+\textbf{Unitary:} $U^\dagger U = U U^\dagger = I$. Preserves inner product.
+\important{\langle U\psi | U\phi \rangle = \langle \psi | \phi \rangle}
+Form: $U = e^{iX}$ where $X$ is Hermitian.
+
+\textbf{Anti-Unitary:} Operator $A$ is anti-unitary if:
+1.
+
+\subsection*{Commutator Identities}
+$[A, BC] = [A, B]C + B[A, C]$.
+$[AB, C] = A[B, C] + [A, C]B$.
+Jacobi: $[A, [B, C]] + [B, [C, A]] + [C, [A, B]] = 0$.
+
+
+\textbf{BCH:} $e^A e^B = e^{A+B+\frac{1}{2}[A,B] + \dots}$
+
+Hadamard: $e^A B e^{-A} = B + [A,B] + \frac{1}{2!}[A,[A,B]] + \dots$
+
+\textbf{Canonical:} $[x_i, p_j] = i\hbar \delta_{ij}$.
+
+\textbf{Angular Momentum:}
+
+$[L_i, x_j] = i\hbar \epsilon_{ijk} x_k, \quad [L_i, p_j] = i\hbar \epsilon_{ijk} p_k$.
+
+$[L^2, L_i] = 0, \quad [L^2, \mathbf{x}] = 0$ (Scalar op? No, vector).
+
+Actually $[L^2, V_q] \neq 0$. But $[L_i, r^2] = 0, [L_i, p^2] = 0$.
+
+\subsection*{Pauli Matrices ($\sigma$)}
+$\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$.
+\important{\sigma_i \sigma_j = \delta_{ij} I + i\epsilon_{ijk} \sigma_k}
+Commutator: $[\sigma_i, \sigma_j] = 2i\epsilon_{ijk} \sigma_k$.
+Anti-commutator: $\{\sigma_i, \sigma_j\} = 2\delta_{ij} I$.
+Identity: $(\vec{\sigma}\cdot\vec{a})(\vec{\sigma}\cdot\vec{b}) = (\vec{a}\cdot\vec{b})I + i\vec{\sigma}\cdot(\vec{a}\times\vec{b})$.
+Rotation: $e^{-i\frac{\theta}{2}\hat{n}\cdot\vec{\sigma}} = I\cos\frac{\theta}{2} - i(\hat{n}\cdot\vec{\sigma})\sin\frac{\theta}{2}$.
+
+\subsection*{Position \& Momentum}
+Fourier: $\psi(x) = \frac{1}{\sqrt{2\pi\hbar}} \int dp \phi(p) e^{ipx/\hbar}$.
+\textbf{Harmonic Oscillator Ladder Ops:}
+$a = \sqrt{\frac{m\omega}{2\hbar}} (x + \frac{i}{m\omega}p)$
+
+$a^\dagger = \sqrt{\frac{m\omega}{2\hbar}} (x - \frac{i}{m\omega}p)$.
+
+$x = \sqrt{\frac{\hbar}{2m\omega}}(a + a^\dagger)$
+
+$p = i\sqrt{\frac{m\hbar\omega}{2}}(a^\dagger - a)$
+
+$[a, a^\dagger] = 1, \quad \mathcal{H} = \hbar\omega(a^\dagger a + 1/2)$.
 
 \end{multicols*}
 

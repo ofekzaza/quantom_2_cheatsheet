@@ -261,7 +261,9 @@ Form: $U = e^{iX}$ where $X$ is Hermitian.
 \textbf{Noether's Theorem:} Symmetry of action $S \implies$ Conserved quantity.
 If $S$ invariant under $q_i \to q_i + \epsilon \mathcal{F}_i$, conserved charge $Q = \sum \frac{\partial \mathcal{L}}{\partial \dot{q}_i} \mathcal{F}_i$.
 
-\textbf{Rotation Group $SO(3)$:} $R^T R = I, \det R = 1$.
+\textbf{Rotation Group $SO(3)$:} 
+
+$R^T R = I, \det R = 1$.
 Preserves inner product $\mathbf{v} \cdot \mathbf{u}$.
 Generator of rotation is Angular Momentum $\mathbf{L}$.
 $R(\hat{n}, \theta) = e^{-i \theta \mathbf{n} \cdot \mathbf{L} / \hbar}$.
@@ -305,15 +307,22 @@ Orthogonality: $\sum_{m_1 m_2} C_{m_1 m_2}^{j m} C_{m_1 m_2}^{j' m'} = \delta_{j
 \subsection*{Tensor Operators (T9)}
 Vector op $V_i$ commutes with $J$ like $r$ or $p$.
 Generic Tensor $T_k^q$ transforms like $Y_k^q$ under rotation.
-\important{[J_z, T_k^q] = \hbar q T_k^q, \quad [J_\pm, T_k^q] = \hbar \sqrt{k(k+1)-q(q\pm 1)} T_k^{q\pm 1}}
+\important{[J_z, T_k^q] = \hbar q T_k^q}
+\important{[J_\pm, T_k^q] = \hbar \sqrt{k(k+1)-q(q\pm 1)} T_k^{q\pm 1}}
 \textbf{Wigner-Eckart Thm:} Matrix elements depend on $m$ only via CG coeff.
 \important{\langle n' j' m' | T_k^q | n j m \rangle = \langle j k; m q | j' m' \rangle \frac{\langle n' j' || T_k || n j \rangle}{\sqrt{2j'+1}}}
 Reduced Matrix Element $\langle || \rangle$ is independent of $m, m', q$.
 
 \subsection*{Perturbation Theory (T10-T11)}
-\textbf{Time-Independent (Non-Degenerate):} $H = H_0 + \lambda V$.
+\textbf{Time-Independent Non-Degenerate} 
+
+$H = H_0 + \lambda V$.
 $E_n^{(1)} = V_{nn}$.
-\important{|n^{(1)}\rangle = \sum_{k \neq n} \frac{V_{kn}}{E_n^{(0)} - E_k^{(0)}} |k^{(0)}\rangle, \quad E_n^{(2)} = \sum_{k \neq n} \frac{|V_{kn}|^2}{E_n^{(0)} - E_k^{(0)}}}
+
+$|n^{(1)}\rangle = \sum_{k \neq n} \frac{V_{kn}}{E_n^{(0)} - E_k^{(0)}} |k^{(0)}\rangle$
+
+$E_n^{(2)} = \sum_{k \neq n} \frac{|V_{kn}|^2}{E_n^{(0)} - E_k^{(0)}}$
+
 \textbf{Time-Dependent:} $H(t) = H_0 + V(t)$. $c_n(t) = \langle n | \psi(t) \rangle e^{iE_n t/\hbar}$.
 \important{\dot{c}_n(t) = -\frac{i}{\hbar} \sum_k V_{nk}(t) e^{i\omega_{nk}t} c_k(t)}
 First Order: $c_n^{(1)}(t) = -\frac{i}{\hbar} \int_{t_0}^t \langle n | V(t') | i \rangle e^{i\omega_{ni}t'} dt'$.
@@ -322,17 +331,28 @@ First Order: $c_n^{(1)}(t) = -\frac{i}{\hbar} \int_{t_0}^t \langle n | V(t') | i
 
 \subsection*{Identical Particles (T12)}
 \textbf{Symmetry:} Bosons (Sym), Fermions (Anti-Sym).
-Helium Atom: $H = \frac{p_1^2}{2m} + \frac{p_2^2}{2m} - \frac{2e^2}{r_1} - \frac{2e^2}{r_2} + \frac{e^2}{r_{12}}$.
+Helium Atom: 
+
+$H = \frac{p_1^2}{2m} + \frac{p_2^2}{2m} - \frac{2e^2}{r_1} - \frac{2e^2}{r_2} + \frac{e^2}{r_{12}}$.
+
 Treat $e^2/r_{12}$ as perturbation.
 Ground State ($1s^2$): Singlet ($S=0$, anti-sym spin) $\implies$ Sym spatial.
 Excited ($1s2s$):
+
 - Parahelium (Singlet): $E_S = E_{1s} + E_{2s} + J + K$.
+
 - Orthohelium (Triplet): $E_T = E_{1s} + E_{2s} + J - K$.
 Exchange energy $K > 0$, so Triplet is lower (Hund's Rule \#1).
 
 \subsection*{Scattering - Born Approx (T13)}
-Lippmann-Schwinger: $|\psi\rangle = |\phi\rangle + G_0^+ V |\psi\rangle$.
-Born Series: $|\psi\rangle = |\phi\rangle + G_0^+ V |\phi\rangle + \dots$
+Lippmann-Schwinger: 
+
+$|\psi\rangle = |\phi\rangle + G_0^+ V |\psi\rangle$.
+
+Born Series: 
+
+$|\psi\rangle = |\phi\rangle + G_0^+ V |\phi\rangle + \dots$
+
 \textbf{First Born Approximation:}
 $f(\theta, \phi) = -\frac{m}{2\pi\hbar^2} \int d^3r e^{-i\Delta\mathbf{k}\cdot\mathbf{r}} V(\mathbf{r}) = -\frac{m}{2\pi\hbar^2} \tilde{V}(\mathbf{q})$
 where $\mathbf{q} = \mathbf{k}' - \mathbf{k}$ is momentum transfer. $|q| = 2k\sin(\theta/2)$.

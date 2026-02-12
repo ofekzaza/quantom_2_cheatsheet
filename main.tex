@@ -235,6 +235,109 @@ N-fermion state:
 \important{\Psi(1,\dots,N) = \frac{1}{\sqrt{N!}} \det(\psi_i(j))}
 Zero if two particles in same state (Pauli exclusion).
 
+\section*{Mathematical Preliminaries (T1)}
+
+\subsection*{Operators Definitions}
+\textbf{Hermitian:} $X = X^\dagger$. Real eigenvalues, orthogonal eigenstates.
+Property: $\langle \alpha | X | \beta \rangle^* = \langle \beta | X^\dagger | \alpha \rangle$.
+If Hermitian: $\langle \alpha | X | \beta \rangle^* = \langle \beta | X | \alpha \rangle$.
+
+\textbf{Unitary:} $U^\dagger U = U U^\dagger = I$. Preserves inner product.
+\important{\langle U\psi | U\phi \rangle = \langle \psi | \phi \rangle}
+Form: $U = e^{iX}$ where $X$ is Hermitian.
+
+\textbf{Anti-Unitary:} Operator $A$ is anti-unitary if:
+1. \textbf{Anti-linear}: $A(c_1|\psi\rangle + c_2|\phi\rangle) = c_1^* A|\psi\rangle + c_2^* A|\phi\rangle$.
+2. Preserves propability (conjugate inner product):
+\important{\langle A\phi | A\psi \rangle = \langle \phi | \psi \rangle^*}
+
+\textbf{Anti-Hermitian:} $X^\dagger = -X$. (Implied).
+
+
+
+\section*{Tirgul Summaries (T2-T3)}
+
+\subsection*{Symmetry \& Conservation (T2)}
+\textbf{Noether's Theorem:} Symmetry of action $S \implies$ Conserved quantity.
+If $S$ invariant under $q_i \to q_i + \epsilon \mathcal{F}_i$, conserved charge $Q = \sum \frac{\partial \mathcal{L}}{\partial \dot{q}_i} \mathcal{F}_i$.
+
+\textbf{Rotation Group $SO(3)$:} $R^T R = I, \det R = 1$.
+Preserves inner product $\mathbf{v} \cdot \mathbf{u}$.
+Generator of rotation is Angular Momentum $\mathbf{L}$.
+$R(\hat{n}, \theta) = e^{-i \theta \mathbf{n} \cdot \mathbf{L} / \hbar}$.
+
+\subsection*{Angular Momentum (T3)}
+\textbf{Commutators:}
+\important{[L_i, L_j] = i\hbar \epsilon_{ijk} L_k, \quad [L^2, L_i] = 0}
+Eigenvalues: $L^2 |l,m\rangle = \hbar^2 l(l+1) |l,m\rangle, \; L_z |l,m\rangle = \hbar m |l,m\rangle$.
+
+\textbf{Spherical Harmonics $Y_l^m(\theta,\phi)$:}
+Defined by separating $\nabla^2$ in spherical coords.
+$Y_l^m(\theta,\phi) \propto P_l^m(\cos\theta) e^{im\phi}$ ($P_l^m$ Assoc. Legendre).
+\important{Y_l^m(\theta,\phi)^* = (-1)^m Y_l^{-m}(\theta,\phi)}
+Orthogonality: $\int d\Omega Y_{l'}^{m'*} Y_l^m = \delta_{ll'} \delta_{mm'}$.
+Parity: $Y_l^m(\pi-\theta, \phi+\pi) = (-1)^l Y_l^m(\theta, \phi)$.
+
+\subsection*{Heisenberg Picture (T4)}
+States fixed, operators evolve: $O_H(t) = U^\dagger(t) O_S U(t)$.
+\important{\frac{d}{dt} O_H = \frac{i}{\hbar} [H, O_H] + \left(\frac{\partial O}{\partial t}\right)_H}
+Example: Free particle $\dot{x} = p/m, \dot{p} = 0$. $x(t) = x(0) + p(0)t/m$.
+
+\subsection*{Spherical Potentials (T5)}
+Radial Eq: $u'' + [k^2 - \frac{l(l+1)}{r^2} - U(r)]u = 0$.
+Free particle ($U=0$): Spherical Bessel $j_l(kr)$ (regular at 0), Neumann $n_l(kr)$ (irregular).
+Infinite Well ($0 < r < R$): $u(R)=0 \implies j_l(k_n R) = 0$.
+$l=0$ states: $j_0(x) = \sin(x)/x \implies \sin(kR)=0 \implies k_n = n\pi/R$.
+
+\subsection*{Atom in Magnetic Field (T6)}
+$H = \frac{1}{2m}(\mathbf{p} + e\mathbf{A})^2 - e\phi$. Gauge $\mathbf{A} = \frac{1}{2}\mathbf{B} \times \mathbf{r}$.
+$H \approx H_0 + H_P + H_D$.
+\textbf{Paramagnetic (Zeeman):} $H_P = -\frac{e}{2m} \mathbf{L} \cdot \mathbf{B} = \mu_B \mathbf{L} \cdot \mathbf{B} / \hbar$.
+\textbf{Diamagnetic:} $H_D = \frac{e^2}{8m} (\mathbf{r} \times \mathbf{B})^2$. Important if $B$ large or $n$ large.
+
+\subsection*{Addition of Angular Momentum (T8)}
+$J = J_1 + J_2$. Basis $|j_1 j_2; m_1 m_2\rangle \to |j_1 j_2; j m\rangle$.
+Clebsch-Gordan Coeffs: $C_{m_1 m_2}^{j m} = \langle j_1 j_2; m_1 m_2 | j m \rangle$.
+\important{|j_1 j_2; j m\rangle = \sum_{m_1, m_2} C_{m_1 m_2}^{j m} |j_1 j_2; m_1 m_2\rangle}
+Selection: $m = m_1 + m_2, \quad |j_1 - j_2| \le j \le j_1 + j_2$.
+Orthogonality: $\sum_{m_1 m_2} C_{m_1 m_2}^{j m} C_{m_1 m_2}^{j' m'} = \delta_{jj'} \delta_{mm'}$.
+
+\subsection*{Tensor Operators (T9)}
+Vector op $V_i$ commutes with $J$ like $r$ or $p$.
+Generic Tensor $T_k^q$ transforms like $Y_k^q$ under rotation.
+\important{[J_z, T_k^q] = \hbar q T_k^q, \quad [J_\pm, T_k^q] = \hbar \sqrt{k(k+1)-q(q\pm 1)} T_k^{q\pm 1}}
+\textbf{Wigner-Eckart Thm:} Matrix elements depend on $m$ only via CG coeff.
+\important{\langle n' j' m' | T_k^q | n j m \rangle = \langle j k; m q | j' m' \rangle \frac{\langle n' j' || T_k || n j \rangle}{\sqrt{2j'+1}}}
+Reduced Matrix Element $\langle || \rangle$ is independent of $m, m', q$.
+
+\subsection*{Perturbation Theory (T10-T11)}
+\textbf{Time-Independent (Non-Degenerate):} $H = H_0 + \lambda V$.
+$E_n^{(1)} = V_{nn}$.
+\important{|n^{(1)}\rangle = \sum_{k \neq n} \frac{V_{kn}}{E_n^{(0)} - E_k^{(0)}} |k^{(0)}\rangle, \quad E_n^{(2)} = \sum_{k \neq n} \frac{|V_{kn}|^2}{E_n^{(0)} - E_k^{(0)}}}
+\textbf{Time-Dependent:} $H(t) = H_0 + V(t)$. $c_n(t) = \langle n | \psi(t) \rangle e^{iE_n t/\hbar}$.
+\important{\dot{c}_n(t) = -\frac{i}{\hbar} \sum_k V_{nk}(t) e^{i\omega_{nk}t} c_k(t)}
+First Order: $c_n^{(1)}(t) = -\frac{i}{\hbar} \int_{t_0}^t \langle n | V(t') | i \rangle e^{i\omega_{ni}t'} dt'$.
+ Fermi's Golden Rule (Transition Rate $i \to f$):
+\important{W_{i\to f} = \frac{2\pi}{\hbar} |V_{fi}|^2 \delta(E_f - E_i)}
+
+\subsection*{Identical Particles (T12)}
+\textbf{Symmetry:} Bosons (Sym), Fermions (Anti-Sym).
+Helium Atom: $H = \frac{p_1^2}{2m} + \frac{p_2^2}{2m} - \frac{2e^2}{r_1} - \frac{2e^2}{r_2} + \frac{e^2}{r_{12}}$.
+Treat $e^2/r_{12}$ as perturbation.
+Ground State ($1s^2$): Singlet ($S=0$, anti-sym spin) $\implies$ Sym spatial.
+Excited ($1s2s$):
+- Parahelium (Singlet): $E_S = E_{1s} + E_{2s} + J + K$.
+- Orthohelium (Triplet): $E_T = E_{1s} + E_{2s} + J - K$.
+Exchange energy $K > 0$, so Triplet is lower (Hund's Rule \#1).
+
+\subsection*{Scattering - Born Approx (T13)}
+Lippmann-Schwinger: $|\psi\rangle = |\phi\rangle + G_0^+ V |\psi\rangle$.
+Born Series: $|\psi\rangle = |\phi\rangle + G_0^+ V |\phi\rangle + \dots$
+\textbf{First Born Approximation:}
+$f(\theta, \phi) = -\frac{m}{2\pi\hbar^2} \int d^3r e^{-i\Delta\mathbf{k}\cdot\mathbf{r}} V(\mathbf{r}) = -\frac{m}{2\pi\hbar^2} \tilde{V}(\mathbf{q})$
+where $\mathbf{q} = \mathbf{k}' - \mathbf{k}$ is momentum transfer. $|q| = 2k\sin(\theta/2)$.
+Valid if potential is weak or energy high.
+
 \end{multicols*}
 
 \end{document}

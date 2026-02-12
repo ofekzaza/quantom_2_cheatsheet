@@ -241,6 +241,9 @@ Zero if two particles in same state (Pauli exclusion).
 \textbf{Linear:} $A(c_1\psi + c_2\phi) = c_1 A\psi + c_2 A\phi$.
 \textbf{Anti-linear:} $A(c_1\psi + c_2\phi) = c_1^* A\psi + c_2^* A\phi$.
 
+Preserves probability: $|\langle A\phi | A\psi \rangle| = |\langle \phi | \psi \rangle|$.
+Identity: $\langle A\phi | A\psi \rangle = \langle \phi | \psi \rangle^*$.
+
 \textbf{Hermitian:} $X = X^\dagger$. Real eigenvalues, orthogonal eigenstates.
 Property: $\langle \alpha | X | \beta \rangle^* = \langle \beta | X^\dagger | \alpha \rangle$.
 If Hermitian: $\langle \alpha | X | \beta \rangle^* = \langle \beta | X | \alpha \rangle$.
@@ -250,20 +253,24 @@ If Hermitian: $\langle \alpha | X | \beta \rangle^* = \langle \beta | X | \alpha
 Form: $U = e^{iX}$ where $X$ is Hermitian.
 
 \textbf{Anti-Unitary:} Operator $A$ is anti-unitary if:
-1. \textbf{Anti-linear}. 2. Preserves probability: $|\langle A\phi | A\psi \rangle| = |\langle \phi | \psi \rangle|$.
-Identity: $\langle A\phi | A\psi \rangle = \langle \phi | \psi \rangle^*$.
+1.
 
 \subsection*{Commutator Identities}
 $[A, BC] = [A, B]C + B[A, C]$.
 $[AB, C] = A[B, C] + [A, C]B$.
 Jacobi: $[A, [B, C]] + [B, [C, A]] + [C, [A, B]] = 0$.
+
+
+\textbf{BCH:} $e^A e^B = e^{A+B+\frac{1}{2}[A,B] + \dots}$
+
+Hadamard: $e^A B e^{-A} = B + [A,B] + \frac{1}{2!}[A,[A,B]] + \dots$
+
 \textbf{Canonical:} $[x_i, p_j] = i\hbar \delta_{ij}$.
+
 \textbf{Angular Momentum:}
 $[L_i, x_j] = i\hbar \epsilon_{ijk} x_k, \quad [L_i, p_j] = i\hbar \epsilon_{ijk} p_k$.
 $[L^2, L_i] = 0, \quad [L^2, \mathbf{x}] = 0$ (Scalar op? No, vector).
 Actually $[L^2, V_q] \neq 0$. But $[L_i, r^2] = 0, [L_i, p^2] = 0$.
-\textbf{BCH Formula:} $e^A e^B = e^{A+B+\frac{1}{2}[A,B] + \dots}$
-Hadamard: $e^A B e^{-A} = B + [A,B] + \frac{1}{2!}[A,[A,B]] + \dots$
 
 \subsection*{Pauli Matrices ($\sigma$)}
 $\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$.
@@ -334,8 +341,11 @@ Infinite Well ($0 < r < R$): $u(R)=0 \implies j_l(k_n R) = 0$.
 $l=0$ states: $j_0(x) = \sin(x)/x \implies \sin(kR)=0 \implies k_n = n\pi/R$.
 
 \subsection*{Atom in Magnetic Field (T6)}
-$H = \frac{1}{2m}(\mathbf{p} + e\mathbf{A})^2 - e\phi$. Gauge $\mathbf{A} = \frac{1}{2}\mathbf{B} \times \mathbf{r}$.
-$H \approx H_0 + H_P + H_D$.
+$\mathcal{H} = \frac{1}{2m}(\mathbf{p} + e\mathbf{A})^2 - e\phi$. 
+
+Gauge $\mathbf{A} = \frac{1}{2}\mathbf{B} \times \mathbf{r}$.
+$\mathcal{H} \approx H_0 + H_P + H_D$.
+
 \textbf{Paramagnetic (Zeeman):} $H_P = -\frac{e}{2m} \mathbf{L} \cdot \mathbf{B} = \mu_B \mathbf{L} \cdot \mathbf{B} / \hbar$.
 \textbf{Diamagnetic:} $H_D = \frac{e^2}{8m} (\mathbf{r} \times \mathbf{B})^2$. Important if $B$ large or $n$ large.
 

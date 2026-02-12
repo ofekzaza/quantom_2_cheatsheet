@@ -134,15 +134,9 @@ Principal value integral contour (semicircle over pole).
 $\frac{1}{E - \mathcal{H}_0 + i\epsilon} = \text{Pr}\frac{1}{E-\mathcal{H}_0} - i\pi \delta(E-\mathcal{H}_0)$.
 Result: $\text{Im} f_k(0) = \frac{k}{4\pi} \int d\Omega' |f_k(\theta')|^2 = \frac{k}{4\pi} \sigma_{tot}$.
 
-\subsection*{Thm 8.5.2 Eigenstates of $J^2, J_0$}
-Transformation matrix elements only depend on $a, \beta$ (independent of $j,m$).
-\important{\langle \Phi_{a j m} | \Psi_{\beta j m} \rangle = \delta_{jj'} \delta_{mm'} \langle \Phi_{a j} || \Psi_{\beta j} \rangle}
 
-\subsection*{CG Coefficients Example (Handwritten)}
-Addition of angular momentum $J = J_1 + J_2$.
-Max $m = j_1 + j_2$ is unique: $|j_1 j_2; j_1+j_2, j_1+j_2\rangle = |j_1, j_1\rangle |j_2, j_2\rangle$.
-Apply $J_- = J_{1-} + J_{2-}$ to find lower $m$ states.
-\important{\alpha = \sqrt{\frac{j_1}{j_1+j_2}}, \quad \beta = -\sqrt{\frac{j_2}{j_1+j_2}}}
+
+
 
 % Page 3 Content
 
@@ -183,10 +177,7 @@ Energy shift:
 \important{\Delta E = \frac{\alpha}{2} (j(j+1) - l(l+1) - s(s+1))}
 Splitting between states $j = l \pm 1/2$.
 
-\subsection*{Angular Momentum Operators}
-$L_z |l,m\rangle = \hbar m |l,m\rangle, \quad L^2 |l,m\rangle = \hbar^2 l(l+1) |l,m\rangle$.
-\important{L_\pm |l,m\rangle = \hbar \sqrt{l(l+1) - m(m\pm 1)} |l, m\pm 1\rangle}
-$L_x = \frac{1}{2}(L_+ + L_-), \quad L_y = \frac{1}{2i}(L_+ - L_-)$.
+
 
 \subsection*{Infinite Spherical Well}
 $V(r) = 0 (r<R), \infty (r>R)$.
@@ -207,14 +198,7 @@ Where $\Delta = \omega - \omega_0$ (detuning), $\Omega = \gamma B_1$ (Rabi freq)
 
 % Page 4 Content
 
-\subsection*{Tensor Operators Example}
-Consider $V \propto (x^2 - y^2)$.
-Selection rules for matrix elements $\langle l', m' | V | l, m \rangle$:
-If $V$ transforms like $T_k^q$ (here $k=2, q=\pm 2$), then $m' = m + q$.
-\important{\Delta m = \pm 2}
-Matrix form example:
 
-$V \doteq \begin{pmatrix} 0 & 0 & \alpha \\ 0 & 0 & 0 \\ \alpha^* & 0 & 0 \end{pmatrix}$
 
 \subsection*{Time-Dependent Perturbation (HO)}
 $V(t) = F_0 x (0 < t < T)$.
@@ -274,20 +258,47 @@ Generator of rotation is Angular Momentum $\mathbf{L}$.
 $R(\hat{n}, \theta) = e^{-i \theta \mathbf{n} \cdot \mathbf{L} / \hbar}$.
 
 \subsection*{Angular Momentum}
+\textbf{Definitions:} $\vec{L} = \vec{r} \times \vec{p}$, $\vec{J} = \vec{L} + \vec{S}$.
+Rotation Generator: $R(\hat{n}, \theta) = e^{-i\theta \hat{n}\cdot\vec{J}/\hbar}$.
 \textbf{Commutators:}
-\important{[L_i, L_j] = i\hbar \epsilon_{ijk} L_k, \quad [L^2, L_i] = 0}
-Eigenvalues: $L^2 |l,m\rangle = \hbar^2 l(l+1) |l,m\rangle, \; L_z |l,m\rangle = \hbar m |l,m\rangle$.
-
+$[J_i, J_j] = i\hbar \epsilon_{ijk} J_k, \quad [L^2, L_i] = 0$.
+$[L_i, x_j] = i\hbar \epsilon_{ijk} x_k, \quad [L_i, p_j] = i\hbar \epsilon_{ijk} p_k$.
+\textbf{Eigenvalues \& Ladder:}
+$L^2 |l,m\rangle = \hbar^2 l(l+1) |l,m\rangle, \quad L_z |l,m\rangle = \hbar m |l,m\rangle$.
+$L_\pm |l,m\rangle = \hbar \sqrt{l(l+1) - m(m\pm 1)} |l, m\pm 1\rangle$.
+$L_x = \frac{1}{2}(L_+ + L_-), \quad L_y = \frac{1}{2i}(L_+ - L_-)$.
 \textbf{Spherical Harmonics $Y_l^m(\theta,\phi)$:}
-Defined by separating $\nabla^2$ in spherical coords.
-$Y_l^m(\theta,\phi) \propto P_l^m(\cos\theta) e^{im\phi}$ ($P_l^m$ Assoc. Legendre).
-\important{Y_l^m(\theta,\phi)^* = (-1)^m Y_l^{-m}(\theta,\phi)}
-Orthogonality: $\int d\Omega Y_{l'}^{m'*} Y_l^m = \delta_{ll'} \delta_{mm'}$.
-Parity: $Y_l^m(\pi-\theta, \phi+\pi) = (-1)^l Y_l^m(\theta, \phi)$.
+\textbf{Coordinate Reps:}
+$L_x = -i\hbar(y\partial_z - z\partial_y) = i\hbar(\sin\phi\partial_\theta + \cot\theta\cos\phi\partial_\phi)$.
+$L_y = -i\hbar(z\partial_x - x\partial_z) = i\hbar(-\cos\phi\partial_\theta + \cot\theta\sin\phi\partial_\phi)$.
+$L_z = -i\hbar(x\partial_y - y\partial_x) = -i\hbar\partial_\phi$.
+$L^2 = -\hbar^2 [\frac{1}{\sin\theta}\partial_\theta(\sin\theta\partial_\theta) + \frac{1}{\sin^2\theta}\partial_\phi^2]$.
+$Y_l^m(\theta,\phi) \propto P_l^m(\cos\theta) e^{im\phi}$. Parity: $Y_{l}^m(\hat{n}) = (-1)^l Y_l^m(-\hat{n})$.
+Conjugate: $Y_l^m{}^* = (-1)^m Y_l^{-m}$. Orthogonality: $\int d\Omega Y_{l'}^{m'*} Y_l^m = \delta_{ll'} \delta_{mm'}$.
+Explicit: $Y_0^0 = \sqrt{\frac{1}{4\pi}}, Y_1^0 = \sqrt{\frac{3}{4\pi}}\cos\theta, Y_1^{\pm 1} = \mp\sqrt{\frac{3}{8\pi}}e^{\pm i\phi}\sin\theta$.
 
-\subsection*{Heisenberg Picture}
-States fixed, operators evolve: $O_H(t) = U^\dagger(t) O_S U(t)$.
-\important{\frac{d}{dt} O_H = \frac{i}{\hbar} [\mathcal{H}, O_H] + \left(\frac{\partial O}{\partial t}\right)_H}
+\subsection*{Addition of Angular Momentum}
+$J = J_1 + J_2$. Basis $|j_1 j_2; m_1 m_2\rangle \to |j_1 j_2; j m\rangle$.
+\important{|j_1 j_2; j m\rangle = \sum_{m_1, m_2} C_{m_1 m_2}^{j m} |j_1 j_2; m_1 m_2\rangle}
+Selection: $m = m_1 + m_2, \quad |j_1 - j_2| \le j \le j_1 + j_2$.
+Example: Limit state $|j_1+j_2, j_1+j_2\rangle = |j_1, j_1\rangle |j_2, j_2\rangle$. lower with $J_-$:
+$\alpha = \sqrt{\frac{j_1}{j_1+j_2}}, \quad \beta = -\sqrt{\frac{j_2}{j_1+j_2}}$.
+
+\subsection*{Tensor Operators \& Wigner-Eckart}
+Definition: $[J_z, T_k^q] = \hbar q T_k^q, \quad [J_\pm, T_k^q] = \hbar \sqrt{k(k+1)-q(q\pm 1)} T_k^{q\pm 1}$.
+\textbf{Wigner-Eckart Thm:} Matrix elements depend on $m$ only via CG coeff.
+\important{\langle n' j' m' | T_k^q | n j m \rangle = \langle j k; m q | j' m' \rangle \frac{\langle n' j' || T_k || n j \rangle}{\sqrt{2j'+1}}}
+Selection rules: $\Delta m = q$, Triangle rule for $j, k, j'$.
+Example: $V \propto (x^2-y^2)$ is Tensor $T_2^{\pm 2} \implies \Delta m = \pm 2$.
+
+\subsection*{Heisenberg Picture \& Dynamics}
+\textbf{Schrödinger Eq:} $i\hbar \frac{d}{dt}|\psi\rangle = \mathcal{H}|\psi\rangle$.
+\textbf{Time Independent:} $\mathcal{H}|\psi\rangle = E|\psi\rangle$.
+\textbf{Heisenberg Eq:} $\frac{d}{dt} O_H = \frac{1}{i\hbar} [O_H, \mathcal{H}] + (\frac{\partial O}{\partial t})_H$.
+\important{\frac{d}{dt}\langle O \rangle = \frac{1}{i\hbar}\langle [O, \mathcal{H}] \rangle + \langle \frac{\partial O}{\partial t} \rangle}
+\textbf{Probability Current:} $\vec{J} = \frac{\hbar}{m}\text{Im}(\psi^*\nabla\psi) - \frac{q}{m}\vec{A}|\psi|^2$.
+Definition: $O_H(t) = e^{i\mathcal{H}t/\hbar} O_S e^{-i\mathcal{H}t/\hbar}$.
+Operator Calc: $\frac{d}{dt}e^{At} = A e^{At}, \quad \frac{d}{dt}(AB) = \dot{A}B + A\dot{B}$.
 Example: Free particle $\dot{x} = p/m, \dot{p} = 0$. $x(t) = x(0) + p(0)t/m$.
 
 \subsection*{Spherical Potentials}
@@ -297,29 +308,22 @@ Infinite Well ($0 < r < R$): $u(R)=0 \implies j_l(k_n R) = 0$.
 $l=0$ states: $j_0(x) = \sin(x)/x \implies \sin(kR)=0 \implies k_n = n\pi/R$.
 
 \subsection*{Atom in Magnetic Field}
-$\mathcal{H} = \frac{1}{2m}(\mathbf{p} + e\mathbf{A})^2 - e\phi$. 
+\textbf{Gauge Invariance:} $\vec{A} \to \vec{A} + \nabla\Lambda, \phi \to \phi - \partial_t\Lambda$.
+$\psi' = e^{iq\Lambda/\hbar}\psi$. Observables unchanged.
+\textbf{Aharonov-Bohm:} Phase shift $\Delta\varphi = \frac{q}{\hbar} \oint \vec{A}\cdot d\vec{l} = \frac{q\Phi}{\hbar}$.
+Interference shifts even if $\vec{B}=0$ on path (only $\vec{A} \neq 0$).
+\textbf{Landau Level Degeneracy:} $N = \Phi / \Phi_0 = BA / (h/e)$.
 
-Gauge $\mathbf{A} = \frac{1}{2}\mathbf{B} \times \mathbf{r}$.
+$\mathcal{H} = \frac{1}{2m}(\mathbf{p} + e\mathbf{A})^2 - e\phi$. 
+Gauge \textbf{Coulomb:} $\nabla \cdot \mathbf{A} = 0$. $\mathbf{A} = \frac{1}{2}\mathbf{B} \times \mathbf{r}$.
 $\mathcal{H} \approx \mathcal{H}_0 + \mathcal{H}_P + \mathcal{H}_D$.
 
 \textbf{Paramagnetic (Zeeman):} $\mathcal{H}_P = -\frac{e}{2m} \mathbf{L} \cdot \mathbf{B} = \mu_B \mathbf{L} \cdot \mathbf{B} / \hbar$.
 \textbf{Diamagnetic:} $\mathcal{H}_D = \frac{e^2}{8m} (\mathbf{r} \times \mathbf{B})^2$. Important if $B$ large or $n$ large.
 
-\subsection*{Addition of Angular Momentum}
-$J = J_1 + J_2$. Basis $|j_1 j_2; m_1 m_2\rangle \to |j_1 j_2; j m\rangle$.
-Clebsch-Gordan Coeffs: $C_{m_1 m_2}^{j m} = \langle j_1 j_2; m_1 m_2 | j m \rangle$.
-\important{|j_1 j_2; j m\rangle = \sum_{m_1, m_2} C_{m_1 m_2}^{j m} |j_1 j_2; m_1 m_2\rangle}
-Selection: $m = m_1 + m_2, \quad |j_1 - j_2| \le j \le j_1 + j_2$.
-Orthogonality: $\sum_{m_1 m_2} C_{m_1 m_2}^{j m} C_{m_1 m_2}^{j' m'} = \delta_{jj'} \delta_{mm'}$.
 
-\subsection*{Tensor Operators}
-Vector op $V_i$ commutes with $J$ like $r$ or $p$.
-Generic Tensor $T_k^q$ transforms like $Y_k^q$ under rotation.
-\important{[J_z, T_k^q] = \hbar q T_k^q}
-\important{[J_\pm, T_k^q] = \hbar \sqrt{k(k+1)-q(q\pm 1)} T_k^{q\pm 1}}
-\textbf{Wigner-Eckart Thm:} Matrix elements depend on $m$ only via CG coeff.
-\important{\langle n' j' m' | T_k^q | n j m \rangle = \langle j k; m q | j' m' \rangle \frac{\langle n' j' || T_k || n j \rangle}{\sqrt{2j'+1}}}
-Reduced Matrix Element $\langle || \rangle$ is independent of $m, m', q$.
+
+
 
 \subsection*{Perturbation Theory}
 \textbf{Time-Independent Non-Degenerate} 
@@ -340,7 +344,10 @@ $c_n^{(1)}(t) = -\frac{i}{\hbar} \int_{t_0}^t \langle n | V(t') | i \rangle e^{i
 \important{W_{i\to f} = \frac{2\pi}{\hbar} |V_{fi}|^2 \delta(E_f - E_i)}
 
 \subsection*{Identical Particles}
-\textbf{Symmetry:} Bosons (Sym), Fermions (Anti-Sym).
+\textbf{Exchange Symmetry:} $P_{12}\psi(1,2) = \eta\psi(2,1) = \eta\psi(1,2)$.
+$\eta=1$ (Bosons, Int Spin), $\eta=-1$ (Fermions, Half-Int Spin).
+\textbf{Pauli Exclusion:} 2 Fermions cannot occupy same state.
+\textbf{Symmetrizers:} $S_N = \frac{1}{N!} \sum P_g, \quad A_N = \frac{1}{N!} \sum (-1)^p P_g$.
 Helium Atom: 
 
 $\mathcal{H} = \frac{p_1^2}{2m} + \frac{p_2^2}{2m} - \frac{2e^2}{r_1} - \frac{2e^2}{r_2} + \frac{e^2}{r_{12}}$.
@@ -370,6 +377,25 @@ Valid if potential is weak or energy high.
 
 
 \section*{Mathematical Preliminaries}
+
+\subsection*{Math Supplement}
+\textbf{Trig:} $\cos a \cos b = \frac{1}{2}[\cos(a-b)+\cos(a+b)]$.
+$\sin a \sin b = \frac{1}{2}[\cos(a-b)-\cos(a+b)]$.
+$\sin a \cos b = \frac{1}{2}[\sin(a-b)+\sin(a+b)]$.
+$\sin(a\pm b) = \sin a\cos b \pm \cos a\sin b$.
+$\cos(a\pm b) = \cos a\cos b \mp \sin a\sin b$.
+$\cos^2 x = \frac{1+\cos 2x}{2}, \sin^2 x = \frac{1-\cos 2x}{2}$.
+\textbf{Series:} $\frac{1}{1-x} = \sum x^n, \quad e^x = \sum \frac{x^n}{n!}$.
+$\sin x = \sum \frac{(-1)^n x^{2n+1}}{(2n+1)!}, \quad \cos x = \sum \frac{(-1)^n x^{2n}}{(2n)!}$.
+\textbf{Delta:} $\delta(f(x)) = \sum_i \frac{\delta(x-x_i)}{|f'(x_i)|}$.
+$\delta^{(3)}(\vec{r}-\vec{r}_0) = \frac{1}{r^2\sin\theta}\delta(r-r_0)\delta(\theta-\theta_0)\delta(\phi-\phi_0)$.
+\textbf{Quantization:} Poisson $\{f,g\} \to \frac{1}{i\hbar}[F,G]$. Replaces $xp \to \frac{1}{2}(XP+PX)$.
+\textbf{Expectation:} $\langle f(X) \rangle = \int_{-\infty}^\infty f(x) |\psi(x)|^2 dx$.
+\textbf{Volume Elements:} $dV_{cyl} = \rho d\rho d\theta dz$. $dV_{sph} = r^2 \sin\theta dr d\theta d\phi$.
+\textbf{Integrals:}
+$\int_{-\infty}^\infty e^{-ax^2+bx} dx = \sqrt{\frac{\pi}{a}}e^{b^2/4a}$.
+$\int \sin^2(ax) dx = \frac{x}{2} - \frac{\sin(2ax)}{4a}, \quad \int \cos^2(ax) dx = \frac{x}{2} + \frac{\sin(2ax)}{4a}$.
+$\int_0^\infty x^n e^{-ax} dx = n!/a^{n+1}$.
 
 \subsection*{Operators Definitions}
 \textbf{Linear:} $A(c_1\psi + c_2\phi) = c_1 A\psi + c_2 A\phi$.
@@ -401,21 +427,21 @@ $[A, BC] = [A, B]C + B[A, C]$.
 $[AB, C] = A[B, C] + [A, C]B$.
 Jacobi: $[A, [B, C]] + [B, [C, A]] + [C, [A, B]] = 0$.
 
-$[A,A] = 0, [A,e^{cA}] = 0$
-
-\textbf{BCH:} $e^A e^B = e^{A+B+\frac{1}{2}[A,B] + \dots}$
+$[A,A] = 0, [A, e^{cA}] = 0$. \textbf{Functions:} $[f(A), A] = 0$.
+$[A, f(B)] = [A, B]f'(B)$ if $[[A,B],B]=0$.
+\textbf{Uncertainty:} $\Delta A \Delta B \ge \frac{1}{2}|\langle [A,B] \rangle|$.
+\textbf{BCH:} $e^A e^B = e^{A+B+\frac{1}{2}[A,B] + \dots}$ if $[A,B]$ commutes.
 
 $e^A B e^{-A} = B + [A,B] + \frac{1}{2!}[A,[A,B]] + \dots$
 
 \textbf{Canonical:} $[x_i, p_j] = i\hbar \delta_{ij}$
 
-\textbf{Angular Momentum:}
+\subsection*{Symmetry Generators}
+Time Translation: $U(t) = e^{-iHt/\hbar}$ (Energy cons).
+Space Translation: $T(\vec{a}) = e^{-i\vec{a}\cdot\vec{P}/\hbar}$ (Momentum cons).
+Rotation: $R(\hat{n}, \theta) = e^{-i\theta \hat{n}\cdot\vec{J}/\hbar}$ (Ang. Mom cons).
 
-$[L_i, x_j] = i\hbar \epsilon_{ijk} x_k \quad [L_i, p_j] = i\hbar \epsilon_{ijk} p_k$.
 
-$[L^2, L_i] = 0 \quad [L^2, \mathbf{x}] = 0$ (Scalar op? No, vector).
-
-Actually $[L^2, V_q] \neq 0$. But $[L_i, r^2] = 0, [L_i, p^2] = 0$.
 
 \subsection*{Pauli Matrices ($\sigma$)}
 $\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$.
@@ -437,7 +463,10 @@ $x = \sqrt{\frac{\hbar}{2m\omega}}(a + a^\dagger)$
 
 $p = i\sqrt{\frac{m\hbar\omega}{2}}(a^\dagger - a)$
 
-$[a, a^\dagger] = 1, \quad \mathcal{H} = \hbar\omega(a^\dagger a + 1/2)$.
+$[a, a^\dagger] = 1, \quad \mathcal{H} = \hbar\omega(a^\dagger a + 1/2) = \hbar\omega(N + 1/2)$.
+$[N, a] = -a, \quad [N, a^\dagger] = a^\dagger$.
+\textbf{Virial Theorem:} $2\langle T \rangle = n\langle V \rangle$ for $V(x) \propto x^n$.
+HO $(n=2) \implies \langle T \rangle = \langle V \rangle = E/2$.
 
 \end{multicols*}
 

@@ -294,7 +294,7 @@ Example: $V \propto (x^2-y^2)$ is Tensor $T_2^{\pm 2} \implies \Delta m = \pm 2$
 \subsection*{Heisenberg Picture \& Dynamics}
 \textbf{Schrödinger Eq:} $i\hbar \frac{d}{dt}|\psi\rangle = \mathcal{H}|\psi\rangle$.
 \textbf{Time Independent:} $\mathcal{H}|\psi\rangle = E|\psi\rangle$.
-\textbf{Heisenberg Eq:} $\frac{d}{dt} O_H = \frac{1}{i\hbar} [O_H, \mathcal{H}] + (\frac{\partial O}{\partial t})_H$.
+\textbf{Heisenberg} $\frac{d}{dt} O_H = \frac{1}{i\hbar} [O_H, \mathcal{H}] + (\frac{\partial O}{\partial t})_H$.
 \important{\frac{d}{dt}\langle O \rangle = \frac{1}{i\hbar}\langle [O, \mathcal{H}] \rangle + \langle \frac{\partial O}{\partial t} \rangle}
 \textbf{Probability Current:} $\vec{J} = \frac{\hbar}{m}\text{Im}(\psi^*\nabla\psi) - \frac{q}{m}\vec{A}|\psi|^2$.
 Definition: $O_H(t) = e^{i\mathcal{H}t/\hbar} O_S e^{-i\mathcal{H}t/\hbar}$.
@@ -379,17 +379,20 @@ Valid if potential is weak or energy high.
 \section*{Mathematical Preliminaries}
 
 \subsection*{Math Supplement}
-\textbf{Trig:} $\cos a \cos b = \frac{1}{2}[\cos(a-b)+\cos(a+b)]$.
-$\sin a \sin b = \frac{1}{2}[\cos(a-b)-\cos(a+b)]$.
-$\sin a \cos b = \frac{1}{2}[\sin(a-b)+\sin(a+b)]$.
-$\sin(a\pm b) = \sin a\cos b \pm \cos a\sin b$.
-$\cos(a\pm b) = \cos a\cos b \mp \sin a\sin b$.
-$\cos^2 x = \frac{1+\cos 2x}{2}, \sin^2 x = \frac{1-\cos 2x}{2}$.
-\textbf{Series:} $\frac{1}{1-x} = \sum x^n, \quad e^x = \sum \frac{x^n}{n!}$.
-$\sin x = \sum \frac{(-1)^n x^{2n+1}}{(2n+1)!}, \quad \cos x = \sum \frac{(-1)^n x^{2n}}{(2n)!}$.
-\textbf{Delta:} $\delta(f(x)) = \sum_i \frac{\delta(x-x_i)}{|f'(x_i)|}$.
+$\cos a \cos b = \frac{1}{2}[\cos(a-b)+\cos(a+b)]$
+$\sin a \sin b = \frac{1}{2}[\cos(a-b)-\cos(a+b)]$
+$\sin a \cos b = \frac{1}{2}[\sin(a-b)+\sin(a+b)]$
+$\sin(a\pm b) = \sin a\cos b \pm \cos a\sin b$
+$\cos(a\pm b) = \cos a\cos b \mp \sin a\sin b$
+$\cos^2 x = \frac{1+\cos 2x}{2}, \sin^2 x = \frac{1-\cos 2x}{2}$
+
+$\frac{1}{1-x} = \sum x^n, \quad e^x = \sum \frac{x^n}{n!}$
+$\sin x = \sum \frac{(-1)^n x^{2n+1}}{(2n+1)!}, \quad \cos x = \sum \frac{(-1)^n x^{2n}}{(2n)!}$
+\textbf{Delta:} $\delta(f(x)) = \sum_i \frac{\delta(x-x_i)}{|f'(x_i)|}$
+
 $\delta^{(3)}(\vec{r}-\vec{r}_0) = \frac{1}{r^2\sin\theta}\delta(r-r_0)\delta(\theta-\theta_0)\delta(\phi-\phi_0)$.
-\textbf{Quantization:} Poisson $\{f,g\} \to \frac{1}{i\hbar}[F,G]$. Replaces $xp \to \frac{1}{2}(XP+PX)$.
+
+\textbf{Quantization:} Poisson $\{f,g\} \to \frac{1}{i\hbar}[F,G]$. Replaces $xp \to \frac{1}{2}[X,P]$.
 \textbf{Expectation:} $\langle f(X) \rangle = \int_{-\infty}^\infty f(x) |\psi(x)|^2 dx$.
 \textbf{Volume Elements:} $dV_{cyl} = \rho d\rho d\theta dz$. $dV_{sph} = r^2 \sin\theta dr d\theta d\phi$.
 \textbf{Integrals:}
@@ -427,10 +430,16 @@ $[A, BC] = [A, B]C + B[A, C]$.
 $[AB, C] = A[B, C] + [A, C]B$.
 Jacobi: $[A, [B, C]] + [B, [C, A]] + [C, [A, B]] = 0$.
 
-$[A,A] = 0, [A, e^{cA}] = 0$. \textbf{Functions:} $[f(A), A] = 0$.
-$[A, f(B)] = [A, B]f'(B)$ if $[[A,B],B]=0$.
+$[A,A] = 0, [A, e^{cA}] = 0$.
+
+$[f(A), A] = 0$ 
+
+$[A, f(B)] = [A, B]f'(B)$ if $[[A,B],B]=0$
+
 \textbf{Uncertainty:} $\Delta A \Delta B \ge \frac{1}{2}|\langle [A,B] \rangle|$.
-\textbf{BCH:} $e^A e^B = e^{A+B+\frac{1}{2}[A,B] + \dots}$ if $[A,B]$ commutes.
+
+
+$[A,B] = 0 \rightarrow  e^A e^B = e^{A+B+\frac{1}{2}[A,B] + \dots}$
 
 $e^A B e^{-A} = B + [A,B] + \frac{1}{2!}[A,[A,B]] + \dots$
 

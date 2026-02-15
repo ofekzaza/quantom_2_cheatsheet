@@ -3,7 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{multicol}
-\usepackage[left=0.5cm, right=0.5cm, top=1.3cm, bottom=0.5cm, a4paper]{geometry}
+\usepackage[left=0.5cm, right=0.5cm, top=1.4cm, bottom=0.5cm, a4paper]{geometry}
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{enumitem}
@@ -163,11 +163,18 @@ Kummer's Eq for $w(\rho)$: $\rho w'' + (2l+2-\rho)w' + (n-l-1)w = 0$.
 \important{a_{k+1} = \frac{k+l+1-n}{(k+1)(k+2l+2)} a_k}
 \textbf{6. Quantization:} Series must terminate for normalizable solution.
 Numerator vanishes at $k = p_{max} \implies p_{max} + l + 1 = n$ (integer).
-\textbf{Definitions:} $Z$ = Atomic number (Nucleus charge $+Ze$).
-$L_q^p(x)$ = Assoc. Laguerre Polys: $L_q^p(x) = \frac{x^{-p} e^x}{q!} \frac{d^q}{dx^q}(e^{-x} x^{p+q})$.
+
+\textbf{Definitions:} 
+
+$Z$ Atomic number (Nucleus charge $+Ze$).
+
+$L_q^p(x)$ Assoc. Laguerre Polys: 
+
+$L_q^p(x) = \frac{x^{-p} e^x}{q!} \frac{d^q}{dx^q}(e^{-x} x^{p+q})$.
 
 \subsection*{Hydrogen-like Half-Space}
 $V(z) = -Ze^2/z (z>0), \infty (z<0)$.
+
 Solving SE gives Rydberg states for odd parity (wavefunc must vanish at $z=0$).
 \important{E_n = -\frac{Z^2 e^4 m}{2\hbar^2 n^2}}
 
@@ -239,7 +246,10 @@ If $S$ invariant under $q_i \to q_i + \epsilon \mathcal{F}_i$, conserved charge 
 
 
 \subsection*{Discrete Symmetries}
-\textbf{Parity ($\pi$ or $P$):} Unitary, $\pi^\dagger = \pi^{-1} = \pi$.
+
+usage: $T^\dagger A T=A_{reversed}$
+
+\textbf{Parity ($\pi, P, \prod$):} Unitary, $\pi^\dagger = \pi^{-1} = \pi$.
 Action: $\mathbf{r} \to -\mathbf{r}, \quad \mathbf{p} \to -\mathbf{p}$.
 $\mathbf{L} = \mathbf{r} \times \mathbf{p} \to (-\mathbf{r}) \times (-\mathbf{p}) = \mathbf{L}$ (Pseudovector).
 Spin $\mathbf{S} \to \mathbf{S}$.
@@ -257,41 +267,80 @@ Preserves inner product $\mathbf{v} \cdot \mathbf{u}$.
 Generator of rotation is Angular Momentum $\mathbf{L}$.
 $R(\hat{n}, \theta) = e^{-i \theta \mathbf{n} \cdot \mathbf{L} / \hbar}$.
 \textbf{Rotation Matrices (Passive $x \to R \hat{x}$):}
-$R_z(\theta) = \begin{pmatrix} \cos\theta & \sin\theta & 0 \\ -\sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{pmatrix}, R_y(\theta) = \begin{pmatrix} \cos\theta & 0 & -\sin\theta \\ 0 & 1 & 0 \\ \sin\theta & 0 & \cos\theta \end{pmatrix}$.
-$R_x(\theta) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\theta & \sin\theta \\ 0 & -\sin\theta & \cos\theta \end{pmatrix}$. (Note signs).
+$R_z(\theta) = \begin{pmatrix} \cos\theta & \sin\theta & 0 \\ -\sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{pmatrix}$
+
+$ R_y(\theta) = \begin{pmatrix} \cos\theta & 0 & -\sin\theta \\ 0 & 1 & 0 \\ \sin\theta & 0 & \cos\theta \end{pmatrix}$ note
+
+$R_x(\theta) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\theta & \sin\theta \\ 0 & -\sin\theta & \cos\theta \end{pmatrix}$ signs
+
+$RR^T=I \quad \det R=1\\ R=\sum_{a>b}^di\omega_{ab}X_{ab} \quad \omega = \sum_{a < b}^n i \omega_{ab} X_{ab} \\ (X_{ab})_{ij} = i(\delta_{ai}\delta_{bj} - \delta_{aj}\delta_{bi})$
+
+$[X_{ab}, X_{cd}] = i\hbar( \delta_{bc} X_{ad} - \delta_{bd} X_{ac} - \delta_{ac} X_{bd} + \delta_{ad} X_{bc})$
+
 Generators $G_i$: $R(\hat{n}, d\theta) \approx 1 - \frac{i}{\hbar} d\theta \hat{n}\cdot\vec{J}$.
 $J_k = -i\hbar \epsilon_{ijk} x_i \partial_j$. (orbital)
-Spin Generators $\vec{S}$: $S_i = \frac{\hbar}{2}\sigma_i$.
+
+Spin Generators $\vec{S}$: $S_i = \frac{\hbar}{2}\sigma_i$
+
 Rotation of Spinor: $D^{(1/2)}(\hat{n}, \theta) = e^{-i\theta \hat{n}\cdot\vec{S}/\hbar} = \cos\frac{\theta}{2}I - i\vec{n}\cdot\vec{\sigma}\sin\frac{\theta}{2}$.
+
 \subsection*{Angular Momentum}
-\textbf{Definitions:} $\vec{L} = \vec{r} \times \vec{p}$, $\vec{J} = \vec{L} + \vec{S}$.
-Rotation Generator: $R(\hat{n}, \theta) = e^{-i\theta \hat{n}\cdot\vec{J}/\hbar}$.
+\textbf{Definitions:} $\vec{L} = \vec{r} \times \vec{p}$, $\vec{J} = \vec{L} + \vec{S} \\ L_i=\epsilon_{ijk}X_jP_k$
+
+Rotation Generator: $R(\hat{n}, \theta) = e^{-i\theta \hat{n}\cdot\vec{J}/\hbar}$
+
+$L_i=\frac{1}{2}\varepsilon_{ilk}X_{lk}$ (i goes from 1 to 3)
+
 \textbf{Commutators:}
+
 $[J_i, J_j] = i\hbar \epsilon_{ijk} J_k, \quad [L^2, L_i] = 0$.
 $[L_i, x_j] = i\hbar \epsilon_{ijk} x_k, \quad [L_i, p_j] = i\hbar \epsilon_{ijk} p_k$.
+
+$J_1=X_{32},J_2=X_{13},J_3=X_{21}$ \underbar{(3d):}
+
+$\quad [J_1, J_2] = i\hbar J_3, \quad [J_2, J_3] = i\hbar J_1$
+
+$\quad [J_3, J_1] = i\hbar J_2 \quad [J_a, J_b] = i\hbar \epsilon_{abc}J_c$
+
 \textbf{Eigenvalues \& Ladder:}
-$L^2 |l,m\rangle = \hbar^2 l(l+1) |l,m\rangle, \quad L_z |l,m\rangle = \hbar m |l,m\rangle$.
-$L_\pm |l,m\rangle = \hbar \sqrt{l(l+1) - m(m\pm 1)} |l, m\pm 1\rangle$.
-$L_x = \frac{1}{2}(L_+ + L_-), \quad L_y = \frac{1}{2i}(L_+ - L_-)$.
+
+$L^2 |l,m\rangle = \hbar^2 l(l+1) |l,m\rangle, \\ 
+L_z |l,m\rangle = \hbar m |l,m\rangle \\
+L_\pm |l,m\rangle = \hbar \sqrt{l(l+1) - m(m\pm 1)} |l, m\pm 1\rangle \\
+L_x = \frac{1}{2}(L_+ + L_-), \quad L_y = \frac{1}{2i}(L_+ - L_-)$.
+
 \textbf{Spherical Harmonics $Y_l^m(\theta,\phi)$:}
+
 \textbf{Coordinate Reps:}
-$L_x = -i\hbar(y\partial_z - z\partial_y) = i\hbar(\sin\phi\partial_\theta + \cot\theta\cos\phi\partial_\phi)$.
-$L_y = -i\hbar(z\partial_x - x\partial_z) = i\hbar(-\cos\phi\partial_\theta + \cot\theta\sin\phi\partial_\phi)$.
-$L_z = -i\hbar(x\partial_y - y\partial_x) = -i\hbar\partial_\phi$.
-$L^2 = -\hbar^2 [\frac{1}{\sin\theta}\partial_\theta(\sin\theta\partial_\theta) + \frac{1}{\sin^2\theta}\partial_\phi^2]$.
-$Y_l^m(\theta,\phi) \propto P_l^m(\cos\theta) e^{im\phi}$. Parity: $Y_{l}^m(\hat{n}) = (-1)^l Y_l^m(-\hat{n})$.
-Conjugate: $Y_l^m{}^* = (-1)^m Y_l^{-m}$. Orthogonality: $\int d\Omega Y_{l'}^{m'*} Y_l^m = \delta_{ll'} \delta_{mm'}$.
+$L_x = -i\hbar(y\partial_z - z\partial_y) = i\hbar(\sin\phi\partial_\theta + \cot\theta\cos\phi\partial_\phi) \\
+L_y = -i\hbar(z\partial_x - x\partial_z) = i\hbar(-\cos\phi\partial_\theta + \cot\theta\sin\phi\partial_\phi) \\
+L_z = -i\hbar(x\partial_y - y\partial_x) = -i\hbar\partial_\phi \\
+L^2 = -\hbar^2 [\frac{1}{\sin\theta}\partial_\theta(\sin\theta\partial_\theta) + \frac{1}{\sin^2\theta}\partial_\phi^2] \\
+Y_l^m(\theta,\phi) \propto P_l^m(\cos\theta) e^{im\phi}$. Parity: $Y_{l}^m(\hat{n}) = (-1)^l Y_l^m(-\hat{n})$
+
+Conjugate: $Y_l^m{}^* = (-1)^m Y_l^{-m}$. 
+
+Orthogonality: $\int d\Omega Y_{l'}^{m'*} Y_l^m = \delta_{ll'} \delta_{mm'}$.
+
 Explicit: $Y_0^0 = \sqrt{\frac{1}{4\pi}}, Y_1^0 = \sqrt{\frac{3}{4\pi}}\cos\theta, Y_1^{\pm 1} = \mp\sqrt{\frac{3}{8\pi}}e^{\pm i\phi}\sin\theta$.
 
 \subsection*{Addition of Angular Momentum}
+$J=\frac{\hbar}{2mi}(\psi^\star\vec{\nabla}\psi-\psi\vec{\nabla}\psi^\star)=\frac{\hbar}{m}\Im{\psi^\star\vec{\nabla}\psi}$
+
+connectivity: $\frac{d}{dt}|\psi|^2=-\vec{\nabla}\cdot\vec{J}$
+
 $J = J_1 + J_2$. Basis $|j_1 j_2; m_1 m_2\rangle \to |j_1 j_2; j m\rangle$.
 \important{|j_1 j_2; j m\rangle = \sum_{m_1, m_2} C_{m_1 m_2}^{j m} |j_1 j_2; m_1 m_2\rangle}
-Selection: $m = m_1 + m_2, \quad |j_1 - j_2| \le j \le j_1 + j_2$.
+Selection: $m = m_1 + m_2, |j_1 - j_2| \le j \le j_1 + j_2$.
+
 Example: Limit state $|j_1+j_2, j_1+j_2\rangle = |j_1, j_1\rangle |j_2, j_2\rangle$. lower with $J_-$:
 $\alpha = \sqrt{\frac{j_1}{j_1+j_2}}, \quad \beta = -\sqrt{\frac{j_2}{j_1+j_2}}$.
 
 \subsection*{Tensor Operators \& Wigner-Eckart}
-Definition: $[J_z, T_k^q] = \hbar q T_k^q, \quad [J_\pm, T_k^q] = \hbar \sqrt{k(k+1)-q(q\pm 1)} T_k^{q\pm 1}$.
+Definition: $[J_z, T_k^q] = \hbar q T_k^q$
+
+$[J_\pm, T_k^q] = \hbar \sqrt{k(k+1)-q(q\pm 1)} T_k^{q\pm 1}$.
+
 \textbf{Wigner-Eckart Thm:} Matrix elements depend on $m$ only via CG coeff.
 \important{\langle n' j' m' | T_k^q | n j m \rangle = \langle j k; m q | j' m' \rangle \frac{\langle n' j' || T_k || n j \rangle}{\sqrt{2j'+1}}}
 Selection rules: $\Delta m = q$, Triangle rule for $j, k, j'$.
@@ -303,10 +352,15 @@ Quadrupole: $Q_{ij} = \frac{V_i W_j + V_j W_i}{2} - \frac{\vec{V}\cdot\vec{W}}{3
 \textbf{Time Independent:} $\mathcal{H}|\psi\rangle = E|\psi\rangle$.
 \textbf{Heisenberg} $\frac{d}{dt} O_H = \frac{1}{i\hbar} [O_H, \mathcal{H}] + (\frac{\partial O}{\partial t})_H$.
 \important{\frac{d}{dt}\langle O \rangle = \frac{1}{i\hbar}\langle [O, \mathcal{H}] \rangle + \langle \frac{\partial O}{\partial t} \rangle}
+
 \textbf{Probability Current:} $\vec{J} = \frac{\hbar}{m}\text{Im}(\psi^*\nabla\psi) - \frac{q}{m}\vec{A}|\psi|^2$.
+
 Definition: $O_H(t) = e^{i\mathcal{H}t/\hbar} O_S e^{-i\mathcal{H}t/\hbar}$.
+
 Operator Calc: $\frac{d}{dt}e^{At} = A e^{At}, \quad \frac{d}{dt}(AB) = \dot{A}B + A\dot{B}$.
+
 Example: Free particle $\dot{x} = p/m, \dot{p} = 0 \implies x(t) = x(0) + p(0)t/m$.
+
 HO Solution: $x(t) = x(0)\cos(\omega t) + \frac{p(0)}{m\omega}\sin(\omega t)$.
 $p(t) = p(0)\cos(\omega t) - m\omega x(0)\sin(\omega t)$.
 
@@ -388,32 +442,24 @@ where $\mathbf{q} = \mathbf{k}' - \mathbf{k}$ is momentum transfer. $|q| = 2k\si
 Radius: $R^2 = -6 \frac{dF}{dq^2}|_{q=0}$.
 \textbf{Delta Perturbation:} $V(\vec{r}) = \alpha\delta(\vec{r}) \implies \Delta E = \alpha |\psi(0)|^2$ (Only $s$-waves).
 
+\subsection*{Jacobi Transformation}
+S first to one before last row is distance between particles, last row in distance between particle of center of mass.
+example: first row is distance between the first pair, second row is distance between the third and the two first and so forth, last is to center of mass
 
-\section*{Mathematical Preliminaries}
+$\eta_A=R=\frac{1}{\sqrt{A}}\sum_{i=1}^A r_i$
 
-\subsection*{Math Supplement}
-$\cos a \cos b = \frac{1}{2}[\cos(a-b)+\cos(a+b)]$
-$\sin a \sin b = \frac{1}{2}[\cos(a-b)-\cos(a+b)]$
-$\sin a \cos b = \frac{1}{2}[\sin(a-b)+\sin(a+b)]$
-$\sin(a\pm b) = \sin a\cos b \pm \cos a\sin b$
-$\cos(a\pm b) = \cos a\cos b \mp \sin a\sin b$
-$\cos^2 x = \frac{1+\cos 2x}{2}, \sin^2 x = \frac{1-\cos 2x}{2}$
+\important{\eta_k=\sqrt{\frac{k}{k+1}}(r_{k+1}-\frac{1}{k}\sum^k_{i=1}r_i)}
 
-$\frac{1}{1-x} = \sum x^n, \quad e^x = \sum \frac{x^n}{n!}$
-$\sin x = \sum \frac{(-1)^n x^{2n+1}}{(2n+1)!}, \quad \cos x = \sum \frac{(-1)^n x^{2n}}{(2n)!}$
-\textbf{Delta:} $\delta(f(x)) = \sum_i \frac{\delta(x-x_i)}{|f'(x_i)|}$
+values of row k, set $r_i$ to be distances to the relavant particles (first pair use only $r_1,r_2$, third and first $r_3,r_1$ rest are zero)
 
-$\delta^{(3)}(\vec{r}-\vec{r}_0) = \frac{1}{r^2\sin\theta}\delta(r-r_0)\delta(\theta-\theta_0)\delta(\phi-\phi_0)$.
 
-\textbf{Quantization:} Poisson $\{f,g\} \to \frac{1}{i\hbar}[F,G]$. Replaces $xp \to \frac{1}{2}[X,P]$.
-\textbf{Expectation:} $\langle f(X) \rangle = \int_{-\infty}^\infty f(x) |\psi(x)|^2 dx$.
-\textbf{Volume Elements:} $dV_{cyl} = \rho d\rho d\theta dz$. $dV_{sph} = r^2 \sin\theta dr d\theta d\phi$.
-\textbf{Integrals:}
-$\int_{-\infty}^\infty e^{-ax^2+bx} dx = \sqrt{\frac{\pi}{a}}e^{b^2/4a}$.
-$\int \sin^2(ax) dx = \frac{x}{2} - \frac{\sin(2ax)}{4a}, \quad \int \cos^2(ax) dx = \frac{x}{2} + \frac{\sin(2ax)}{4a}$.
-$\int_0^\infty x^n e^{-ax} dx = n!/a^{n+1}$.
+\section*{MATH}
 
 \subsection*{Operators Definitions}
+
+$|\psi\rangle\langle\psi|=I, A = \sum_{ij}|u_i\rangle\langle u_j| \\
+C_{ij} = \sum_{k=1}^{n} A_{ik} B_{kj}, \langle A\rangle_{\alpha\beta}=\langle A\rangle^\dagger_{\beta\alpha}$
+
 \textbf{Linear:} $A(c_1\psi + c_2\phi) = c_1 A\psi + c_2 A\phi$.
 \textbf{Anti-linear:} $A(c_1\psi + c_2\phi) = c_1^* A\psi + c_2^* A\phi$.
 
@@ -428,8 +474,16 @@ If Hermitian: $\langle \alpha | X | \beta \rangle^* = \langle \beta | X | \alpha
 \important{\langle U\psi | U\phi \rangle = \langle \psi | \phi \rangle}
 Form: $U = e^{iX}$ where $X$ is Hermitian.
 
+self values are $\lambda=e^{i\theta}$
+
 \textbf{Anti-Unitary:} Operator $A$ is anti-unitary if:
 1.
+
+\textbf{Hermitic:} $\langle Aa|b\rangle=\langle a|Ab\rangle$
+
+$\langle Aa|b\rangle = \int (Aa)^\star b (yakobian) dr$
+
+$\langle a|Ab\rangle = \int a^\star A[b (yakobian)] dr$
 
 \subsection*{Levi-Civita Symbol ($\epsilon_{ijk}$)}
 $\epsilon_{ijk} = \begin{cases} +1 \quad 123,231,312\\ -1 \quad 321,132,213 \\ 0 \quad else \end{cases}$
@@ -439,38 +493,89 @@ $(\mathbf{A} \times \mathbf{B})_i = \epsilon_{ijk} A_j B_k$
 $\sum_{i=1}^3\epsilon_{ijk} \epsilon_{ilm} = \delta_{jl}\delta_{km} - \delta_{jm}\delta_{kl}$
 
 \subsection*{Commutator Identities}
-$[A, BC] = [A, B]C + B[A, C]$.
-$[AB, C] = A[B, C] + [A, C]B$.
-Jacobi: $[A, [B, C]] + [B, [C, A]] + [C, [A, B]] = 0$.
+$[A, BC] = [A, B]C + B[A, C]$
 
-$[A,A] = 0, [A, e^{cA}] = 0$.
+$[AB, C] = A[B, C] + [A, C]B$
+
+$[A, [B, C]] + [B, [C, A]] + [C, [A, B]] = 0$
+
+$[A,A] = 0, [A, e^{cA}] = 0$ 
 
 $[f(A), A] = 0$ 
 
-$[A, f(B)] = [A, B]f'(B)$ if $[[A,B],B]=0$
+$[[A,B],B]=0\rightarrow[A, f(B)] = [A, B]f'(B)$
 
-$[P, F(X)] = -i\hbar \frac{\partial F}{\partial X}, \quad [X, G(P)] = i\hbar \frac{\partial G}{\partial P}$.
-
-\textbf{Uncertainty:} $\Delta A \Delta B \ge \frac{1}{2}|\langle [A,B] \rangle|$.
-
+$[P, F(X)] = -i\hbar \frac{\partial F}{\partial X}, [X, G(P)] = i\hbar \frac{\partial G}{\partial P}$
 
 $[A,B] = 0 \rightarrow  e^A e^B = e^{A+B+\frac{1}{2}[A,B] + \dots}$
 
 $e^A B e^{-A} = B + [A,B] + \frac{1}{2!}[A,[A,B]] + \dots$
 
+$[L_i,L_j] = i\hbar\epsilon_{idk}L_k \quad [\mathcal{H}, L] = 0 $
+
+\textbf{Uncertainty:} $\Delta A \Delta B \ge \frac{1}{2}|\langle [A,B] \rangle|$.
+
 \textbf{Canonical:} $[x_i, p_j] = i\hbar \delta_{ij}$.
 From Ex: $[L_i, L_j] = i\hbar \epsilon_{ijk} L_k$.
+
 $[L_i, x_j] = i\hbar \epsilon_{ijk} x_k, \quad [L_i, p_j] = i\hbar \epsilon_{ijk} p_k$.
+
 $[L_i x_k, L_j p_m]$ via standard expansion.
+
 $[a^\dagger a, a] = -a, [a^\dagger a, a^\dagger] = a^\dagger$.
-$[X_1, X_2] = iX_3$ (Exercise 2 matrices, same algebra as $L$).
+
+$[X_{ab}, X_{cd}] = i \hbar[ \delta_{bc} X_{ad} - \delta_{bd} X_{ac} - \delta_{ac} X_{bd} + \delta_{ad} X_{bc}]$
+
+$[J_i, J_j] = i\hbar \epsilon_{ijk} J_k, \quad [L^2, L_i] = 0$
+$[L_i, x_j] = i\hbar \epsilon_{ijk} x_k, \quad [L_i, p_j] = i\hbar \epsilon_{ijk} p_k$
+
+$[J^2,J_c]=0 \quad  [J_+,J_-]=2J_0$
+
+$[J_0,J_\pm]=\pm J_\pm$
+
+$[J_i, J_j] = i\hbar \epsilon_{ijk} J_k, \quad [L^2, L_i] = 0$.
+$[L_i, x_j] = i\hbar \epsilon_{ijk} x_k, \quad [L_i, p_j] = i\hbar \epsilon_{ijk} p_k$.
+
+
+\textbf{specific shit}
+
+$M_i = X_{i4}$
+
+$[L_i, M_j]=i\hbar\epsilon_{ijk}M_k, [M_i,M_j] = i\hbar\epsilon_{ijk}L_k$
+
+\underbar{$G_i^\pm=\frac{1}{2}(L_i\pm M_i)$}
+
+$[G_i^\pm,G_j^\pm]=i\hbar\epsilon_{ijk}G_k^\pm $
+
+$[G_k^+,G_j^-]=0$
+
+\underbar{LaplaceRungeLentz $A=\frac{1}{m}p\times L-k\hat{r}$}
+
+$[L_i,A_j]=i\hbar\epsilon_{ijk}A_k$
+
+$[A_i,A_j]=-2im\mathcal{H}\hbar\epsilon_{ijk}L_k$
+
+$K=\frac{A}{\sqrt(-2mH}\quad$ K is preserved
+
+$[K_i,K_j]=-i\hbar\epsilon_{ijk}L_k$
+
+\underbar{$A=-\frac{1}{2}r\times B$}
+
+$\Pi_i = m\dot{r} = p_i + \frac{q}{2}\epsilon_{ijk}r_j B_k$
+
+$[\prod_i,\prod_j] = i\hbar\epsilon_{ijk}B_k$
+
+$\dot{\prod_i} = -\frac{i}{\hbar}[\prod_i,\mathcal{H}] = qv\times V$ Lorentz
+
 
 \subsection*{Symmetry Generators}
-Time Translation: $U(t) = e^{-iHt/\hbar}$ (Energy cons).
-Space Translation: $T(\vec{a}) = e^{-i\vec{a}\cdot\vec{P}/\hbar}$ (Momentum cons).
-Rotation: $R(\hat{n}, \theta) = e^{-i\theta \hat{n}\cdot\vec{J}/\hbar}$ (Ang. Mom cons).
+Time: $T(t) = e^{-iHt/\hbar}$ (Energy).
 
+Space: $U(\vec{a}) = e^{-i\vec{a}\cdot\vec{P}/\hbar}$ (Momentum).
 
+Rotation: $R(\hat{n}, \theta) = e^{-i\theta \hat{n}\cdot\vec{J}/\hbar}$ (Ang. Mom).
+
+$|x+\alpha\rangle=U(x)|\alpha\rangle$
 
 \subsection*{Pauli Matrices ($\sigma$)}
 $\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$.
@@ -481,21 +586,85 @@ Identity: $(\vec{\sigma}\cdot\vec{a})(\vec{\sigma}\cdot\vec{b}) = (\vec{a}\cdot\
 
 Rotation: $e^{-i\frac{\theta}{2}\hat{n}\cdot\vec{\sigma}} = I\cos\frac{\theta}{2} - i(\hat{n}\cdot\vec{\sigma})\sin\frac{\theta}{2}$.
 
+$\sigma_i\sigma_j+\sigma_j\sigma_i=2\delta_{ij}I $
+
 \subsection*{Position \& Momentum}
 Fourier: $\psi(x) = \frac{1}{\sqrt{2\pi\hbar}} \int dp \phi(p) e^{ipx/\hbar}$.
 \textbf{Harmonic Oscillator Ladder Ops:}
+$N = a^\dagger a$
+
 $a = \sqrt{\frac{m\omega}{2\hbar}} (x + \frac{i}{m\omega}p)$
 
-$a^\dagger = \sqrt{\frac{m\omega}{2\hbar}} (x - \frac{i}{m\omega}p)$.
+$a^\dagger = \sqrt{\frac{m\omega}{2\hbar}} (x - \frac{i}{m\omega}p)$
 
-$x = \sqrt{\frac{\hbar}{2m\omega}}(a + a^\dagger)$
+$x = \sqrt{\frac{\hbar}{2m\omega}}(a + a^\dagger) = -i\hbar\vec{\nabla}_p$
 
-$p = i\sqrt{\frac{m\hbar\omega}{2}}(a^\dagger - a)$
+$p = i\sqrt{\frac{m\hbar\omega}{2}}(a^\dagger - a) = -i\hbar\vec{\nabla}$
 
-$[a, a^\dagger] = 1, \quad \mathcal{H} = \hbar\omega(a^\dagger a + 1/2) = \hbar\omega(N + 1/2)$.
-$[N, a] = -a, \quad [N, a^\dagger] = a^\dagger$.
+$\frac{\vec{p}^2}{2m}=-\frac{\hbar^2}{2m}\vec{\nabla}^2$
+
+$\mathcal{H} = \hbar\omega(a^\dagger a + 1/2) = \hbar\omega(N + 1/2)$
+
+$[a, a^\dagger] = 1, [N, a] = -a, [N, a^\dagger] = a^\dagger$
+
 \textbf{Virial Theorem:} $2\langle T \rangle = n\langle V \rangle$ for $V(x) \propto x^n$.
 HO $(n=2) \implies \langle T \rangle = \langle V \rangle = E/2$.
+
+\subsection*{Math Supplement}
+$\cos a \cos b = \frac{1}{2}[\cos(a-b)+\cos(a+b)]$
+$\sin a \sin b = \frac{1}{2}[\cos(a-b)-\cos(a+b)]$
+$\sin a \cos b = \frac{1}{2}[\sin(a-b)+\sin(a+b)]$
+$\sin(a\pm b) = \sin a\cos b \pm \cos a\sin b$
+$\cos(a\pm b) = \cos a\cos b \mp \sin a\sin b$
+$\cos^2 x = \frac{1+\cos 2x}{2}, \sin^2 x = \frac{1-\cos 2x}{2}$
+
+\textbf{Taylor series:}
+
+$e^x = \sum \frac{x^n}{n!} \approx 1 + x + \frac{1}{2} x^2 \\
+\sin x = \sum \frac{(-1)^n x^{2n+1}}{(2n+1)!} \approx x - \frac{1}{3!} x^3\\
+\cos x = \sum \frac{(-1)^n x^{2n}}{(2n)!} \approx 1 - \frac{1}{2}x^2 \\
+\ln(1+x) = x - \frac{1}{2}x^2 + \frac{1}{3}x^3 \\
+(1+x)^\alpha = 1 +\alpha x + \frac{\alpha(\alpha-1)}{2}x^2$
+
+\textbf{Delta:} $\delta(f(x)) = \sum_i \frac{\delta(x-x_i)}{|f'(x_i)|}$
+
+$\delta^{(3)}(\vec{r}-\vec{r}_0) = \frac{1}{r^2\sin\theta}\delta(r-r_0)\delta(\theta-\theta_0)\delta(\phi-\phi_0)$.
+
+\underbar{\textbf{Quantization:}}
+
+\important{Poisson: \quad \{f,g\} \to \frac{1}{i\hbar}[F,G]}
+\important{Replaces: \quad xp \to \frac{1}{2}[X,P]}
+
+when quantifying something, try to make the math fit one of the two formulas, believe in yourself.
+
+remember: $(A\times B)^\dagger=-B\times A$
+
+example:
+
+$A = \frac{1}{m} p \times L - k\hat{r} \\$
+$p \times L = \frac{1}{2}(p \times L + p \times L) \\$
+$p \times L = \frac{1}{2}(p \times L - L \times p) \\$
+$p \times L = \frac{1}{2}\{p, L\} \\$
+$p \times L = \frac{1}{2} \frac{1}{i\hbar} [P, L] \\$
+$A = \frac{1}{2im\hbar} [P, L] - k\hat{r}$
+
+\textbf{Expectation:} 
+
+$\langle f(X) \rangle = \int_{-\infty}^\infty f(x) |\psi(x)|^2 dx$.
+
+$\langle \alpha |f|\beta \rangle = \int_{0}^{\infty} \psi_{\alpha}^*(r) \left[ \hat{f} \psi_{\beta}(r) \right] r^2 dr = \sum_{i,j} a_i^* F_{ij} b_j$
+
+
+$\langle x'|x\rangle=\delta_{xx'}$
+
+\textbf{Volume Elements:} $dV_{cyl} = \rho d\rho d\theta dz$. $dV_{sph} = r^2 \sin\theta dr d\theta d\phi$.
+
+\textbf{Integrals:}
+$\int_{-\infty}^\infty e^{-ax^2+bx} dx = \sqrt{\frac{\pi}{a}}e^{b^2/4a} \\
+\int \sin^2(ax) dx = \frac{x}{2} - \frac{\sin(2ax)}{4a} \\ 
+\int \cos^2(ax) dx = \frac{x}{2} + \frac{\sin(2ax)}{4a} \\ 
+\int_0^\infty x^n e^{-ax} dx = n!/a^{n+1}$.
+
 
 \end{multicols*}
 

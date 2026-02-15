@@ -177,6 +177,7 @@ $V(z) = -Ze^2/z (z>0), \infty (z<0)$.
 
 Solving SE gives Rydberg states for odd parity (wavefunc must vanish at $z=0$).
 \important{E_n = -\frac{Z^2 e^4 m}{2\hbar^2 n^2}}
+Wavefunction: $\psi_{nlm}(\mathbf{r})$ where $l-|m|$ is odd (node at $z=0$, or odd parity).
 
 \subsection*{Spin-Orbit Coupling}
 $\mathcal{H} = \frac{\alpha}{\hbar^2} \mathbf{L} \cdot \mathbf{S} = \frac{\alpha}{2\hbar^2}(J^2 - L^2 - S^2)$.
@@ -243,6 +244,8 @@ Zero if two particles in same state (Pauli exclusion).
 - Space Translation ($\mathbf{r} \to \mathbf{r}+\mathbf{a}$) $\implies$ Momentum ($\mathbf{p}$) cons.
 - Rotation ($\hat{n}, \theta$) $\implies$ Angular Momentum ($\mathbf{L}$) cons.
 If $S$ invariant under $q_i \to q_i + \epsilon \mathcal{F}_i$, conserved charge $Q = \sum \frac{\partial \mathcal{L}}{\partial \dot{q}_i} \mathcal{F}_i$.
+\textbf{Lagrangian:} $L = T - V$. Momentum: $p_i = \frac{\partial L}{\partial \dot{q}_i}$.
+Hamiltonian $H = \sum p_i \dot{q}_i - L$.
 
 
 \subsection*{Discrete Symmetries}
@@ -266,6 +269,8 @@ $R^T R = I, \det R = 1$.
 Preserves inner product $\mathbf{v} \cdot \mathbf{u}$.
 Generator of rotation is Angular Momentum $\mathbf{L}$.
 $R(\hat{n}, \theta) = e^{-i \theta \mathbf{n} \cdot \mathbf{L} / \hbar}$.
+\textbf{Wigner D-matrix:} $\mathcal{D}_{m'm}^j(\alpha, \beta, \gamma) = \langle jm' | R(\alpha, \beta, \gamma) | jm \rangle = e^{-im'\alpha} d_{m'm}^j(\beta) e^{-im\gamma}$.
+Use: $|jm\rangle_{rotated} = \sum_{m'} |jm'\rangle \mathcal{D}_{m'm}^j(\Omega)$.
 \textbf{Rotation Matrices (Passive $x \to R \hat{x}$):}
 $R_z(\theta) = \begin{pmatrix} \cos\theta & \sin\theta & 0 \\ -\sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{pmatrix}$
 
@@ -273,6 +278,8 @@ $ R_y(\theta) = \begin{pmatrix} \cos\theta & 0 & -\sin\theta \\ 0 & 1 & 0 \\ \si
 
 $R_x(\theta) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\theta & \sin\theta \\ 0 & -\sin\theta & \cos\theta \end{pmatrix}$ signs
 
+$J_1 = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & i \\ 0 & -i & 0 \end{pmatrix}, J_2 = \begin{pmatrix} 0 & 0 & -i \\ 0 & 0 & 0 \\ i & 0 & 0 \end{pmatrix}, J_3 = \begin{pmatrix} 0 & i & 0 \\ -i & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}$
+$J_k = X_{ij}$ s.t if $k=1 \implies i=2,j=3$ (cyclic).
 $RR^T=I \quad \det R=1\\ R=\sum_{a>b}^di\omega_{ab}X_{ab} \quad \omega = \sum_{a < b}^n i \omega_{ab} X_{ab} \\ (X_{ab})_{ij} = i(\delta_{ai}\delta_{bj} - \delta_{aj}\delta_{bi})$
 
 $[X_{ab}, X_{cd}] = i\hbar( \delta_{bc} X_{ad} - \delta_{bd} X_{ac} - \delta_{ac} X_{bd} + \delta_{ad} X_{bc})$
@@ -335,6 +342,9 @@ Selection: $m = m_1 + m_2, |j_1 - j_2| \le j \le j_1 + j_2$.
 
 Example: Limit state $|j_1+j_2, j_1+j_2\rangle = |j_1, j_1\rangle |j_2, j_2\rangle$. lower with $J_-$:
 $\alpha = \sqrt{\frac{j_1}{j_1+j_2}}, \quad \beta = -\sqrt{\frac{j_2}{j_1+j_2}}$.
+\textbf{CG Calculation:} Start with highest weight state $|j_{max}, m_{max}\rangle_{tot} = |j_1, j_1\rangle |j_2, j_2\rangle$.
+Apply lowering operator $J_-^{tot} = J_-^{(1)} + J_-^{(2)}$ to generate lower $m$ states.
+Orthogonalize for other $j$ states (e.g., $j_{max}-1$).
 
 \subsection*{Tensor Operators \& Wigner-Eckart}
 Definition: $[J_z, T_k^q] = \hbar q T_k^q$
@@ -663,7 +673,14 @@ $\langle x'|x\rangle=\delta_{xx'}$
 $\int_{-\infty}^\infty e^{-ax^2+bx} dx = \sqrt{\frac{\pi}{a}}e^{b^2/4a} \\
 \int \sin^2(ax) dx = \frac{x}{2} - \frac{\sin(2ax)}{4a} \\ 
 \int \cos^2(ax) dx = \frac{x}{2} + \frac{\sin(2ax)}{4a} \\ 
-\int_0^\infty x^n e^{-ax} dx = n!/a^{n+1}$.
+\int_0^\infty x^n e^{-ax} dx = n!/a^{n+1}$
+
+
+\textbf{Derivatives:} $(\tan x)' = \sec^2 x, (\cot x)' = -\csc^2 x \\$
+$(\tanh x)' = \text{sech}^2 x, (\coth x)' = -\text{csch}^2 x \\$
+$\sinh' = \cosh, \cosh' = \sinh$
+
+\textbf{Probability:} $P(\vec{r}) = |\psi(\vec{r})|^2 = |c_i|^2 = \int r dr / \int dr $
 
 
 \end{multicols*}

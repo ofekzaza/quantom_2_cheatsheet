@@ -623,16 +623,27 @@ Rotation: $R(\hat{n}, \theta) = e^{-i\theta \hat{n}\cdot\vec{J}/\hbar}$ (Ang. Mo
 
 $|x+\alpha\rangle=U(x)|\alpha\rangle$
 
-\subsection*{Pauli Matrices ($\sigma$)}
+\subsection*{Spin ($\vec{S}$)}
+Definition: $\vec{S}$ is an internal angular momentum. Total angular momentum $\vec{J} = \vec{L} + \vec{S}$.
+Commutators: $[S_i, S_j] = i\hbar \epsilon_{ijk} S_k, \quad [S^2, S_i] = 0$.
+Relation to Pauli: $\vec{S} = \frac{\hbar}{2}\vec{\sigma}$.
+\textbf{Pauli Matrices ($\sigma$):}
 $\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$.
 \important{\sigma_i \sigma_j = \delta_{ij} I + i\epsilon_{ijk} \sigma_k}
 $[\sigma_i, \sigma_j] = 2i\epsilon_{ijk} \sigma_k \quad \{\sigma_i, \sigma_j\} = 2\delta_{ij} I$
+Identity: $(\vec{\sigma}\cdot\vec{a})(\vec{\sigma}\cdot\vec{b}) = (\vec{a}\cdot\vec{b})I + i\vec{\sigma}\cdot(\vec{a}\times\vec{b})$. $(\vec{a}\cdot \vec{\sigma})^2=|\vec{a}|^2I$.
 
-Identity: $(\vec{\sigma}\cdot\vec{a})(\vec{\sigma}\cdot\vec{b}) = (\vec{a}\cdot\vec{b})I + i\vec{\sigma}\cdot(\vec{a}\times\vec{b})$
+\textbf{Spin Bases (z, x, y):}
+$z$: $|\uparrow\rangle = \binom{1}{0}, |\downarrow\rangle = \binom{0}{1}$.
+$x$: $|\uparrow\rangle_x = \frac{1}{\sqrt{2}}\binom{1}{1}, |\downarrow\rangle_x = \frac{1}{\sqrt{2}}\binom{1}{-1}$.
+$y$: $|\uparrow\rangle_y = \frac{1}{\sqrt{2}}\binom{1}{i}, |\downarrow\rangle_y = \frac{1}{\sqrt{2}}\binom{1}{-i}$.
 
-Rotation: $e^{-i\frac{\theta}{2}\hat{n}\cdot\vec{\sigma}} = I\cos\frac{\theta}{2} - i(\hat{n}\cdot\vec{\sigma})\sin\frac{\theta}{2}$.
-
-$\sigma_i\sigma_j+\sigma_j\sigma_i=2\delta_{ij}I\quad(\vec{a}\cdot \vec{\sigma})^2=|\vec{a}|^2I$
+\textbf{General Direction $\hat{n}$:}
+Direction: $\hat{n} = (\sin\theta\cos\phi, \sin\theta\sin\phi, \cos\theta)$.
+Rotation Operator: $U(\hat{n}, \theta) = e^{-i\frac{\theta}{2}\hat{n}\cdot\vec{\sigma}} = \cos\frac{\theta}{2} I - i(\hat{n}\cdot\vec{\sigma})\sin\frac{\theta}{2}$.
+Eigenstates of $\hat{n}\cdot\vec{S}$:
+$|\uparrow\rangle_{\hat{n}} = \begin{pmatrix} \cos\frac{\theta}{2} \\ e^{i\phi}\sin\frac{\theta}{2} \end{pmatrix}, \quad |\downarrow\rangle_{\hat{n}} = \begin{pmatrix} \sin\frac{\theta}{2} \\ -e^{i\phi}\cos\frac{\theta}{2} \end{pmatrix}$.
+(Note: $U(\hat{n}, \theta)$ rotates by $\theta$ around $\hat{n}$. State $|\uparrow\rangle_{\hat{n}}$ is obtained by rotating $|\uparrow\rangle_z$ to direction $\hat{n}$).
 
 \subsection*{Position \& Momentum}
 Fourier: $\psi(x) = \frac{1}{\sqrt{2\pi\hbar}} \int dp \phi(p) e^{ipx/\hbar}$.

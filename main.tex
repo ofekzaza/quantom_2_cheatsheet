@@ -325,12 +325,13 @@ $\quad [J_3, J_1] = i\hbar J_2 \quad [J_a, J_b] = i\hbar \epsilon_{abc}J_c$
 
 $L^2 |l,m\rangle = \hbar^2 l(l+1) |l,m\rangle, \\ 
 L_z |l,m\rangle = \hbar m |l,m\rangle \\
-L_\pm |l,m\rangle = \hbar \sqrt{l(l+1) - m(m\pm 1)} |l, m\pm 1\rangle \\
+L_\pm |lm\rangle = \hbar \sqrt{l(l+1) - m(m\pm 1)} |lm\pm 1\rangle \\
 L_x = \frac{1}{2}(L_+ + L_-), \quad L_y = \frac{1}{2i}(L_+ - L_-)$.
 
 \textbf{Spherical Harmonics $Y_l^m(\theta,\phi)$:}
 
 \textbf{Coordinate Reps:}
+
 $L_x = -i\hbar(y\partial_z - z\partial_y) = i\hbar(\sin\phi\partial_\theta + \cot\theta\cos\phi\partial_\phi) \\
 L_y = -i\hbar(z\partial_x - x\partial_z) = i\hbar(-\cos\phi\partial_\theta + \cot\theta\sin\phi\partial_\phi) \\
 L_z = -i\hbar(x\partial_y - y\partial_x) = -i\hbar\partial_\phi \\
@@ -354,14 +355,22 @@ Selection: $m = m_1 + m_2, |j_1 - j_2| \le j \le j_1 + j_2$.
 
 Example: Limit state $|j_1+j_2, j_1+j_2\rangle = |j_1, j_1\rangle |j_2, j_2\rangle$. lower with $J_-$:
 $\alpha = \sqrt{\frac{j_1}{j_1+j_2}}, \quad \beta = -\sqrt{\frac{j_2}{j_1+j_2}}$.
-\textbf{CG Calculation:} Start with highest weight state $|j_{max}, m_{max}\rangle_{tot} = |j_1, j_1\rangle |j_2, j_2\rangle$.
+
+\textbf{CG Calculation:} 
+
+Start with highest weight state $|j_{max}, m_{max}\rangle_{tot} = |j_1, j_1\rangle |j_2, j_2\rangle$.
 Apply lowering operator $J_-^{tot} = J_-^{(1)} + J_-^{(2)}$ to generate lower $m$ states.
 Orthogonalize: $|j_{max}-1, j_{max}-1\rangle \perp |j_{max}, j_{max}-1\rangle$.
+
 \textbf{Example $1 \otimes 1/2$:}
+
 States: $|1, 1/2\rangle$ (highest). Apply $J_-$:
 $|3/2, 1/2\rangle = \sqrt{1/3}|1, -1/2\rangle + \sqrt{2/3}|0, 1/2\rangle$.
+
 Orthogonal state ($j=1/2$): $|1/2, 1/2\rangle = \sqrt{2/3}|1, -1/2\rangle - \sqrt{1/3}|0, 1/2\rangle$.
+
 \textbf{CG Tables:}
+
 $1 \otimes 1/2$:
 \begin{tabular}{|c|cc|}
 \hline
@@ -484,9 +493,18 @@ $|\psi\rangle = |\phi\rangle + G_0^+ V |\phi\rangle + \dots$
 \textbf{First Born Approximation:}
 $f(\theta, \phi) = -\frac{m}{2\pi\hbar^2} \int d^3r e^{-i\Delta\mathbf{k}\cdot\mathbf{r}} V(\mathbf{r}) = -\frac{m}{2\pi\hbar^2} \tilde{V}(\mathbf{q})$
 where $\mathbf{q} = \mathbf{k}' - \mathbf{k}$ is momentum transfer. $|q| = 2k\sin(\theta/2)$.
-\textbf{Form Factor:} $f(q) = F(q^2) f_{point}(q)$. $F(q^2) = \int d^3r \rho(r) e^{i\vec{q}\cdot\vec{r}}$.
+
+\textbf{Form Factor:} 
+
+$f(q) = F(q^2) f_{point}(q)$
+
+$F(q^2) = \int d^3r \rho(r) e^{i\vec{q}\cdot\vec{r}}$
+
 Radius: $R^2 = -6 \frac{dF}{dq^2}|_{q=0}$.
-\textbf{Delta Perturbation:} $V(\vec{r}) = \alpha\delta(\vec{r}) \implies \Delta E = \alpha |\psi(0)|^2$ (Only $s$-waves).
+
+\textbf{Delta Perturbation:} 
+
+$V(\vec{r}) = \alpha\delta(\vec{r}) \implies \Delta E = \alpha |\psi(0)|^2$ (Only $s$-waves).
 
 \subsection*{Jacobi Transformation}
 S first to one before last row is distance between particles, last row in distance between particle of center of mass.

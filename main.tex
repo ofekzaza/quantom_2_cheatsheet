@@ -128,14 +128,10 @@ Harmonic oscillator centered at $y_0 = -\frac{\hbar k}{qB}$. $\omega_c = \frac{q
 
 \subsection*{Thm 13.9.1 Optical Theorem}
 \important{\sigma_{tot}(k) = \frac{4\pi}{k} \text{Im} f_k(0)}
-
 \textit{Proof:} $f_k(\theta) = f(k,k') = -\frac{m}{2\pi\hbar^2} (2\pi\hbar)^3 \langle \mathbf{k} | T | \mathbf{k} \rangle$.
 Use Lippmann-Schwinger: $\text{Im}\langle \mathbf{k}|T|\mathbf{k}\rangle = \text{Im}\langle \mathbf{k}|V|\Psi_\mathbf{k}^{in}\rangle$.
 Principal value integral contour (semicircle over pole).
-
-$\frac{1}{E - \mathcal{H}_0 + i\epsilon} = 
-\text{Pr}\frac{1}{E-\mathcal{H}_0} - i\pi \delta(E-\mathcal{H}_0)$.
-
+$\frac{1}{E - \mathcal{H}_0 + i\epsilon} = \text{Pr}\frac{1}{E-\mathcal{H}_0} - i\pi \delta(E-\mathcal{H}_0)$.
 Result: $\text{Im} f_k(0) = \frac{k}{4\pi} \int d\Omega' |f_k(\theta')|^2 = \frac{k}{4\pi} \sigma_{tot}$.
 
 
@@ -157,20 +153,14 @@ $\mathcal{H}_{rel}$ is effectively a 1-body problem with mass $\mu$.
 \subsection*{Hydrogen Atom Solution}
 \important{\Psi_{nlm} = N \rho^l e^{-\rho/2} L_{n-l-1}^{2l+1}(\rho) Y_{lm}(\theta,\phi)}
 \important{E_n = - \frac{Z^2 \mu e^4}{32\pi^2\epsilon_0^2\hbar^2 n^2}}
-
 \textbf{1. Separation:} $\Psi(\mathbf{r}) = R(r)Y_{lm}(\Omega)$. Radial eq for $u(r) = rR(r)$.
-
 \textbf{2. Radial Eq:} Dimensionless $\rho = \frac{2Z}{na_0}r$, $a_0 = \frac{4\pi\epsilon_0\hbar^2}{\mu e^2}$.
 \important{u''(\rho) + \left[ \frac{n}{\rho} - \frac{1}{4} - \frac{l(l+1)}{\rho^2} \right] u(\rho) = 0}
-
 \textbf{3. Asymptotics:} $\rho \to 0: u \sim \rho^{l+1}$. $\rho \to \infty: u \sim e^{-\rho/2}$.
-
 \textbf{4. Ansatz:} $u(\rho) = \rho^{l+1} e^{-\rho/2} w(\rho)$.
 Kummer's Eq for $w(\rho)$: $\rho w'' + (2l+2-\rho)w' + (n-l-1)w = 0$.
-
 \textbf{5. Series Solution:} $w(\rho) = \sum a_k \rho^k$. Recurrence relation:
 \important{a_{k+1} = \frac{k+l+1-n}{(k+1)(k+2l+2)} a_k}
-
 \textbf{6. Quantization:} Series must terminate for normalizable solution.
 Numerator vanishes at $k = p_{max} \implies p_{max} + l + 1 = n$ (integer).
 
@@ -290,13 +280,10 @@ Kramers Degeneracy: For half-integer $j$, $T^2 = -1 \implies$ degeneracy.
 $R^T R = I, \det R = 1$.
 Preserves inner product $\mathbf{v} \cdot \mathbf{u}$.
 Generator of rotation is Angular Momentum $\mathbf{L}$.
-$R(\hat{n}, \theta) = e^{-i \theta \mathbf{n} \cdot \mathbf{L} / \hbar}$
-
-\textbf{Wigner D-matrix:} $\mathcal{D}_{m'm}^j(\alpha, \beta, \gamma) = \langle jm' | R(\alpha, \beta, \gamma) | jm \rangle = e^{-im'\alpha} d_{m'm}^j(\beta) e^{-im\gamma}$
+$R(\hat{n}, \theta) = e^{-i \theta \mathbf{n} \cdot \mathbf{L} / \hbar}$.
+\textbf{Wigner D-matrix:} $\mathcal{D}_{m'm}^j(\alpha, \beta, \gamma) = \langle jm' | R(\alpha, \beta, \gamma) | jm \rangle = e^{-im'\alpha} d_{m'm}^j(\beta) e^{-im\gamma}$.
 Use: $|jm\rangle_{rotated} = \sum_{m'} |jm'\rangle \mathcal{D}_{m'm}^j(\Omega)$.
-
 \textbf{Rotation Matrices (Passive $x \to R \hat{x}$):}
-
 $R_z(\theta) = \begin{pmatrix} \cos\theta & \sin\theta & 0 \\ -\sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{pmatrix}$
 
 $ R_y(\theta) = \begin{pmatrix} \cos\theta & 0 & -\sin\theta \\ 0 & 1 & 0 \\ \sin\theta & 0 & \cos\theta \end{pmatrix}$ note
@@ -304,9 +291,7 @@ $ R_y(\theta) = \begin{pmatrix} \cos\theta & 0 & -\sin\theta \\ 0 & 1 & 0 \\ \si
 $R_x(\theta) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\theta & \sin\theta \\ 0 & -\sin\theta & \cos\theta \end{pmatrix}$ signs
 
 $J_1 = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & i \\ 0 & -i & 0 \end{pmatrix}, J_2 = \begin{pmatrix} 0 & 0 & -i \\ 0 & 0 & 0 \\ i & 0 & 0 \end{pmatrix}, J_3 = \begin{pmatrix} 0 & i & 0 \\ -i & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}$
-
 $J_k = X_{ij}$ s.t if $k=1 \implies i=2,j=3$ (cyclic).
-
 $RR^T=I \quad \det R=1\\ R=\sum_{a>b}^di\omega_{ab}X_{ab} \quad \omega = \sum_{a < b}^n i \omega_{ab} X_{ab} \\ (X_{ab})_{ij} = i(\delta_{ai}\delta_{bj} - \delta_{aj}\delta_{bi})$
 
 $[X_{ab}, X_{cd}] = i\hbar( \delta_{bc} X_{ad} - \delta_{bd} X_{ac} - \delta_{ac} X_{bd} + \delta_{ad} X_{bc})$
@@ -431,11 +416,8 @@ Operator Calc: $\frac{d}{dt}e^{At} = A e^{At}, \quad \frac{d}{dt}(AB) = \dot{A}B
 
 Example: Free particle $\dot{x} = p/m, \dot{p} = 0 \implies x(t) = x(0) + p(0)t/m$.
 
-HO Solution: 
-
-$x(t) = x(0)\cos(\omega t) + \frac{p(0)}{m\omega}\sin(\omega t)$
-
-$p(t) = p(0)\cos(\omega t) - m\omega x(0)\sin(\omega t)$
+HO Solution: $x(t) = x(0)\cos(\omega t) + \frac{p(0)}{m\omega}\sin(\omega t)$.
+$p(t) = p(0)\cos(\omega t) - m\omega x(0)\sin(\omega t)$.
 
 \subsection*{Spherical Potentials}
 Radial Eq: $u'' + [k^2 - \frac{l(l+1)}{r^2} - U(r)]u = 0$.
@@ -447,10 +429,8 @@ $l=0$ states: $j_0(x) = \sin(x)/x \implies \sin(kR)=0 \implies k_n = n\pi/R$.
 \subsection*{Atom in Magnetic Field}
 \textbf{Gauge Invariance:} $\vec{A} \to \vec{A} + \nabla\Lambda, \phi \to \phi - \partial_t\Lambda$.
 $\psi' = e^{iq\Lambda/\hbar}\psi$. Observables unchanged.
-
 \textbf{Aharonov-Bohm:} Phase shift $\Delta\varphi = \frac{q}{\hbar} \oint \vec{A}\cdot d\vec{l} = \frac{q\Phi}{\hbar}$.
 Interference shifts even if $\vec{B}=0$ on path (only $\vec{A} \neq 0$).
-
 \textbf{Landau Level Degeneracy:} $N = \Phi / \Phi_0 = BA / (h/e)$.
 
 $\mathcal{H} = \frac{1}{2m}(\mathbf{p} + e\mathbf{A})^2 - e\phi$. 
@@ -458,9 +438,7 @@ Gauge \textbf{Coulomb:} $\nabla \cdot \mathbf{A} = 0$. $\mathbf{A} = \frac{1}{2}
 $\mathcal{H} \approx \mathcal{H}_0 + \mathcal{H}_P + \mathcal{H}_D$.
 
 \textbf{Paramagnetic (Zeeman):} $\mathcal{H}_P = -\frac{e}{2m} \mathbf{L} \cdot \mathbf{B} = \mu_B \mathbf{L} \cdot \mathbf{B} / \hbar$.
-
 \textbf{Diamagnetic:} $\mathcal{H}_D = \frac{e^2}{8m} (\mathbf{r} \times \mathbf{B})^2$.
-
 \textbf{Gauge Trans:} $\vec{A}' = \vec{A} + \nabla\chi, \quad \phi' = \phi - \partial_t\chi, \quad \psi' = e^{iq\chi/\hbar}\psi$.
 
 
@@ -686,17 +664,10 @@ $|x+\alpha\rangle=U(x)|\alpha\rangle$
 
 \subsection*{Spin ($\vec{S}$)}
 Definition: $\vec{S}$ is an internal angular momentum. Total angular momentum $\vec{J} = \vec{L} + \vec{S}$.
-
 Commutators: $[S_i, S_j] = i\hbar \epsilon_{ijk} S_k, \quad [S^2, S_i] = 0$.
-
 Relation to Pauli: $\vec{S} = \frac{\hbar}{2}\vec{\sigma}$.
-thus self values are $\hbar/2$
-
 \textbf{Pauli Matrices ($\sigma$):}
-
-$\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}\\ \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix},
-\sigma = \begin{pmatrix} 1 & 1-i \\ 1+i & -1 \end{pmatrix}$
-
+$\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$.
 \important{\sigma_i \sigma_j = \delta_{ij} I + i\epsilon_{ijk} \sigma_k}
 $[\sigma_i, \sigma_j] = 2i\epsilon_{ijk} \sigma_k \quad \{\sigma_i, \sigma_j\} = 2\delta_{ij} I$
 Identity: $(\vec{\sigma}\cdot\vec{a})(\vec{\sigma}\cdot\vec{b}) = (\vec{a}\cdot\vec{b})I + i\vec{\sigma}\cdot(\vec{a}\times\vec{b})$. $(\vec{a}\cdot \vec{\sigma})^2=|\vec{a}|^2I$.

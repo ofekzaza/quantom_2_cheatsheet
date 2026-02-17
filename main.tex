@@ -129,8 +129,11 @@ Harmonic oscillator centered at $y_0 = -\frac{\hbar k}{qB}$. $\omega_c = \frac{q
 \subsection*{Thm 13.9.1 Optical Theorem}
 \important{\sigma_{tot}(k) = \frac{4\pi}{k} \text{Im} f_k(0)}
 \textit{Proof:} $f_k(\theta) = f(k,k') = -\frac{m}{2\pi\hbar^2} (2\pi\hbar)^3 \langle \mathbf{k} | T | \mathbf{k} \rangle$.
+
 Use Lippmann-Schwinger: $\text{Im}\langle \mathbf{k}|T|\mathbf{k}\rangle = \text{Im}\langle \mathbf{k}|V|\Psi_\mathbf{k}^{in}\rangle$.
+
 Principal value integral contour (semicircle over pole).
+
 $\frac{1}{E - \mathcal{H}_0 + i\epsilon} = \text{Pr}\frac{1}{E-\mathcal{H}_0} - i\pi \delta(E-\mathcal{H}_0)$.
 Result: $\text{Im} f_k(0) = \frac{k}{4\pi} \int d\Omega' |f_k(\theta')|^2 = \frac{k}{4\pi} \sigma_{tot}$.
 
@@ -281,17 +284,22 @@ $R^T R = I, \det R = 1$.
 Preserves inner product $\mathbf{v} \cdot \mathbf{u}$.
 Generator of rotation is Angular Momentum $\mathbf{L}$.
 $R(\hat{n}, \theta) = e^{-i \theta \mathbf{n} \cdot \mathbf{L} / \hbar}$.
+
 \textbf{Wigner D-matrix:} $\mathcal{D}_{m'm}^j(\alpha, \beta, \gamma) = \langle jm' | R(\alpha, \beta, \gamma) | jm \rangle = e^{-im'\alpha} d_{m'm}^j(\beta) e^{-im\gamma}$.
 Use: $|jm\rangle_{rotated} = \sum_{m'} |jm'\rangle \mathcal{D}_{m'm}^j(\Omega)$.
-\textbf{Rotation Matrices (Passive $x \to R \hat{x}$):}
+
+\textbf{ Matrices (Passive $x \to R \hat{x}$):}
+
 $R_z(\theta) = \begin{pmatrix} \cos\theta & \sin\theta & 0 \\ -\sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{pmatrix}$
 
 $ R_y(\theta) = \begin{pmatrix} \cos\theta & 0 & -\sin\theta \\ 0 & 1 & 0 \\ \sin\theta & 0 & \cos\theta \end{pmatrix}$ note
 
 $R_x(\theta) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\theta & \sin\theta \\ 0 & -\sin\theta & \cos\theta \end{pmatrix}$ signs
 
-$J_1 = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & i \\ 0 & -i & 0 \end{pmatrix}, J_2 = \begin{pmatrix} 0 & 0 & -i \\ 0 & 0 & 0 \\ i & 0 & 0 \end{pmatrix}, J_3 = \begin{pmatrix} 0 & i & 0 \\ -i & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}$
+$J_1 = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & i \\ 0 & -i & 0 \end{pmatrix}, J_2 = \begin{pmatrix} 0 & 0 & -i \\ 0 & 0 & 0 \\ i & 0 & 0 \end{pmatrix}\\J_3 = \begin{pmatrix} 0 & i & 0 \\ -i & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}$
+
 $J_k = X_{ij}$ s.t if $k=1 \implies i=2,j=3$ (cyclic).
+
 $RR^T=I \quad \det R=1\\ R=\sum_{a>b}^di\omega_{ab}X_{ab} \quad \omega = \sum_{a < b}^n i \omega_{ab} X_{ab} \\ (X_{ab})_{ij} = i(\delta_{ai}\delta_{bj} - \delta_{aj}\delta_{bi})$
 
 $[X_{ab}, X_{cd}] = i\hbar( \delta_{bc} X_{ad} - \delta_{bd} X_{ac} - \delta_{ac} X_{bd} + \delta_{ad} X_{bc})$
@@ -464,9 +472,12 @@ $c_n^{(1)}(t) = -\frac{i}{\hbar} \int_{t_0}^t \langle n | V(t') | i \rangle e^{i
 \important{W_{i\to f} = \frac{2\pi}{\hbar} |V_{fi}|^2 \delta(E_f - E_i)}
 
 \subsection*{Identical Particles}
+
 \textbf{Exchange Symmetry:} $P_{12}\psi(1,2) = \eta\psi(2,1) = \eta\psi(1,2)$.
 $\eta=1$ (Bosons, Int Spin), $\eta=-1$ (Fermions, Half-Int Spin).
+
 \textbf{Pauli Exclusion:} 2 Fermions cannot occupy same state.
+
 \textbf{Symmetrizers:} $S_N = \frac{1}{N!} \sum P_g, \quad A_N = \frac{1}{N!} \sum (-1)^p P_g$.
 Helium Atom: 
 
@@ -579,7 +590,9 @@ $[L_i,L_j] = i\hbar\epsilon_{idk}L_k \quad [\mathcal{H}, L] = 0 $
 
 \textbf{Uncertainty:} $\Delta A \Delta B \ge \frac{1}{2}|\langle [A,B] \rangle|$.
 
-\textbf{Canonical:} $[x_i, p_j] = i\hbar \delta_{ij}$.
+\textbf{Canonical:} 
+$[x_i, p_j] = i\hbar \delta_{ij}$.
+
 From Ex: $[L_i, L_j] = i\hbar \epsilon_{ijk} L_k$.
 
 $[L_i, x_j] = i\hbar \epsilon_{ijk} x_k, \quad [L_i, p_j] = i\hbar \epsilon_{ijk} p_k$.
@@ -762,11 +775,14 @@ $\int_{-\infty}^\infty e^{-ax^2+bx} dx = \sqrt{\frac{\pi}{a}}e^{b^2/4a} \\
 \int_0^\infty x^n e^{-ax} dx = n!/a^{n+1}$
 
 
-\textbf{Derivatives:} $(\tan x)' = \sec^2 x, (\cot x)' = -\csc^2 x \\$
+\textbf{Derivatives:} 
+
+$(\tan x)' = \sec^2 x, (\cot x)' = -\csc^2 x \\$
 $(\tanh x)' = \text{sech}^2 x, (\coth x)' = -\text{csch}^2 x \\$
 $\sinh' = \cosh, \cosh' = \sinh$
 
-\textbf{Probability:} $P(\vec{r}) = |\psi(\vec{r})|^2 = |c_i|^2 = \int r dr / \int dr $
+\textbf{Probability:} 
+$P(\vec{r}) = |\psi(\vec{r})|^2 = |c_i|^2 = \int r dr / \int dr $
 
 
 \end{multicols*}

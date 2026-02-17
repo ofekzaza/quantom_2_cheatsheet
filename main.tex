@@ -84,13 +84,17 @@ There is at least one eigenval in $[E-\sigma, E+\sigma]$.
 \subsection*{Thm 5.4.1 Upper bound on $j_0$}
 Given Hilbert space with basis $\{|ab\rangle\}$ of $J^2, J_0$ with eigenvalues $a,b$.
 \important{\text{If } a \ge b^2 \implies a - b^2 \ge 0}
-\textit{Proof:} $J^2 = J_0^2 + \frac{1}{2}(J_- J_+ + J_+ J_-) \implies a - b^2 \ge 0$.
+\textit{Proof:}  $J^2 = J_0^2 + \frac{1}{2}(J_- J_+ + J_+ J_-) \implies \\  \quad \quad \implies a - b^2 \ge 0$
 
 \subsection*{Thm 3.1.2 Ops equal within phase}
 \important{A = e^{i\theta} B \iff |\langle a|A|b\rangle| = |\langle a|B|b\rangle|}
-\textit{Proof "$\Leftarrow$":} $A|b_j\rangle = e^{i\theta_j} B|b_j\rangle$. Apply to $|b_1\rangle + |b_2\rangle$.
+
+\textit{Proof "$\Leftarrow$":} $A|b_j\rangle = e^{i\theta_j} B|b_j\rangle$. 
+Apply to $|b_1\rangle + |b_2\rangle$.
 $A(|b_1\rangle+|b_2\rangle) = e^{i\theta_{12}} B(|b_1\rangle+|b_2\rangle) = e^{i\theta_1} B|b_1\rangle + e^{i\theta_2} B|b_2\rangle$.
+
 Linearity $\implies B(e^{i\theta_{12}} - e^{i\theta_1})|b_1\rangle + B(e^{i\theta_{12}} - e^{i\theta_2})|b_2\rangle = 0$.
+
 Inner product with $B|b_i\rangle \implies e^{i\theta_1} = e^{i\theta_2}$. Phase is global.
 
 \subsection*{Thm 3.1.3 Scalar Product Preserving}
@@ -128,9 +132,13 @@ Harmonic oscillator centered at $y_0 = -\frac{\hbar k}{qB}$. $\omega_c = \frac{q
 
 \subsection*{Thm 13.9.1 Optical Theorem}
 \important{\sigma_{tot}(k) = \frac{4\pi}{k} \text{Im} f_k(0)}
-\textit{Proof:} $f_k(\theta) = f(k,k') = -\frac{m}{2\pi\hbar^2} (2\pi\hbar)^3 \langle \mathbf{k} | T | \mathbf{k} \rangle$.
+\textit{Proof:} 
 
-Use Lippmann-Schwinger: $\text{Im}\langle \mathbf{k}|T|\mathbf{k}\rangle = \text{Im}\langle \mathbf{k}|V|\Psi_\mathbf{k}^{in}\rangle$.
+$f_k(\theta) = f(k,k') = -\frac{m}{2\pi\hbar^2} (2\pi\hbar)^3 \langle \mathbf{k} | T | \mathbf{k} \rangle$.
+
+Use Lippmann-Schwinger: 
+
+$\quad \text{Im}\langle \mathbf{k}|T|\mathbf{k}\rangle = \text{Im}\langle \mathbf{k}|V|\Psi_\mathbf{k}^{in}\rangle$.
 
 Principal value integral contour (semicircle over pole).
 
@@ -156,14 +164,20 @@ $\mathcal{H}_{rel}$ is effectively a 1-body problem with mass $\mu$.
 \subsection*{Hydrogen Atom Solution}
 \important{\Psi_{nlm} = N \rho^l e^{-\rho/2} L_{n-l-1}^{2l+1}(\rho) Y_{lm}(\theta,\phi)}
 \important{E_n = - \frac{Z^2 \mu e^4}{32\pi^2\epsilon_0^2\hbar^2 n^2}}
+
 \textbf{1. Separation:} $\Psi(\mathbf{r}) = R(r)Y_{lm}(\Omega)$. Radial eq for $u(r) = rR(r)$.
+
 \textbf{2. Radial Eq:} Dimensionless $\rho = \frac{2Z}{na_0}r$, $a_0 = \frac{4\pi\epsilon_0\hbar^2}{\mu e^2}$.
 \important{u''(\rho) + \left[ \frac{n}{\rho} - \frac{1}{4} - \frac{l(l+1)}{\rho^2} \right] u(\rho) = 0}
+
 \textbf{3. Asymptotics:} $\rho \to 0: u \sim \rho^{l+1}$. $\rho \to \infty: u \sim e^{-\rho/2}$.
+
 \textbf{4. Ansatz:} $u(\rho) = \rho^{l+1} e^{-\rho/2} w(\rho)$.
 Kummer's Eq for $w(\rho)$: $\rho w'' + (2l+2-\rho)w' + (n-l-1)w = 0$.
+
 \textbf{5. Series Solution:} $w(\rho) = \sum a_k \rho^k$. Recurrence relation:
 \important{a_{k+1} = \frac{k+l+1-n}{(k+1)(k+2l+2)} a_k}
+
 \textbf{6. Quantization:} Series must terminate for normalizable solution.
 Numerator vanishes at $k = p_{max} \implies p_{max} + l + 1 = n$ (integer).
 
@@ -180,18 +194,24 @@ $V(z) = -Ze^2/z (z>0), \infty (z<0)$.
 
 Solving SE gives Rydberg states for odd parity (wavefunc must vanish at $z=0$).
 \important{E_n = -\frac{Z^2 e^4 m}{2\hbar^2 n^2}}
-\important{E_n = -\frac{Z^2 e^4 m}{2\hbar^2 n^2}}
+
 Wavefunction: $\psi_{nlm}(\mathbf{r})$ where $l-|m|$ is odd (node at $z=0$, or odd parity).
 
 \section*{Identical Particles}
+
 \textbf{Symmetry:} $P_{12}\psi(1,2) = \pm \psi(1,2)$.
 $+$: Bosons (integer spin). $-$: Fermions (half-integer spin).
+
 \textbf{Slater Determinant (Fermions):} N-particle state is an antisym product of single-particle states $\phi_\alpha$.
 $\psi(1, \dots, N) = \frac{1}{\sqrt{N!}} \det | \phi_{\alpha_i}(j) |$.
+
 \textbf{2 Particles:} $\Psi = \psi_{space}(\vec{r}_1, \vec{r}_2) \chi_{spin}$.
 Total symmetry = Space sym $\times$ Spin sym.
+
 \textbf{Electrons (Fermions):} Total must be Anti-Sym.
+
 - \textbf{Triplet} ($S=1$, Sym spin): Space must be Anti-Sym ($\psi(r_1, r_2) = -\psi(r_2, r_1)$).
+
 - \textbf{Singlet} ($S=0$, Anti-Sym spin): Space must be Sym.
 
 \subsection*{Spin-Orbit Coupling}
@@ -209,8 +229,12 @@ Sol: $R_{nl}(r) = A j_l(k_n r)$. Boundary $j_l(k_n R) = 0$.
 
 \subsection*{Permutation Group Representations ($S_3$)}
 Matrices for basis vectors (possibly defining specific rep):
-$T(123) = \begin{pmatrix} 0 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0 \end{pmatrix}$, $T(12) = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}$.
+
+$T_{123} = \begin{pmatrix} 0 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0 \end{pmatrix}$
+$T_{12} = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}$
+
 Eigenvalues of $T(123)$: $\det(T - \lambda I) = -\lambda^3 + 1 = 0 \implies \lambda = 1, e^{\pm i 2\pi/3}$.
+
 Vectors: $|1\rangle = \frac{1}{\sqrt{3}}(1,1,1)^T$ (invariant).
 
 \subsection*{Spin in Magnetic Field (Rabi)}
@@ -254,11 +278,16 @@ Zero if two particles in same state (Pauli exclusion).
 \section*{Tirgul Summaries}
 
 \subsection*{Symmetry \& Conservation}
+
 \textbf{Noether's Theorem:} Continuous symmetry $\implies$ conservation.
 - Time Translation ($t \to t+\epsilon$) $\implies$ Energy ($\mathcal{H}$) cons.
+
 - Space Translation ($\mathbf{r} \to \mathbf{r}+\mathbf{a}$) $\implies$ Momentum ($\mathbf{p}$) cons.
+
 - Rotation ($\hat{n}, \theta$) $\implies$ Angular Momentum ($\mathbf{L}$) cons.
+
 If $S$ invariant under $q_i \to q_i + \epsilon \mathcal{F}_i$, conserved charge $Q = \sum \frac{\partial \mathcal{L}}{\partial \dot{q}_i} \mathcal{F}_i$.
+
 \textbf{Lagrangian:} $L = T - V$. Momentum: $p_i = \frac{\partial L}{\partial \dot{q}_i}$.
 Hamiltonian $H = \sum p_i \dot{q}_i - L$.
 
@@ -282,11 +311,10 @@ Kramers Degeneracy: For half-integer $j$, $T^2 = -1 \implies$ degeneracy.
 
 $R^T R = I, \det R = 1$.
 Preserves inner product $\mathbf{v} \cdot \mathbf{u}$.
-Generator of rotation is Angular Momentum $\mathbf{L}$.
-$R(\hat{n}, \theta) = e^{-i \theta \mathbf{n} \cdot \mathbf{L} / \hbar}$.
 
-\textbf{Wigner D-matrix:} $\mathcal{D}_{m'm}^j(\alpha, \beta, \gamma) = \langle jm' | R(\alpha, \beta, \gamma) | jm \rangle = e^{-im'\alpha} d_{m'm}^j(\beta) e^{-im\gamma}$.
-Use: $|jm\rangle_{rotated} = \sum_{m'} |jm'\rangle \mathcal{D}_{m'm}^j(\Omega)$.
+Generator of rotation is Angular Momentum $\mathbf{L}$.
+
+$R(\hat{n}, \theta) = e^{-i \theta \mathbf{n} \cdot \mathbf{L} / \hbar}$.
 
 \textbf{ Matrices (Passive $x \to R \hat{x}$):}
 
@@ -366,12 +394,19 @@ $\alpha = \sqrt{\frac{j_1}{j_1+j_2}}, \quad \beta = -\sqrt{\frac{j_2}{j_1+j_2}}$
 
 \textbf{CG Calculation Algorithm (Tirgul 8):}
 1. Start with the highest weight state: $|j_{max}, m_{max}\rangle = |j_1, j_1\rangle |j_2, j_2\rangle$, where $j_{max} = j_1+j_2$.
+
 2. Apply lowering operator $J_- = J_{1-} + J_{2-}$ $2j$ times to generate all states in this $j$ subspace.
+
 3. If $j = |j_1 - j_2|$, stop.
+
 4. Else, move to next subspace $j \to j-1$. Write top state $|j, j\rangle$ as linear combination of basis states with $m_1+m_2=j$.
+
 5. Require orthogonality to all states with same $m$ but higher $j$ (from previous steps).
+
 6. Normalize the state.
+
 7. Solve for coefficients to get the top state of this new subspace.
+
 8. Return to step 2.
 
 \textbf{Example $1 \otimes 1/2$:}
@@ -488,7 +523,9 @@ Helium Atom:
 $\mathcal{H} = \frac{p_1^2}{2m} + \frac{p_2^2}{2m} - \frac{2e^2}{r_1} - \frac{2e^2}{r_2} + \frac{e^2}{r_{12}}$.
 
 Treat $e^2/r_{12}$ as perturbation.
+
 Ground State ($1s^2$): Singlet ($S=0$, anti-sym spin) $\implies$ Sym spatial.
+
 Excited ($1s2s$):
 
 - Parahelium (Singlet): $E_S = E_{1s} + E_{2s} + J + K$.
@@ -506,6 +543,7 @@ Born Series:
 $|\psi\rangle = |\phi\rangle + G_0^+ V |\phi\rangle + \dots$
 
 \textbf{First Born Approximation:}
+
 $f(\theta, \phi) = -\frac{m}{2\pi\hbar^2} \int d^3r e^{-i\Delta\mathbf{k}\cdot\mathbf{r}} V(\mathbf{r}) = -\frac{m}{2\pi\hbar^2} \tilde{V}(\mathbf{q})$
 where $\mathbf{q} = \mathbf{k}' - \mathbf{k}$ is momentum transfer. $|q| = 2k\sin(\theta/2)$.
 
@@ -546,7 +584,9 @@ Preserves probability: $|\langle A\phi | A\psi \rangle| = |\langle \phi | \psi \
 Identity: $\langle A\phi | A\psi \rangle = \langle \phi | \psi \rangle^*$.
 
 \textbf{Hermitian:} $X = X^\dagger$. Real eigenvalues, orthogonal eigenstates.
+
 Property: $\langle \alpha | X | \beta \rangle^* = \langle \beta | X^\dagger | \alpha \rangle$.
+
 If Hermitian: $\langle \alpha | X | \beta \rangle^* = \langle \beta | X | \alpha \rangle$.
 
 \textbf{Unitary:} $U^\dagger U = U U^\dagger = I$. Preserves inner product.
@@ -570,6 +610,53 @@ $\epsilon_{ijk} = \begin{cases} +1 \quad 123,231,312\\ -1 \quad 321,132,213 \\ 0
 $(\mathbf{A} \times \mathbf{B})_i = \epsilon_{ijk} A_j B_k$
 
 $\sum_{i=1}^3\epsilon_{ijk} \epsilon_{ilm} = \delta_{jl}\delta_{km} - \delta_{jm}\delta_{kl}$
+
+\subsection*{Tensor operations}
+
+\textbf{Wigner D-matrix:} 
+
+$\mathcal{D}_{m'm}^j(\alpha, \beta, \gamma) = \langle jm' | R(\alpha, \beta, \gamma) | jm \rangle = e^{-im'\alpha} d_{m'm}^j(\beta) e^{-im\gamma}$
+
+Use: $|jm\rangle_{rotated} = \sum_{m'} |jm'\rangle 
+\mathcal{D}_{m'm}^j(\Omega)$
+
+\textbf{operators}
+
+V vector operation, T time operator
+
+$[J_i, V_j] = i\hbar\epsilon_{ijk}V_k$
+
+Transformation: 
+
+$T(R)V_iT^\dagger(R) = \sum_j R_{ji}V_j$
+
+\textbf{Spherical Tensor:}
+
+$A_{ij}=W_iV_j$
+
+$[J_z, A_\mu^{(\lambda)}] = \hbar\mu A_\mu^{(\lambda)}$
+
+$[J_\pm, A_\mu^{(\lambda)}] = \hbar\sqrt{(\lambda \mp \mu)(\lambda \pm \mu + 1)} A_{\mu\pm 1}^{(\lambda)}$
+
+Transformation: 
+
+$T(R)A_\mu^{(\lambda)}T^\dagger(R) = \sum_{\mu'} D_{\mu'\mu}^{(\lambda)}(R) A_{\mu'}^{(\lambda)}$
+
+Rotation of $Y_l^m$: 
+
+$Y_l^m(\hat{n}') = \sum_{m'} D_{m'm}^{(l)}(R) Y_l^{m'}(\hat{n})$
+
+\textbf{Selection Rules:} $m + \mu = m', \quad |j - \lambda| \le j' \le j + \lambda$
+
+\textbf{Projection Theorem:}
+
+$\langle jm|V_\mu|jm'\rangle = \frac{\langle jm|\vec{J}\cdot\vec{V}|jm\rangle}{\hbar^2 j(j+1)} \langle jm'|J_\mu|jm'\rangle$.
+
+\textbf{Landé g-factor:} 
+
+$g_J = 1 + \frac{j(j+1) + s(s+1) - l(l+1)}{2j(j+1)}$.
+
+(Note: Tirgul uses $g_J = \frac{3}{2} + \dots$ which is for spin 1/2. Generalized is $1 + \dots$).
 
 \subsection*{Commutator Identities}
 $[A, BC] = [A, B]C + B[A, C]$
@@ -596,30 +683,6 @@ $[L_i,L_j] = i\hbar\epsilon_{idk}L_k \quad [\mathcal{H}, L] = 0 $
 
 \textbf{Canonical:} 
 $[x_i, p_j] = i\hbar \delta_{ij}$.
-
-\textbf{Vector Operator:} $[J_i, V_j] = i\hbar\epsilon_{ijk}V_k$
-
-Transformation: $T(R)V_iT^\dagger(R) = \sum_j R_{ji}V_j$
-
-\textbf{Spherical Tensor:}
-
-$[J_z, A_\mu^{(\lambda)}] = \hbar\mu A_\mu^{(\lambda)}$
-
-$[J_\pm, A_\mu^{(\lambda)}] = \hbar\sqrt{(\lambda \mp \mu)(\lambda \pm \mu + 1)} A_{\mu\pm 1}^{(\lambda)}$
-
-Transformation: $T(R)A_\mu^{(\lambda)}T^\dagger(R) = \sum_{\mu'} D_{\mu'\mu}^{(\lambda)}(R) A_{\mu'}^{(\lambda)}$
-
-Rotation of $Y_l^m$: $Y_l^m(\hat{n}') = \sum_{m'} D_{m'm}^{(l)}(R) Y_l^{m'}(\hat{n})$
-
-\textbf{Selection Rules:} $m + \mu = m', \quad |j - \lambda| \le j' \le j + \lambda$
-
-\textbf{Projection Theorem:}
-
-$\langle jm|V_\mu|jm'\rangle = \frac{\langle jm|\vec{J}\cdot\vec{V}|jm\rangle}{\hbar^2 j(j+1)} \langle jm'|J_\mu|jm'\rangle$.
-
-\textbf{Landé g-factor:} $g_J = 1 + \frac{j(j+1) + s(s+1) - l(l+1)}{2j(j+1)}$.
-
-(Note: Tirgul uses $g_J = \frac{3}{2} + \dots$ which is for spin 1/2. Generalized is $1 + \dots$).
 
 $[L_i x_k, L_j p_m]$ via standard expansion.
 
@@ -662,6 +725,8 @@ $[K_i,K_j]=-i\hbar\epsilon_{ijk}L_k$
 
 \underbar{$A=-\frac{1}{2}r\times B$}
 
+physical moment 
+
 $\Pi_i = m\dot{r} = p_i + \frac{q}{2}\epsilon_{ijk}r_j B_k$
 
 $[\prod_i,\prod_j] = i\hbar\epsilon_{ijk}B_k$
@@ -671,12 +736,17 @@ $\dot{\prod_i} = -\frac{i}{\hbar}[\prod_i,\mathcal{H}] = qv\times V$ Lorentz
 
 \subsection*{Scattering}
 
-\textbf{Born Approximation:} $f(\theta) = -\frac{2m}{\hbar^2 q} \int_0^\infty r V(r) \sin(qr) dr$, where $q = 2k\sin(\theta/2)$.
+\textbf{Born Approximation:} 
+
+$f(\theta) = -\frac{2m}{\hbar^2 q} \int_0^\infty r V(r) \sin(qr) dr$, 
+
+where $q = 2k\sin(\theta/2)$
 
 Cross-section: $\frac{d\sigma}{d\Omega} = |f(\theta)|^2$.
 
-\textbf{Yukawa Potential:} $V(r) = -V_0 \frac{e^{-\mu r}}{r}$.
+\textbf{Yukawa Potential:} 
 
+$V(r) = -V_0 \frac{e^{-\mu r}}{r}$.
 
 Amplitude: $f(\theta) = \frac{2mV_0}{\hbar^2(\mu^2+q^2)}$
 
@@ -684,9 +754,13 @@ Limit $\mu \to 0$ (Coulomb): $f(\theta) \propto \frac{1}{\sin^2(\theta/2)}$.
 
 \textbf{Identical Particles Interaction:}
 
-Triplet ($S=1$, Anti-sym Space): $\frac{d\sigma}{d\Omega} \propto |f(\theta) - f(\pi-\theta)|^2$.
+Triplet ($S=1$, Anti-sym Space):
 
-Singlet ($S=0$, Sym Space): $\frac{d\sigma}{d\Omega} \propto |f(\theta) + f(\pi-\theta)|^2$.
+$\frac{d\sigma}{d\Omega} \propto |f(\theta) - f(\pi-\theta)|^2$.
+
+Singlet ($S=0$, Sym Space): 
+
+$\frac{d\sigma}{d\Omega} \propto |f(\theta) + f(\pi-\theta)|^2$.
 
 Unpolarized (Average): $\frac{1}{4}\sigma_{singlet} + \frac{3}{4}\sigma_{triplet} = |f(\theta)|^2 + |f(\pi-\theta)|^2 + \text{Re}[f(\theta)f^*(\pi-\theta)]$.
 
@@ -700,26 +774,50 @@ Rotation: $R(\hat{n}, \theta) = e^{-i\theta \hat{n}\cdot\vec{J}/\hbar}$ (Ang. Mo
 $|x+\alpha\rangle=U(x)|\alpha\rangle$
 
 \subsection*{Spin ($\vec{S}$)}
-Definition: $\vec{S}$ is an internal angular momentum. Total angular momentum $\vec{J} = \vec{L} + \vec{S}$.
-Commutators: $[S_i, S_j] = i\hbar \epsilon_{ijk} S_k, \quad [S^2, S_i] = 0$.
+Definition: $\vec{S}$ is an internal angular momentum. 
+
+Total angular momentum $\vec{J} = \vec{L} + \vec{S}$.
+
+Commutators: 
+
+$[S_i, S_j] = i\hbar \epsilon_{ijk} S_k, \quad [S^2, S_i] = 0$.
+
 Relation to Pauli: $\vec{S} = \frac{\hbar}{2}\vec{\sigma}$.
+
 \textbf{Pauli Matrices ($\sigma$):}
-$\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$.
+
+$\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} \\ \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}, 
+\sigma = \begin{pmatrix} 1 & 1-i \\ 1+i & -1 \end{pmatrix}$
 \important{\sigma_i \sigma_j = \delta_{ij} I + i\epsilon_{ijk} \sigma_k}
+
 $[\sigma_i, \sigma_j] = 2i\epsilon_{ijk} \sigma_k \quad \{\sigma_i, \sigma_j\} = 2\delta_{ij} I$
-Identity: $(\vec{\sigma}\cdot\vec{a})(\vec{\sigma}\cdot\vec{b}) = (\vec{a}\cdot\vec{b})I + i\vec{\sigma}\cdot(\vec{a}\times\vec{b})$. $(\vec{a}\cdot \vec{\sigma})^2=|\vec{a}|^2I$.
+
+$(\vec{\sigma}\cdot\vec{a})(\vec{\sigma}\cdot\vec{b}) = (\vec{a}\cdot\vec{b})I + i\vec{\sigma}\cdot(\vec{a}\times\vec{b})$
+
+$(\vec{a}\cdot \vec{\sigma})^2=|\vec{a}|^2I$.
 
 \textbf{Spin Bases (z, x, y):}
-$z$: $|\uparrow\rangle = \binom{1}{0}, |\downarrow\rangle = \binom{0}{1}$.
-$x$: $|\uparrow\rangle_x = \frac{1}{\sqrt{2}}\binom{1}{1}, |\downarrow\rangle_x = \frac{1}{\sqrt{2}}\binom{1}{-1}$.
-$y$: $|\uparrow\rangle_y = \frac{1}{\sqrt{2}}\binom{1}{i}, |\downarrow\rangle_y = \frac{1}{\sqrt{2}}\binom{1}{-i}$.
+
+$z$: $|\uparrow\rangle = \binom{1}{0}, |\downarrow\rangle = \binom{0}{1}$
+
+$x$: $|\uparrow\rangle_x = \frac{1}{\sqrt{2}}\binom{1}{1}, |\downarrow\rangle_x = \frac{1}{\sqrt{2}}\binom{1}{-1}$
+
+$y$: $|\uparrow\rangle_y = \frac{1}{\sqrt{2}}\binom{1}{i}, |\downarrow\rangle_y = \frac{1}{\sqrt{2}}\binom{1}{-i}$
 
 \textbf{General Direction $\hat{n}$:}
-Direction: $\hat{n} = (\sin\theta\cos\phi, \sin\theta\sin\phi, \cos\theta)$.
-Rotation Operator: $U(\hat{n}, \theta) = e^{-i\frac{\theta}{2}\hat{n}\cdot\vec{\sigma}} = \cos\frac{\theta}{2} I - i(\hat{n}\cdot\vec{\sigma})\sin\frac{\theta}{2}$.
+Direction: 
+
+$\hat{n} = (\sin\theta\cos\phi, \sin\theta\sin\phi, \cos\theta)$.
+
+Rotation Operator: 
+
+$U(\hat{n}, \theta) = e^{-i\frac{\theta}{2}\hat{n}\cdot\vec{\sigma}} = \cos\frac{\theta}{2} I - i(\hat{n}\cdot\vec{\sigma})\sin\frac{\theta}{2}$
+
 Eigenstates of $\hat{n}\cdot\vec{S}$:
-$|\uparrow\rangle_{\hat{n}} = \begin{pmatrix} \cos\frac{\theta}{2} \\ e^{i\phi}\sin\frac{\theta}{2} \end{pmatrix}, \quad |\downarrow\rangle_{\hat{n}} = \begin{pmatrix} \sin\frac{\theta}{2} \\ -e^{i\phi}\cos\frac{\theta}{2} \end{pmatrix}$.
-(Note: $U(\hat{n}, \theta)$ rotates by $\theta$ around $\hat{n}$. State $|\uparrow\rangle_{\hat{n}}$ is obtained by rotating $|\uparrow\rangle_z$ to direction $\hat{n}$).
+
+$|\uparrow\rangle_{\hat{n}} = \begin{pmatrix} \cos\frac{\theta}{2} \\ e^{i\phi}\sin\frac{\theta}{2} \end{pmatrix} |\downarrow\rangle_{\hat{n}} = \begin{pmatrix} \sin\frac{\theta}{2} \\ -e^{i\phi}\cos\frac{\theta}{2} \end{pmatrix}$
+
+Note: $U(\hat{n}, \theta)$ rotates by $\theta$ around $\hat{n}$. State $|\uparrow\rangle_{\hat{n}}$ is obtained by rotating $|\uparrow\rangle_z$ to direction $\hat{n}$
 
 \subsection*{Position \& Momentum}
 Fourier: $\psi(x) = \frac{1}{\sqrt{2\pi\hbar}} \int dp \phi(p) e^{ipx/\hbar}$.

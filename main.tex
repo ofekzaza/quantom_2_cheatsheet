@@ -364,11 +364,15 @@ Selection: $m = m_1 + m_2, |j_1 - j_2| \le j \le j_1 + j_2$.
 Example: Limit state $|j_1+j_2, j_1+j_2\rangle = |j_1, j_1\rangle |j_2, j_2\rangle$. lower with $J_-$:
 $\alpha = \sqrt{\frac{j_1}{j_1+j_2}}, \quad \beta = -\sqrt{\frac{j_2}{j_1+j_2}}$.
 
-\textbf{CG Calculation:} 
-
-Start with highest weight state $|j_{max}, m_{max}\rangle_{tot} = |j_1, j_1\rangle |j_2, j_2\rangle$.
-Apply lowering operator $J_-^{tot} = J_-^{(1)} + J_-^{(2)}$ to generate lower $m$ states.
-Orthogonalize: $|j_{max}-1, j_{max}-1\rangle \perp |j_{max}, j_{max}-1\rangle$.
+\textbf{CG Calculation Algorithm (Tirgul 8):}
+1. Start with the highest weight state: $|j_{max}, m_{max}\rangle = |j_1, j_1\rangle |j_2, j_2\rangle$, where $j_{max} = j_1+j_2$.
+2. Apply lowering operator $J_- = J_{1-} + J_{2-}$ $2j$ times to generate all states in this $j$ subspace.
+3. If $j = |j_1 - j_2|$, stop.
+4. Else, move to next subspace $j \to j-1$. Write top state $|j, j\rangle$ as linear combination of basis states with $m_1+m_2=j$.
+5. Require orthogonality to all states with same $m$ but higher $j$ (from previous steps).
+6. Normalize the state.
+7. Solve for coefficients to get the top state of this new subspace.
+8. Return to step 2.
 
 \textbf{Example $1 \otimes 1/2$:}
 

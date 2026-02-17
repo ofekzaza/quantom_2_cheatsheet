@@ -129,7 +129,19 @@ $\mathcal{H} = \frac{1}{2m}(\mathbf{p} - q\mathbf{A})^2$. $B = B\hat{z}$. Gauge 
 $\mathcal{H} = \frac{p_y^2}{2m} + \frac{1}{2}m \omega_c^2 (y - y_0)^2 + \frac{\hbar^2 k_z^2}{2m}$.
 Harmonic oscillator centered at $y_0 = -\frac{\hbar k}{qB}$. $\omega_c = \frac{qB}{m}$.
 \important{E = \hbar\omega_c (n + \frac{1}{2}) + \frac{\hbar^2 k_z^2}{2m}}
+\subsection*{Example: 2D Harmonic Oscillator (S3 Q3)}
 
+Hamiltonian $H = \hbar\omega(a_x^\dagger a_x + a_y^\dagger a_y + 1)$.
+
+Define Left/Right operators: $a_{L,R} = \frac{1}{\sqrt{2}}(a_x \pm i a_y)$.
+
+Commutators: $[a_L, a_L^\dagger] = [a_R, a_R^\dagger] = 1, [a_L, a_R] = 0$.
+
+$H = \hbar\omega(a_R^\dagger a_R + a_L^\dagger a_L + 1)$.
+
+Angular Momentum: $L = \hbar(a_R^\dagger a_R - a_L^\dagger a_L)$.
+
+Basis states $|n_L, n_R\rangle$ are eigenstates of $H$ and $L$.
 \subsection*{Thm 13.9.1 Optical Theorem}
 \important{\sigma_{tot}(k) = \frac{4\pi}{k} \text{Im} f_k(0)}
 \textit{Proof:} 
@@ -339,6 +351,9 @@ Spin Generators $\vec{S}$: $S_i = \frac{\hbar}{2}\sigma_i$
 
 Rotation of Spinor: $D^{(1/2)}(\hat{n}, \theta) = e^{-i\theta \hat{n}\cdot\vec{S}/\hbar} = \cos\frac{\theta}{2}I - i\vec{n}\cdot\vec{\sigma}\sin\frac{\theta}{2}$.
 
+\textbf{Finite Rotation (Vector/Spin-1):}
+\important{e^{-\frac{i}{\hbar} J_y \beta} = 1 - \left(\frac{J_y}{\hbar}\right)^2 (1 - \cos\beta) - i \frac{J_y}{\hbar} \sin\beta}
+
 \subsection*{Angular Momentum}
 \textbf{Definitions:} $\vec{L} = \vec{r} \times \vec{p}$, $\vec{J} = \vec{L} + \vec{S} \\ L_i=\epsilon_{ijk}X_jP_k$
 
@@ -392,7 +407,7 @@ Selection: $m = m_1 + m_2, |j_1 - j_2| \le j \le j_1 + j_2$.
 Example: Limit state $|j_1+j_2, j_1+j_2\rangle = |j_1, j_1\rangle |j_2, j_2\rangle$. lower with $J_-$:
 $\alpha = \sqrt{\frac{j_1}{j_1+j_2}}, \quad \beta = -\sqrt{\frac{j_2}{j_1+j_2}}$.
 
-\textbf{CG Calculation Algorithm (Tirgul 8):}
+\textbf{CG Calculation Algorithm:}
 1. Start with the highest weight state: $|j_{max}, m_{max}\rangle = |j_1, j_1\rangle |j_2, j_2\rangle$, where $j_{max} = j_1+j_2$.
 
 2. Apply lowering operator $J_- = J_{1-} + J_{2-}$ $2j$ times to generate all states in this $j$ subspace.
@@ -438,16 +453,19 @@ $|0, 0\rangle$ & $\sqrt{1/3}$ & $-\sqrt{1/3}$ \\
 \hline
 \end{tabular}
 
-\subsection*{Tensor Operators \& Wigner-Eckart}
-Definition: $[J_z, T_k^q] = \hbar q T_k^q$
+\subsection*{Clebsch-Gordan Coefficients}
+\subsection*{Tensor Operators}
 
 $[J_\pm, T_k^q] = \hbar \sqrt{k(k+1)-q(q\pm 1)} T_k^{q\pm 1}$.
+
+\textbf{Tensor Product (Coupling):}
+\important{A_\mu^{(\lambda)} = [U^{(\lambda_1)} \times V^{(\lambda_2)}]_\mu^\lambda = \sum_{\mu_1 \mu_2} \langle \lambda_1 \mu_1 \lambda_2 \mu_2 | \lambda_1 \lambda_2 \lambda \mu \rangle U_{\mu_1}^{(\lambda_1)} V_{\mu_2}^{(\lambda_2)}}
 
 \textbf{Wigner-Eckart Thm:} Matrix elements depend on $m$ only via CG coeff.
 \important{\langle n' j' m' | T_k^q | n j m \rangle = \langle j k; m q | j' m' \rangle \frac{\langle n' j' || T_k || n j \rangle}{\sqrt{2j'+1}}}
 Selection rules: $\Delta m = q$, Triangle rule for $j, k, j'$.
 Example: $V \propto (x^2-y^2)$ is Tensor $T_2^{\pm 2} \implies \Delta m = \pm 2$.
-Quadrupole: $Q_{ij} = \frac{V_i W_j + V_j W_i}{2} - \frac{\vec{V}\cdot\vec{W}}{3}\delta_{ij}$ (Traceless Symm Tensor).
+Quadrupole: $Q_{ij} = \frac{W_i V_j + W_j V_i}{2} - \frac{\mathbf{W}\cdot\mathbf{V}}{3}\delta_{ij}$ (Traceless Symm Tensor).
 
 \subsection*{Heisenberg Picture \& Dynamics}
 \textbf{Schrödinger Eq:} $i\hbar \frac{d}{dt}|\psi\rangle = \mathcal{H}|\psi\rangle$.
@@ -493,22 +511,71 @@ $\mathcal{H} \approx \mathcal{H}_0 + \mathcal{H}_P + \mathcal{H}_D$.
 
 
 \subsection*{Perturbation Theory}
-\textbf{Time-Independent Non-Degenerate} 
+\subsection*{Approximation Methods}
+\textbf{Non-Degenerate:} $H = H_0 + V$.
+First Order Energy: \important{E_n^{(1)} = \langle n^{(0)} | V | n^{(0)} \rangle = V_{nn}}
+Second Order Energy: \important{E_n^{(2)} = \sum_{k \neq n} \frac{|V_{kn}|^2}{E_n^{(0)} - E_k^{(0)}}}
+First Order State: \important{|\psi_n^{(1)}\rangle = \sum_{k \neq n} \frac{V_{kn}}{E_n^{(0)} - E_k^{(0)}} |k^{(0)}\rangle}
+Validity: $|V_{kn}| \ll |E_n^{(0)} - E_k^{(0)}|$.
 
-$\mathcal{H} = \mathcal{H}_0 + \lambda V$.
-$E_n^{(1)} = V_{nn}$.
+\textbf{Degenerate:} States $|n^0\rangle, \dots, |m^0\rangle$ with same $E^{(0)}$.
+Diagonalize $V$ in the degenerate subspace $W_{ij} = \langle i^{(0)}|V|j^{(0)}\rangle$.
+Eigenvalues of $W$ are the first-order corrections $E^{(1)}$.
+Eigenvectors are the "good" zeroth-order states.
 
-$|n^{(1)}\rangle = \sum_{k \neq n} \frac{V_{kn}}{E_n^{(0)} - E_k^{(0)}} |k^{(0)}\rangle$
+\textbf{Stark Effect ($H = H_0 + e\mathcal{E}z$):}
+- Ground ($n=1$): Non-degenerate. $E^{(1)}=0$ (parity). $E^{(2)} = -\frac{9}{4}a_0^3 \mathcal{E}^2$.
+- Excited ($n=2$): 4-fold degenerate ($2s, 2p_0, 2p_{\pm 1}$).
+    - $2p_{\pm 1}$ unperturbed ($m \neq 0$).
+    - $2s, 2p_0$ mix. $W = \begin{pmatrix} 0 & -3ea_0\mathcal{E} \\ -3ea_0\mathcal{E} & 0 \end{pmatrix}$.
+    - Linear shift: $E^{(1)} = \pm 3ea_0\mathcal{E}$.
 
-$E_n^{(2)} = \sum_{k \neq n} \frac{|V_{kn}|^2}{E_n^{(0)} - E_k^{(0)}}$
 
-\textbf{Time-Dependent:} $\mathcal{H}(t) = \mathcal{H}_0 + V(t)$. $c_n(t) = \langle n | \psi(t) \rangle e^{iE_n t/\hbar}$.
-\important{\dot{c}_n(t) = -\frac{i}{\hbar} \sum_k V_{nk}(t) e^{i\omega_{nk}t} c_k(t)}
-First Order: 
+\textbf{Time-Dependent Perturbation:}
 
-$c_n^{(1)}(t) = -\frac{i}{\hbar} \int_{t_0}^t \langle n | V(t') | i \rangle e^{i\omega_{ni}t'} dt'$.
- Fermi's Golden Rule (Transition Rate $i \to f$):
-\important{W_{i\to f} = \frac{2\pi}{\hbar} |V_{fi}|^2 \delta(E_f - E_i)}
+\textbf{Basis Expansion:} $|\psi(t)\rangle = \sum_n c_n(t) e^{-i E_n t/\hbar} |n\rangle$.
+
+(Coefficients $c_n(t)$ correspond to interaction picture states, not just $|n\rangle$).
+
+$c_n(t) = c_n(t_0) - \frac{i}{\hbar} \sum_k \int_{t_0}^t dt' e^{i\omega_{nk}t'} V_{nk}(t') c_k(t')$.
+
+$c_n(t) = c_n(t_0) - \frac{i}{\hbar} \sum_k \int_{t_0}^t dt' e^{i\omega_{nk}t'} V_{nk}(t') c_k(t')$.
+
+First Order: $c_n^{(1)}(t) \approx -\frac{i}{\hbar} \int_{t_0}^t dt' e^{i\omega_{ni}t'} V_{ni}(t')$.
+
+Transition Rate (Golden Rule): $W_{i\to f} = \frac{2\pi}{\hbar} |V_{fi}|^2 \delta(E_f - E_i)$.
+
+\textbf{Example: H-atom in E-field (Ex 11 Q3):}
+
+$V(t) = -eEz e^{-t/\tau} \Theta(t)$ (Perturbation). Transition $|100\rangle \to |210\rangle$.
+
+\textbf{1. Matrix Element $V_{210, 100}(t)$:}
+
+$V_{fi}(t) = \langle 210 | -eEz | 100 \rangle e^{-t/\tau}$. Use $z = r\cos\theta = r\sqrt{\frac{4\pi}{3}}Y_{10}$.
+
+Integral: $\int_0^\infty r^2 dr R_{21}(r) (r) R_{10}(r) \times \int d\Omega Y_{10}^* Y_{10} Y_{00}$.
+
+Radial part: $\int_0^\infty r^4 e^{-3r/2a_0} dr = 4! (2a_0/3)^5$. Angular gives factor.
+
+Let $V_{fi}(t) = A e^{-t/\tau}$ where $A$ is the spatial integral result.
+
+\textbf{2. Amplitude $c_{210}^{(1)}(t)$:}
+
+$c(t) = -\frac{i}{\hbar} \int_0^t dt' V_{fi}(t') e^{i\omega_{21}t'} = -\frac{i A}{\hbar} \int_0^t dt' e^{-(1/\tau - i\omega_{21})t'}$.
+
+$c(t) = -\frac{i A}{\hbar} \frac{1}{1/\tau - i\omega_{21}} (1 - e^{-(1/\tau - i\omega_{21})t})$.
+
+\textbf{3. Probability ($t \to \infty$):}
+
+$P(\infty) = |c(\infty)|^2 = \frac{|A|^2}{\hbar^2} \frac{1}{(1/\tau)^2 + \omega_{21}^2} = \frac{|A|^2 \tau^2}{\hbar^2 (1 + \omega_{21}^2 \tau^2)}$.
+
+\textbf{Sudden Approximation (Quantum Quench):}
+
+State doesn't change: $|\psi(0^+)\rangle = |\psi(0^-)\rangle$.
+
+Prob to find new eigenstate $|n_{new}\rangle$: $P_n = |\langle n_{new} | \psi_{old} \rangle|^2$.
+
+Adiabatic: $H(t)$ changes slowly. System stays in $n$-th eigenstate of $H(t)$.
 
 \subsection*{Identical Particles}
 
@@ -530,30 +597,70 @@ Excited ($1s2s$):
 
 - Parahelium (Singlet): $E_S = E_{1s} + E_{2s} + J + K$.
 
-- Orthohelium (Triplet): $E_T = E_{1s} + E_{2s} + J - K$.
-Exchange energy $K > 0$, so Triplet is lower (Hund's Rule \#1).
+\subsection*{Helium Atom (General Solution)}
 
-\subsection*{Scattering - Born Approx}
-Lippmann-Schwinger: 
+Hamiltonian: $H = \frac{p_1^2}{2m} + \frac{p_2^2}{2m} - \frac{Ze^2}{r_1} - \frac{Ze^2}{r_2} + \frac{e^2}{r_{12}}$.
 
-$|\psi\rangle = |\phi\rangle + G_0^+ V |\psi\rangle$.
+Treat $V_{ee} = e^2/r_{12}$ as perturbation.
 
-Born Series: 
+\textbf{Zeroth Order:} Independent electrons. $\Psi^{(0)} = \psi_{n_1}(\mathbf{r}_1)\psi_{n_2}(\mathbf{r}_2)$.
 
-$|\psi\rangle = |\phi\rangle + G_0^+ V |\phi\rangle + \dots$
+Ground state ($1s^2$): $E^{(0)} = 2 \times (-13.6 Z^2) = -108.8$ eV (for $Z=2$).
 
-\textbf{First Born Approximation:}
+\textbf{First Order Correction:}
 
-$f(\theta, \phi) = -\frac{m}{2\pi\hbar^2} \int d^3r e^{-i\Delta\mathbf{k}\cdot\mathbf{r}} V(\mathbf{r}) = -\frac{m}{2\pi\hbar^2} \tilde{V}(\mathbf{q})$
-where $\mathbf{q} = \mathbf{k}' - \mathbf{k}$ is momentum transfer. $|q| = 2k\sin(\theta/2)$.
+$\Delta E = \langle \Psi^{(0)} | \frac{e^2}{r_{12}} | \Psi^{(0)} \rangle = \int d^3r_1 d^3r_2 |\psi_{100}(1)|^2 |\psi_{100}(2)|^2 \frac{e^2}{r_{12}}$.
 
-\textbf{Form Factor:} 
+Calculation yields: $\Delta E = \frac{5}{8} Z \frac{e^2}{a_0} = \frac{5}{4} Z R_\infty$.
 
-$f(q) = F(q^2) f_{point}(q)$
+For He ($Z=2$): $\Delta E \approx 34$ eV.
 
-$F(q^2) = \int d^3r \rho(r) e^{i\vec{q}\cdot\vec{r}}$
+Total Energy: $E \approx -108.8 + 34 = -74.8$ eV (Exp: -79.0 eV).
 
-Radius: $R^2 = -6 \frac{dF}{dq^2}|_{q=0}$.
+\textbf{Excited States ($1s2s$):}
+
+Direct ($J$): Coulomb repulsion. $J = \int |\psi_a(1)|^2 |\psi_b(2)|^2 V_{12}$.
+
+Exchange ($K$): Quantum overlap. $K = \int \psi_a^*(1)\psi_b^*(2) V_{12} \psi_a(2)\psi_b(1)$.
+
+Splitting: $E = E^{(0)} + J \pm K$.
+
+- Parahelium (Singlet, Anti-sym spin): $E = E^{(0)} + J + K$.
+
+- Orthohelium (Triplet, Sym spin): $E = E^{(0)} + J - K$ (Lower Energy).
+
+\subsection*{Scattering Theory}
+
+Lippmann-Schwinger: $|\psi\rangle = |\phi\rangle + G_0^+ V |\psi\rangle$.
+
+Green's Function: \important{G^+(\mathbf{r}) = -\frac{m}{2\pi\hbar^2} \frac{e^{ikr}}{r}}
+
+\textbf{Born Approximation ($|\psi\rangle \approx |\phi\rangle$):}
+
+Scattering Amplitude: $f(\theta) = -\frac{m}{2\pi\hbar^2} \int d^3r' e^{-i\mathbf{q}\cdot\mathbf{r}'} V(\mathbf{r}')$.
+
+Momentum Transfer: $\mathbf{q} = \mathbf{k}_f - \mathbf{k}_i$, $q = 2k\sin(\theta/2)$.
+
+Spherically Symmetric $V(r)$:
+\important{f(\theta) = -\frac{2m}{q\hbar^2} \int_0^\infty r V(r) \sin(qr) dr}
+
+\textbf{Example: Yukawa Potential (Tirgul 13):}
+
+$V(r) = -V_0 \frac{e^{-\mu r}}{r}$.
+
+$f(\theta) = \frac{2mV_0}{\hbar^2(\mu^2+q^2)}$.
+
+Validity: Low energy or weak potential.
+
+Coulomb Limit ($\mu \to 0$): $f(\theta) \propto \frac{1}{q^2} \propto \frac{1}{\sin^2(\theta/2)}$ (Rutherford).
+
+\textbf{Form Factor (Finite Size):}
+
+$f(q) = f_{point}(q) F(q^2)$.
+
+$F(q^2) = \int d^3r \rho(r) e^{i\mathbf{q}\cdot\mathbf{r}}$ (Fourier of charge density).
+
+RMS Radius: $R^2 = -6 \frac{dF}{dq^2}|_{q=0}$.
 
 \textbf{Delta Perturbation:} 
 
@@ -616,6 +723,9 @@ $\sum_{i=1}^3\epsilon_{ijk} \epsilon_{ilm} = \delta_{jl}\delta_{km} - \delta_{jm
 \textbf{Wigner D-matrix:} 
 
 $\mathcal{D}_{m'm}^j(\alpha, \beta, \gamma) = \langle jm' | R(\alpha, \beta, \gamma) | jm \rangle = e^{-im'\alpha} d_{m'm}^j(\beta) e^{-im\gamma}$
+
+\textbf{Clebsch-Gordan Series (Product of D-matrices):}
+\important{D_{\mu_1' \mu_1}^{(\lambda_1)} D_{\mu_2' \mu_2}^{(\lambda_2)} = \sum_{\mu', \lambda, \mu} \langle \lambda_1 \lambda_2; \mu_1' \mu_2' | \lambda_1 \lambda_2; \lambda \mu' \rangle \langle \lambda_1 \lambda_2; \lambda \mu | \lambda_1 \lambda_2; \mu_1 \mu_2 \rangle D_{\mu' \mu}^{(\lambda)}}
 
 Use: $|jm\rangle_{rotated} = \sum_{m'} |jm'\rangle 
 \mathcal{D}_{m'm}^j(\Omega)$

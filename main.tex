@@ -632,6 +632,27 @@ $[\prod_i,\prod_j] = i\hbar\epsilon_{ijk}B_k$
 $\dot{\prod_i} = -\frac{i}{\hbar}[\prod_i,\mathcal{H}] = qv\times V$ Lorentz
 
 
+\subsection*{Scattering}
+
+\textbf{Born Approximation:} $f(\theta) = -\frac{2m}{\hbar^2 q} \int_0^\infty r V(r) \sin(qr) dr$, where $q = 2k\sin(\theta/2)$.
+
+Cross-section: $\frac{d\sigma}{d\Omega} = |f(\theta)|^2$.
+
+\textbf{Yukawa Potential:} $V(r) = -V_0 \frac{e^{-\mu r}}{r}$.
+
+
+Amplitude: $f(\theta) = \frac{2mV_0}{\hbar^2(\mu^2+q^2)}$
+
+Limit $\mu \to 0$ (Coulomb): $f(\theta) \propto \frac{1}{\sin^2(\theta/2)}$.
+
+\textbf{Identical Particles Interaction:}
+
+Triplet ($S=1$, Anti-sym Space): $\frac{d\sigma}{d\Omega} \propto |f(\theta) - f(\pi-\theta)|^2$.
+
+Singlet ($S=0$, Sym Space): $\frac{d\sigma}{d\Omega} \propto |f(\theta) + f(\pi-\theta)|^2$.
+
+Unpolarized (Average): $\frac{1}{4}\sigma_{singlet} + \frac{3}{4}\sigma_{triplet} = |f(\theta)|^2 + |f(\pi-\theta)|^2 + \text{Re}[f(\theta)f^*(\pi-\theta)]$.
+
 \subsection*{Symmetry Generators}
 Time: $T(t) = e^{-iHt/\hbar}$ (Energy).
 

@@ -597,9 +597,29 @@ $[L_i,L_j] = i\hbar\epsilon_{idk}L_k \quad [\mathcal{H}, L] = 0 $
 \textbf{Canonical:} 
 $[x_i, p_j] = i\hbar \delta_{ij}$.
 
-From Ex: $[L_i, L_j] = i\hbar \epsilon_{ijk} L_k$.
+\textbf{Vector Operator:} $[J_i, V_j] = i\hbar\epsilon_{ijk}V_k$
 
-$[L_i, x_j] = i\hbar \epsilon_{ijk} x_k, \quad [L_i, p_j] = i\hbar \epsilon_{ijk} p_k$.
+Transformation: $T(R)V_iT^\dagger(R) = \sum_j R_{ji}V_j$
+
+\textbf{Spherical Tensor:}
+
+$[J_z, A_\mu^{(\lambda)}] = \hbar\mu A_\mu^{(\lambda)}$
+
+$[J_\pm, A_\mu^{(\lambda)}] = \hbar\sqrt{(\lambda \mp \mu)(\lambda \pm \mu + 1)} A_{\mu\pm 1}^{(\lambda)}$
+
+Transformation: $T(R)A_\mu^{(\lambda)}T^\dagger(R) = \sum_{\mu'} D_{\mu'\mu}^{(\lambda)}(R) A_{\mu'}^{(\lambda)}$
+
+Rotation of $Y_l^m$: $Y_l^m(\hat{n}') = \sum_{m'} D_{m'm}^{(l)}(R) Y_l^{m'}(\hat{n})$
+
+\textbf{Selection Rules:} $m + \mu = m', \quad |j - \lambda| \le j' \le j + \lambda$
+
+\textbf{Projection Theorem:}
+
+$\langle jm|V_\mu|jm'\rangle = \frac{\langle jm|\vec{J}\cdot\vec{V}|jm\rangle}{\hbar^2 j(j+1)} \langle jm'|J_\mu|jm'\rangle$.
+
+\textbf{Landé g-factor:} $g_J = 1 + \frac{j(j+1) + s(s+1) - l(l+1)}{2j(j+1)}$.
+
+(Note: Tirgul uses $g_J = \frac{3}{2} + \dots$ which is for spin 1/2. Generalized is $1 + \dots$).
 
 $[L_i x_k, L_j p_m]$ via standard expansion.
 

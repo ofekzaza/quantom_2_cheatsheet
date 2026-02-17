@@ -543,7 +543,11 @@ $c_n(t) = c_n(t_0) - \frac{i}{\hbar} \sum_k \int_{t_0}^t dt' e^{i\omega_{nk}t'} 
 
 First Order: $c_n^{(1)}(t) \approx -\frac{i}{\hbar} \int_{t_0}^t dt' e^{i\omega_{ni}t'} V_{ni}(t')$.
 
-Transition Rate (Golden Rule): $W_{i\to f} = \frac{2\pi}{\hbar} |V_{fi}|^2 \delta(E_f - E_i)$.
+Transition Rate (Fermi Golden Rule): 
+
+$W_{i\to f} = \frac{2\pi}{\hbar} |V_{fi}|^2 \delta(E_f - E_i)$.
+
+\textbf{Usage:} Transitions to a continuum of states (multiply by density of states $\rho(E)$) or long times $t \to \infty$. Constant $V$.
 
 \textbf{Example: H-atom in E-field (Ex 11 Q3):}
 

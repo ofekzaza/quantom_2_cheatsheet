@@ -177,7 +177,19 @@ $V(z) = -Ze^2/z (z>0), \infty (z<0)$.
 
 Solving SE gives Rydberg states for odd parity (wavefunc must vanish at $z=0$).
 \important{E_n = -\frac{Z^2 e^4 m}{2\hbar^2 n^2}}
+\important{E_n = -\frac{Z^2 e^4 m}{2\hbar^2 n^2}}
 Wavefunction: $\psi_{nlm}(\mathbf{r})$ where $l-|m|$ is odd (node at $z=0$, or odd parity).
+
+\section*{Identical Particles}
+\textbf{Symmetry:} $P_{12}\psi(1,2) = \pm \psi(1,2)$.
+$+$: Bosons (integer spin). $-$: Fermions (half-integer spin).
+\textbf{Slater Determinant (Fermions):} N-particle state is an antisym product of single-particle states $\phi_\alpha$.
+$\psi(1, \dots, N) = \frac{1}{\sqrt{N!}} \det | \phi_{\alpha_i}(j) |$.
+\textbf{2 Particles:} $\Psi = \psi_{space}(\vec{r}_1, \vec{r}_2) \chi_{spin}$.
+Total symmetry = Space sym $\times$ Spin sym.
+\textbf{Electrons (Fermions):} Total must be Anti-Sym.
+- \textbf{Triplet} ($S=1$, Sym spin): Space must be Anti-Sym ($\psi(r_1, r_2) = -\psi(r_2, r_1)$).
+- \textbf{Singlet} ($S=0$, Anti-Sym spin): Space must be Sym.
 
 \subsection*{Spin-Orbit Coupling}
 $\mathcal{H} = \frac{\alpha}{\hbar^2} \mathbf{L} \cdot \mathbf{S} = \frac{\alpha}{2\hbar^2}(J^2 - L^2 - S^2)$.
@@ -344,7 +356,31 @@ Example: Limit state $|j_1+j_2, j_1+j_2\rangle = |j_1, j_1\rangle |j_2, j_2\rang
 $\alpha = \sqrt{\frac{j_1}{j_1+j_2}}, \quad \beta = -\sqrt{\frac{j_2}{j_1+j_2}}$.
 \textbf{CG Calculation:} Start with highest weight state $|j_{max}, m_{max}\rangle_{tot} = |j_1, j_1\rangle |j_2, j_2\rangle$.
 Apply lowering operator $J_-^{tot} = J_-^{(1)} + J_-^{(2)}$ to generate lower $m$ states.
-Orthogonalize for other $j$ states (e.g., $j_{max}-1$).
+Orthogonalize: $|j_{max}-1, j_{max}-1\rangle \perp |j_{max}, j_{max}-1\rangle$.
+\textbf{Example $1 \otimes 1/2$:}
+States: $|1, 1/2\rangle$ (highest). Apply $J_-$:
+$|3/2, 1/2\rangle = \sqrt{1/3}|1, -1/2\rangle + \sqrt{2/3}|0, 1/2\rangle$.
+Orthogonal state ($j=1/2$): $|1/2, 1/2\rangle = \sqrt{2/3}|1, -1/2\rangle - \sqrt{1/3}|0, 1/2\rangle$.
+\textbf{CG Tables:}
+$1 \otimes 1/2$:
+\begin{tabular}{|c|cc|}
+\hline
+$|jm\rangle$ & $|1, -1/2\rangle$ & $|0, 1/2\rangle$ \\
+\hline
+$|3/2, 1/2\rangle$ & $\sqrt{1/3}$ & $\sqrt{2/3}$ \\
+$|1/2, 1/2\rangle$ & $\sqrt{2/3}$ & $-\sqrt{1/3}$ \\
+\hline
+\end{tabular}
+$1 \otimes 1$:
+\begin{tabular}{|c|cc|}
+\hline
+$|1, 0\rangle$ & $|1, -1\rangle$ & $|0, 0\rangle$ \\
+\hline
+$|2, 0\rangle$ & $\sqrt{1/6}$ & $\sqrt{2/3}$ \\
+$|1, 0\rangle$ & $\sqrt{1/2}$ & $0$ \\
+$|0, 0\rangle$ & $\sqrt{1/3}$ & $-\sqrt{1/3}$ \\
+\hline
+\end{tabular}
 
 \subsection*{Tensor Operators \& Wigner-Eckart}
 Definition: $[J_z, T_k^q] = \hbar q T_k^q$

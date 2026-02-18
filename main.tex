@@ -45,10 +45,15 @@
 \subsection*{Ritz Theorem}
 \important{R[\psi] = \frac{\langle \psi | \mathcal{H} | \psi \rangle}{\langle \psi | \psi \rangle} \ge E_0}
 \textbf{Step 1: Expand $|\psi\rangle$ in energy eigenbasis}.
+
 $|\psi\rangle = \sum_n c_n |n\rangle, \quad c_n = \langle n | \psi \rangle$.
+
 Then $\langle \psi | \psi \rangle = \sum_n |c_n|^2$.
+
 Using $\mathcal{H}|n\rangle = E_n |n\rangle$, $\langle \psi | \mathcal{H} | \psi \rangle = \sum_{n,m} c_m^* c_n \langle m | \mathcal{H} | n \rangle = \sum_n |c_n|^2 E_n$.
+
 So $R[\psi] = \frac{\sum_n |c_n|^2 E_n}{\sum_n |c_n|^2}$.
+
 \textbf{Step 2: Prove $R[\psi] \ge E_0$}.
 Since $E_n \ge E_0$, $\sum_n |c_n|^2 E_n \ge E_0 \sum_n |c_n|^2$.
 
@@ -384,7 +389,7 @@ Spin Generators $\vec{S}$: $S_i = \frac{\hbar}{2}\sigma_i$
 Rotation of Spinor: $D^{(1/2)}(\hat{n}, \theta) = e^{-i\theta \hat{n}\cdot\vec{S}/\hbar} = \cos\frac{\theta}{2}I - i\vec{n}\cdot\vec{\sigma}\sin\frac{\theta}{2}$.
 
 \textbf{Finite Rotation (Vector/Spin-1):}
-\important{e^{-\frac{i}{\hbar} J_y \beta} = 1 - \left(\frac{J_y}{\hbar}\right)^2 (1 - \cos\beta) - i \frac{J_y}{\hbar} \sin\beta}
+$e^{-\frac{i}{\hbar} J_y \beta} = 1 - \left(\frac{J_y}{\hbar}\right)^2 (1 - \cos\beta) - i \frac{J_y}{\hbar} \sin\beta$
 
 \subsection*{Angular Momentum}
 \textbf{Definitions:} $\vec{L} = \vec{r} \times \vec{p}$, $\vec{J} = \vec{L} + \vec{S} \\ L_i=\epsilon_{ijk}X_jP_k$
@@ -587,8 +592,6 @@ Eigenvectors are the "good" zeroth-order states.
 
 \textbf{Time-Dependent Perturbation:}
 
-\textbf{Basis Expansion:} 
-
 $|\psi(t)\rangle = \sum_n c_n(t) e^{-i E_n t/\hbar} |n\rangle$.
 
 (Coefficients $c_n(t)$ correspond to interaction picture states, not just $|n\rangle$).
@@ -602,10 +605,10 @@ First Order:
 $c_n^{(1)}(t) \approx -\frac{i}{\hbar} \int_{t_0}^t dt' e^{i\omega_{ni}t'} V_{ni}(t')$.
 
 Transition Rate (Fermi Golden Rule): 
-
-$W_{i\to f} = \frac{2\pi}{\hbar} |V_{fi}|^2 \delta(E_f - E_i)$.
+\important{W_{i\to f} = \frac{2\pi}{\hbar} |V_{fi}|^2 \delta(E_f - E_i)}
 
 \textbf{Usage:} Transitions to a continuum of states (multiply by density of states $\rho(E)$) or long times $t \to \infty$. Constant $V$.
+works only on monochromatic Perturbation.
 
 \textbf{Example: H-atom in E-field (Ex 11 Q3):}
 

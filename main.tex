@@ -203,6 +203,36 @@ $L_q^p(x)$ Assoc. Laguerre Polys:
 
 $L_q^p(x) = \frac{x^{-p} e^x}{q!} \frac{d^q}{dx^q}(e^{-x} x^{p+q})$.
 
+\textbf{Explicit Wavefunctions:}
+$\psi_{100} = \frac{1}{\sqrt{\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} e^{-\frac{r}{a_0}}$
+$\psi_{200} = \frac{1}{\sqrt{32\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(2 - \frac{r}{a_0}\right) e^{-\frac{r}{2a_0}}$
+$\psi_{210} = \frac{1}{\sqrt{32\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \frac{r}{a_0} e^{-\frac{r}{2a_0}} \cos\theta$
+$\psi_{21\pm1} = \mp \frac{1}{\sqrt{64\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \frac{r}{a_0} e^{-\frac{r}{2a_0}} \sin\theta e^{\pm i\phi}$
+$\psi_{300} = \frac{1}{81\sqrt{3\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(27 - 18\frac{r}{a_0} + 2\left(\frac{r}{a_0}\right)^2\right) e^{-\frac{r}{3a_0}}$
+$\psi_{310} = \frac{1}{81}\sqrt{\frac{2}{\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(6\frac{r}{a_0} - \left(\frac{r}{a_0}\right)^2\right) e^{-\frac{r}{3a_0}} \cos\theta$
+$\psi_{31\pm1} = \mp \frac{1}{81\sqrt{\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(6\frac{r}{a_0} - \left(\frac{r}{a_0}\right)^2\right) e^{-\frac{r}{3a_0}} \sin\theta e^{\pm i\phi}$
+$\psi_{320} = \frac{1}{81\sqrt{6\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(\frac{r}{a_0}\right)^2 e^{-\frac{r}{3a_0}} (3\cos^2\theta - 1)$
+$\psi_{32\pm1} = \mp \frac{1}{81\sqrt{\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(\frac{r}{a_0}\right)^2 e^{-\frac{r}{3a_0}} \sin\theta \cos\theta e^{\pm i\phi}$
+$\psi_{32\pm2} = \frac{1}{162\sqrt{\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(\frac{r}{a_0}\right)^2 e^{-\frac{r}{3a_0}} \sin^2\theta e^{\pm 2i\phi}$
+
+\subsection*{Hydrogen Fine Structure \& Magnetic Fields}
+\textbf{1. Relativistic Kinetic Energy ($H_{MV}$):}
+$H_{MV} = -\frac{p^4}{8m_e^3c^2} \approx -\frac{1}{2mc^2}(E_n^{(0)} + \frac{Ze^2}{r})^2$.
+Energy Shift: $\Delta E_{MV} = -\frac{E_n^2}{2mc^2} \left[ \frac{4n}{l+1/2} - 3 \right]$.
+
+\textbf{2. Spin-Orbit Coupling ($H_{SO}$):}
+$H_{SO} = \frac{e^2}{8\pi\epsilon_0 m^2c^2 r^3} \mathbf{L} \cdot \mathbf{S}$.
+Shift: $\Delta E_{SO} = \frac{E_n^2}{2mc^2} \frac{n(j(j+1)-l(l+1)-3/4)}{l(l+1/2)(l+1)}$.
+
+\textbf{3. Darwin Term ($H_D$):} (Only for $l=0$)
+$H_D = \frac{\pi\hbar^2}{2m^2c^2} \frac{Ze^2}{4\pi\epsilon_0} \delta(\mathbf{r})$.
+Shift: $\Delta E_D = \frac{2n E_n^2}{mc^2}$.
+
+\textbf{Total Fine Structure:} $\Delta E_{FS} = \frac{E_n^2}{2mc^2} \left( 3 - \frac{4n}{j+1/2} \right)$.
+
+\textbf{4. Diamagnetic Term (B-field):}
+$H_{Dia} = \frac{e^2 B^2}{8 m_e} r^2 \sin^2 \theta$. (Quadratic B-field).
+
 \subsection*{Hydrogen-like Half-Space}
 $V(z) = -Ze^2/z (z>0), \infty (z<0)$.
 
@@ -395,7 +425,13 @@ Conjugate: $Y_l^m{}^* = (-1)^m Y_l^{-m}$.
 
 Orthogonality: $\int d\Omega Y_{l'}^{m'*} Y_l^m = \delta_{ll'} \delta_{mm'}$.
 
-Explicit: $Y_0^0 = \sqrt{\frac{1}{4\pi}}, Y_1^0 = \sqrt{\frac{3}{4\pi}}\cos\theta, Y_1^{\pm 1} = \mp\sqrt{\frac{3}{8\pi}}e^{\pm i\phi}\sin\theta$.
+Explicit:
+$Y_0^0 = \sqrt{\frac{1}{4\pi}}$
+$Y_1^0 = \sqrt{\frac{3}{4\pi}}\cos\theta = \sqrt{\frac{3}{4\pi}}\frac{z}{r}$
+$Y_1^{\pm 1} = \mp\sqrt{\frac{3}{8\pi}}e^{\pm i\phi}\sin\theta = \mp\sqrt{\frac{3}{8\pi}}\frac{x\pm iy}{r}$
+$Y_2^0 = \sqrt{\frac{5}{16\pi}}(3\cos^2\theta-1) = \sqrt{\frac{5}{16\pi}}\frac{3z^2-r^2}{r^2}$
+$Y_2^{\pm 1} = \mp\sqrt{\frac{15}{8\pi}}e^{\pm i\phi}\sin\theta\cos\theta = \mp\sqrt{\frac{15}{8\pi}}\frac{(x\pm iy)z}{r^2}$
+$Y_2^{\pm 2} = \sqrt{\frac{15}{32\pi}}e^{\pm 2i\phi}\sin^2\theta = \sqrt{\frac{15}{32\pi}}\frac{(x\pm iy)^2}{r^2}$
 
 \subsection*{Addition of Angular Momentum}
 $J=\frac{\hbar}{2mi}(\psi^\star\vec{\nabla}\psi-\psi\vec{\nabla}\psi^\star)=\frac{\hbar}{m}\Im{\psi^\star\vec{\nabla}\psi}$
@@ -541,6 +577,12 @@ Eigenvectors are the "good" zeroth-order states.
     - $2s, 2p_0$ mix. $W = \begin{pmatrix} 0 & -3ea_0\mathcal{E} \\ -3ea_0\mathcal{E} & 0 \end{pmatrix}$.
     
     - Linear shift: $E^{(1)} = \pm 3ea_0\mathcal{E}$.
+
+\textbf{Ex 10 Q2: Contact Interaction ($V(\mathbf{r}) = A \delta(\mathbf{r})$):}
+- Only $l=0$ (s-states) affected since $\psi_{nlm}(0) = 0$ for $l\neq 0$.
+- For 1s: $\Delta E_{1s} = \langle 1s | A \delta(\mathbf{r}) | 1s \rangle = A |\psi_{1s}(0)|^2$.
+- $\psi_{1s}(0) = \frac{1}{\sqrt{\pi a_0^3}} \implies \Delta E_{1s} = \frac{A}{\pi a_0^3}$.
+(Example of Darwin-type term where interaction is at nucleus).
 
 
 \textbf{Time-Dependent Perturbation:}

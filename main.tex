@@ -586,22 +586,36 @@ Validity: $|V_{kn}| \ll |E_n^{(0)} - E_k^{(0)}|$.
 Diagonalize $V$ in the degenerate subspace $W_{ij} = \langle i^{(0)}|V|j^{(0)}\rangle$.
 Eigenvalues of $W$ are the first-order corrections $E^{(1)}$.
 Eigenvectors are the "good" zeroth-order states.
+
 \textbf{Degenerate Perturbation Theory Algorithm:}
+
 1. Identify the degenerate subspace $D$ (states $|n_1\rangle, \dots, |n_g\rangle$ with same energy $E^{(0)}$).
+
 2. Construct the perturbation matrix $W$ within this subspace: $W_{ij} = \langle n_i | V | n_j \rangle$.
+
 3. Diagonalize $W$: Solve $\det(W - E^{(1)}I) = 0$.
+
 4. **Eigenvalues**: The first-order energy corrections $E^{(1)}$.
+
 5. **Eigenvectors**: The "good" zeroth-order states (basis in which $V$ is diagonal).
 
 \textbf{Simple Example (2-State Degeneracy):}
+
 $H_0 = E_0 \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, \quad V = \begin{pmatrix} 0 & \delta \\ \delta & 0 \end{pmatrix}$.
+
 Degenerate subspace is whole space. Matrix $W = V$.
+
 Diagonalize: $\det \begin{pmatrix} -\lambda & \delta \\ \delta & -\lambda \end{pmatrix} = \lambda^2 - \delta^2 = 0 \implies \lambda = \pm \delta$.
+
 Energy Shifts: $E^{(1)} = \pm \delta$. Degeneracy lifted.
+
 Good states: $\frac{1}{\sqrt{2}}(|1\rangle \pm |2\rangle)$.
 
 \textbf{Stark Effect ($H = H_0 + e\mathcal{E}z$):}
-- Ground ($n=1$): Non-degenerate. $E^{(1)}=0$ (parity). $E^{(2)} = -\frac{9}{4}a_0^3 \mathcal{E}^2$.
+
+- Ground ($n=1$): Non-degenerate. $E^{(1)}=0$ (parity).
+
+$E^{(2)} = -\frac{9}{4}a_0^3 \mathcal{E}^2$.
 
 - Excited ($n=2$): 4-fold degenerate ($2s, 2p_0, 2p_{\pm 1}$).
 
@@ -611,8 +625,11 @@ Good states: $\frac{1}{\sqrt{2}}(|1\rangle \pm |2\rangle)$.
     - Linear shift: $E^{(1)} = \pm 3ea_0\mathcal{E}$.
 
 \textbf{Ex 10 Q2: Contact Interaction ($V(\mathbf{r}) = A \delta(\mathbf{r})$):}
+
 - Only $l=0$ (s-states) affected since $\psi_{nlm}(0) = 0$ for $l\neq 0$.
+
 - For 1s: $\Delta E_{1s} = \langle 1s | A \delta(\mathbf{r}) | 1s \rangle = A |\psi_{1s}(0)|^2$.
+
 - $\psi_{1s}(0) = \frac{1}{\sqrt{\pi a_0^3}} \implies \Delta E_{1s} = \frac{A}{\pi a_0^3}$.
 (Example of Darwin-type term where interaction is at nucleus).
 
@@ -625,12 +642,13 @@ Coefficient evolution:
 $\dot{c}_n(t) = -\frac{i}{\hbar} \sum_k e^{i\omega_{nk}t} V_{nk}(t) c_k(t)$.
 
 Integral Form (for iteration):
+
 $c_n(t) = c_n(t_0) - \frac{i}{\hbar} \sum_k \int_{t_0}^t dt' e^{i\omega_{nk}t'} V_{nk}(t') c_k(t')$.
 
 \textbf{Iterative Expansion (Dyson Series):}
 \begin{align*}
-c_n(t) &= \underbrace{c_n(t_0)}_{c_n^{(0)}} - \underbrace{\frac{i}{\hbar} \sum_m c_m(t_0) \int_{t_0}^t dt' e^{i\omega_{nm}t'} V_{nm}(t')}_{c_n^{(1)}(t)} \\
-&- \underbrace{\frac{1}{\hbar^2} \sum_{m,m'} c_{m'}(t_0) \int_{t_0}^t dt' \int_{t_0}^{t'} dt'' e^{i\omega_{nm}t'} V_{nm}(t') e^{i\omega_{mm'}t''} V_{mm'}(t'')}_{c_n^{(2)}(t)} + \dots
+c_n&(t) = \underbrace{c_n(t_0)}_{c_n^{(0)}} - \\ &\underbrace{\frac{i}{\hbar} \sum_m c_m(t_0) \int_{t_0}^t dt' e^{i\omega_{nm}t'} V_{nm}(t')}_{c_n^{(1)}(t)} \\
+- &\frac{1}{\hbar^2} \sum_{m,m'} c_{m'}(t_0) \int_{t_0}^t dt' \int_{t_0}^{t'}  e^{i\omega_{nm}t'} \\ & \underbrace{\dots V_{nm}(t') e^{i\omega_{mm'}t''} V_{mm'}(t'')dt''}_{c_n^{(2)}(t)} + \dots
 \end{align*}
 
 First Order Approx ($c_n(t_0)=\delta_{ni}$):
@@ -828,7 +846,8 @@ $\sum_{i=1}^3\epsilon_{ijk} \epsilon_{ilm} = \delta_{jl}\delta_{km} - \delta_{jm
 $\mathcal{D}_{m'm}^j(\alpha, \beta, \gamma) = \langle jm' | R(\alpha, \beta, \gamma) | jm \rangle = e^{-im'\alpha} d_{m'm}^j(\beta) e^{-im\gamma}$
 
 \textbf{Clebsch-Gordan Series (Product of D-matrices):}
-\important{D_{\mu_1' \mu_1}^{(\lambda_1)} D_{\mu_2' \mu_2}^{(\lambda_2)} = \sum_{\mu', \lambda, \mu} \langle \lambda_1 \lambda_2; \mu_1' \mu_2' | \lambda_1 \lambda_2; \lambda \mu' \rangle \langle \lambda_1 \lambda_2; \lambda \mu | \lambda_1 \lambda_2; \mu_1 \mu_2 \rangle D_{\mu' \mu}^{(\lambda)}}
+$D_{\mu_1' \mu_1}^{(\lambda_1)} D_{\mu_2' \mu_2}^{(\lambda_2)} = \sum_{\mu', \lambda, \mu} \langle \lambda_1 \lambda_2; \mu_1' \mu_2' | \lambda_1 \lambda_2; \lambda \mu' \rangle \\\langle \lambda_1 \lambda_2; \lambda \mu | \lambda_1 \lambda_2; \mu_1 \mu_2 \rangle D_{\mu' \mu}^{(\lambda)}$
+
 
 Use: $|jm\rangle_{rotated} = \sum_{m'} |jm'\rangle 
 \mathcal{D}_{m'm}^j(\Omega)$

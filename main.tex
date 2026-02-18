@@ -646,6 +646,9 @@ Integral Form (for iteration):
 $c_n(t) = c_n(t_0) - \frac{i}{\hbar} \sum_k \int_{t_0}^t dt' e^{i\omega_{nk}t'} V_{nk}(t') c_k(t')$.
 
 \textbf{Iterative Expansion (Dyson Series):}
+
+$\omega_{nm}=\frac{E_n-E_m}{\hbar}$
+
 \begin{align*}
 c_n&(t) = \underbrace{c_n(t_0)}_{c_n^{(0)}} - \\ &\underbrace{\frac{i}{\hbar} \sum_m c_m(t_0) \int_{t_0}^t dt' e^{i\omega_{nm}t'} V_{nm}(t')}_{c_n^{(1)}(t)} \\
 - &\frac{1}{\hbar^2} \sum_{m,m'} c_{m'}(t_0) \int_{t_0}^t dt' \int_{t_0}^{t'}  e^{i\omega_{nm}t'} \\ & \underbrace{\dots V_{nm}(t') e^{i\omega_{mm'}t''} V_{mm'}(t'')dt''}_{c_n^{(2)}(t)} + \dots

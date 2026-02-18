@@ -412,6 +412,12 @@ Y_l^m(\theta,\phi) \propto P_l^m(\cos\theta) e^{im\phi}$.
 
 Parity: $Y_{l}^m(\hat{n}) = (-1)^l Y_l^m(-\hat{n})$
 
+\textbf{Radial Hamiltonian (3D):}
+$H = -\frac{\hbar^2}{2\mu} \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 \frac{\partial}{\partial r} \right) + \frac{L^2}{2\mu r^2} + V(r)$.
+
+Schrödinger Eq:
+$-\frac{\hbar^2}{2\mu} \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 \frac{\partial \Psi}{\partial r} \right) + \frac{L^2}{2\mu r^2}\Psi + V(r)\Psi = E\Psi$.
+
 
 \subsection*{Addition of Angular Momentum}
 $J=\frac{\hbar}{2mi}(\psi^\star\vec{\nabla}\psi-\psi\vec{\nabla}\psi^\star)=\frac{\hbar}{m}\Im{\psi^\star\vec{\nabla}\psi} = J_1 +J_2$
@@ -580,6 +586,19 @@ Validity: $|V_{kn}| \ll |E_n^{(0)} - E_k^{(0)}|$.
 Diagonalize $V$ in the degenerate subspace $W_{ij} = \langle i^{(0)}|V|j^{(0)}\rangle$.
 Eigenvalues of $W$ are the first-order corrections $E^{(1)}$.
 Eigenvectors are the "good" zeroth-order states.
+\textbf{Degenerate Perturbation Theory Algorithm:}
+1. Identify the degenerate subspace $D$ (states $|n_1\rangle, \dots, |n_g\rangle$ with same energy $E^{(0)}$).
+2. Construct the perturbation matrix $W$ within this subspace: $W_{ij} = \langle n_i | V | n_j \rangle$.
+3. Diagonalize $W$: Solve $\det(W - E^{(1)}I) = 0$.
+4. **Eigenvalues**: The first-order energy corrections $E^{(1)}$.
+5. **Eigenvectors**: The "good" zeroth-order states (basis in which $V$ is diagonal).
+
+\textbf{Simple Example (2-State Degeneracy):}
+$H_0 = E_0 \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, \quad V = \begin{pmatrix} 0 & \delta \\ \delta & 0 \end{pmatrix}$.
+Degenerate subspace is whole space. Matrix $W = V$.
+Diagonalize: $\det \begin{pmatrix} -\lambda & \delta \\ \delta & -\lambda \end{pmatrix} = \lambda^2 - \delta^2 = 0 \implies \lambda = \pm \delta$.
+Energy Shifts: $E^{(1)} = \pm \delta$. Degeneracy lifted.
+Good states: $\frac{1}{\sqrt{2}}(|1\rangle \pm |2\rangle)$.
 
 \textbf{Stark Effect ($H = H_0 + e\mathcal{E}z$):}
 - Ground ($n=1$): Non-degenerate. $E^{(1)}=0$ (parity). $E^{(2)} = -\frac{9}{4}a_0^3 \mathcal{E}^2$.
@@ -602,14 +621,19 @@ Eigenvectors are the "good" zeroth-order states.
 
 $|\psi(t)\rangle = \sum_n c_n(t) e^{-i E_n t/\hbar} |n\rangle$.
 
-(Coefficients $c_n(t)$ correspond to interaction picture states, not just $|n\rangle$).
+Coefficient evolution:
+$\dot{c}_n(t) = -\frac{i}{\hbar} \sum_k e^{i\omega_{nk}t} V_{nk}(t) c_k(t)$.
 
-$c_{nt} =  c_{nt_0} - \frac{i}{\hbar} \sum_k \int_{t_0}^t dt' e^{i\omega_{nk}t'} V_{nk}(t') c_k(t')$
+Integral Form (for iteration):
+$c_n(t) = c_n(t_0) - \frac{i}{\hbar} \sum_k \int_{t_0}^t dt' e^{i\omega_{nk}t'} V_{nk}(t') c_k(t')$.
 
-$c_{nt} =  c_{nt_0} - \frac{i}{\hbar} \sum_k \int_{t_0}^t dt' e^{i\omega_{nk}t'} V_{nk}(t') c_k(t')$
+\textbf{Iterative Expansion (Dyson Series):}
+\begin{align*}
+c_n(t) &= \underbrace{c_n(t_0)}_{c_n^{(0)}} - \underbrace{\frac{i}{\hbar} \sum_m c_m(t_0) \int_{t_0}^t dt' e^{i\omega_{nm}t'} V_{nm}(t')}_{c_n^{(1)}(t)} \\
+&- \underbrace{\frac{1}{\hbar^2} \sum_{m,m'} c_{m'}(t_0) \int_{t_0}^t dt' \int_{t_0}^{t'} dt'' e^{i\omega_{nm}t'} V_{nm}(t') e^{i\omega_{mm'}t''} V_{mm'}(t'')}_{c_n^{(2)}(t)} + \dots
+\end{align*}
 
-First Order: 
-
+First Order Approx ($c_n(t_0)=\delta_{ni}$):
 $c_n^{(1)}(t) \approx -\frac{i}{\hbar} \int_{t_0}^t dt' e^{i\omega_{ni}t'} V_{ni}(t')$.
 
 Transition Rate (Fermi Golden Rule): 
@@ -646,13 +670,15 @@ $c(t) = -\frac{i A}{\hbar} \frac{1}{1/\tau - i\omega_{21}} (1 - e^{-(1/\tau - i\
 
 $P(\infty) = |c(\infty)|^2 = \frac{|A|^2}{\hbar^2} \frac{1}{(1/\tau)^2 + \omega_{21}^2} = \frac{|A|^2 \tau^2}{\hbar^2 (1 + \omega_{21}^2 \tau^2)}$.
 
-\textbf{Sudden Approximation (Quantum Quench):}
-
-State doesn't change: $|\psi(0^+)\rangle = |\psi(0^-)\rangle$.
-
-Prob to find new eigenstate $|n_{new}\rangle$: $P_n = |\langle n_{new} | \psi_{old} \rangle|^2$.
-
-Adiabatic: $H(t)$ changes slowly. System stays in $n$-th eigenstate of $H(t)$.
+\textbf{Quantum Quench ($V(t \to -\infty) = 0, \quad V(t \to \infty) = V_0$):}
+Initially in state $|i\rangle$. Perturbation turns on to constant $V_0$.
+Coefficients ($n=i$): $c_i(t) \approx 1 - \frac{i}{\hbar} t (V_0)_{ii} + \dots$
+Coefficients ($f \neq i$):
+$c_f(t) \approx -\frac{(V_0)_{fi}}{\hbar \omega_{fi}} e^{i\omega_{fi}t} + \int_{-\infty}^t dt' \frac{\dot{V}_{fi}(t')}{\hbar \omega_{fi}} e^{i\omega_{fi}t'}$.
+If quench is instantaneous ($t=0$):
+$|\psi(t)\rangle \approx e^{-iE_i t/\hbar} \left[ \left( 1 - \frac{i}{\hbar}t [V_0]_{ii} \right) |i\rangle + \sum_{f\neq i} \frac{[V_0]_{fi}}{E_i - E_f} (1 - e^{i\omega_{fi}t}) |f\rangle \right]$.
+Long time limit ($t \to \infty$): Recovers Time-Independent Perturbation result (shifted energy/state).
+State stays "frozen" in old basis for sudden change: $P_n = |\langle n_{new} | \psi_{old} \rangle|^2$.
 
 \subsection*{Identical Particles}
 

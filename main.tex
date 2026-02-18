@@ -114,9 +114,6 @@ $\mathcal{H} = -\frac{\hbar^2}{2m}\nabla^2 - \frac{a}{r^s}$ ($a>0$) contains inf
 \textit{Proof:} Trial $\Psi(r) = N e^{-(r-r_0)^2/\beta^2 r_0^2}$.
 For large $r_0$, $E < 0$ is possible.
 
-\subsection*{Thm 8.2.2 Triangular Rule}
-Admissible $j$ are
-\important{|j_1-j_2| \le j \le j_1+j_2}
 
 
 
@@ -208,20 +205,9 @@ $L_q^p(x)$ Assoc. Laguerre Polys:
 
 $L_q^p(x) = \frac{x^{-p} e^x}{q!} \frac{d^q}{dx^q}(e^{-x} x^{p+q})$.
 
-\textbf{Explicit Wavefunctions:}
-$\psi_{100} = \frac{1}{\sqrt{\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} e^{-\frac{r}{a_0}}$
-$\psi_{200} = \frac{1}{\sqrt{32\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(2 - \frac{r}{a_0}\right) e^{-\frac{r}{2a_0}}$
-$\psi_{210} = \frac{1}{\sqrt{32\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \frac{r}{a_0} e^{-\frac{r}{2a_0}} \cos\theta$
-$\psi_{21\pm1} = \mp \frac{1}{\sqrt{64\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \frac{r}{a_0} e^{-\frac{r}{2a_0}} \sin\theta e^{\pm i\phi}$
-$\psi_{300} = \frac{1}{81\sqrt{3\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(27 - 18\frac{r}{a_0} + 2\left(\frac{r}{a_0}\right)^2\right) e^{-\frac{r}{3a_0}}$
-$\psi_{310} = \frac{1}{81}\sqrt{\frac{2}{\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(6\frac{r}{a_0} - \left(\frac{r}{a_0}\right)^2\right) e^{-\frac{r}{3a_0}} \cos\theta$
-$\psi_{31\pm1} = \mp \frac{1}{81\sqrt{\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(6\frac{r}{a_0} - \left(\frac{r}{a_0}\right)^2\right) e^{-\frac{r}{3a_0}} \sin\theta e^{\pm i\phi}$
-$\psi_{320} = \frac{1}{81\sqrt{6\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(\frac{r}{a_0}\right)^2 e^{-\frac{r}{3a_0}} (3\cos^2\theta - 1)$
-$\psi_{32\pm1} = \mp \frac{1}{81\sqrt{\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(\frac{r}{a_0}\right)^2 e^{-\frac{r}{3a_0}} \sin\theta \cos\theta e^{\pm i\phi}$
-$\psi_{32\pm2} = \frac{1}{162\sqrt{\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(\frac{r}{a_0}\right)^2 e^{-\frac{r}{3a_0}} \sin^2\theta e^{\pm 2i\phi}$
-
 \subsection*{Hydrogen Fine Structure \& Magnetic Fields}
-\textbf{1. Relativistic Kinetic Energy ($H_{MV}$):}
+\textbf{1. Relativistic Kinetic Energy $H_{MV}$}
+
 $H_{MV} = -\frac{p^4}{8m_e^3c^2} \approx -\frac{1}{2mc^2}(E_n^{(0)} + \frac{Ze^2}{r})^2$.
 Energy Shift: $\Delta E_{MV} = -\frac{E_n^2}{2mc^2} \left[ \frac{4n}{l+1/2} - 3 \right]$.
 
@@ -324,8 +310,6 @@ N-fermion state:
 \important{\Psi(1,\dots,N) = \frac{1}{\sqrt{N!}} \det(\psi_i(j))}
 Zero if two particles in same state (Pauli exclusion).
 
-\section*{Tirgul Summaries}
-
 \subsection*{Symmetry \& Conservation}
 
 \textbf{Noether's Theorem:} Continuous symmetry $\implies$ conservation.
@@ -375,6 +359,8 @@ $R_x(\theta) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\theta & \sin\theta \\ 0 & -
 
 $J_1 = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & i \\ 0 & -i & 0 \end{pmatrix}, J_2 = \begin{pmatrix} 0 & 0 & -i \\ 0 & 0 & 0 \\ i & 0 & 0 \end{pmatrix}\\J_3 = \begin{pmatrix} 0 & i & 0 \\ -i & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}$
 
+\underbar{dont forget $\hbar$}
+
 $J_k = X_{ij}$ s.t if $k=1 \implies i=2,j=3$ (cyclic).
 
 $RR^T=I \quad \det R=1\\ R=\sum_{a>b}^di\omega_{ab}X_{ab} \quad \omega = \sum_{a < b}^n i \omega_{ab} X_{ab} \\ (X_{ab})_{ij} = i(\delta_{ai}\delta_{bj} - \delta_{aj}\delta_{bi})$
@@ -416,38 +402,34 @@ L_z |l,m\rangle = \hbar m |l,m\rangle \\
 L_\pm |lm\rangle = \hbar \sqrt{l(l+1) - m(m\pm 1)} |lm\pm 1\rangle \\
 L_x = \frac{1}{2}(L_+ + L_-), \quad L_y = \frac{1}{2i}(L_+ - L_-)$.
 
-\textbf{Spherical Harmonics $Y_l^m(\theta,\phi)$:}
-
 \textbf{Coordinate Reps:}
 
 $L_x = -i\hbar(y\partial_z - z\partial_y) = i\hbar(\sin\phi\partial_\theta + \cot\theta\cos\phi\partial_\phi) \\
 L_y = -i\hbar(z\partial_x - x\partial_z) = i\hbar(-\cos\phi\partial_\theta + \cot\theta\sin\phi\partial_\phi) \\
 L_z = -i\hbar(x\partial_y - y\partial_x) = -i\hbar\partial_\phi \\
 L^2 = -\hbar^2 [\frac{1}{\sin\theta}\partial_\theta(\sin\theta\partial_\theta) + \frac{1}{\sin^2\theta}\partial_\phi^2] \\
-Y_l^m(\theta,\phi) \propto P_l^m(\cos\theta) e^{im\phi}$. Parity: $Y_{l}^m(\hat{n}) = (-1)^l Y_l^m(-\hat{n})$
+Y_l^m(\theta,\phi) \propto P_l^m(\cos\theta) e^{im\phi}$. 
 
-Conjugate: $Y_l^m{}^* = (-1)^m Y_l^{-m}$. 
+Parity: $Y_{l}^m(\hat{n}) = (-1)^l Y_l^m(-\hat{n})$
 
-Orthogonality: $\int d\Omega Y_{l'}^{m'*} Y_l^m = \delta_{ll'} \delta_{mm'}$.
-
-Explicit:
-$Y_0^0 = \sqrt{\frac{1}{4\pi}}$
-$Y_1^0 = \sqrt{\frac{3}{4\pi}}\cos\theta = \sqrt{\frac{3}{4\pi}}\frac{z}{r}$
-$Y_1^{\pm 1} = \mp\sqrt{\frac{3}{8\pi}}e^{\pm i\phi}\sin\theta = \mp\sqrt{\frac{3}{8\pi}}\frac{x\pm iy}{r}$
-$Y_2^0 = \sqrt{\frac{5}{16\pi}}(3\cos^2\theta-1) = \sqrt{\frac{5}{16\pi}}\frac{3z^2-r^2}{r^2}$
-$Y_2^{\pm 1} = \mp\sqrt{\frac{15}{8\pi}}e^{\pm i\phi}\sin\theta\cos\theta = \mp\sqrt{\frac{15}{8\pi}}\frac{(x\pm iy)z}{r^2}$
-$Y_2^{\pm 2} = \sqrt{\frac{15}{32\pi}}e^{\pm 2i\phi}\sin^2\theta = \sqrt{\frac{15}{32\pi}}\frac{(x\pm iy)^2}{r^2}$
 
 \subsection*{Addition of Angular Momentum}
-$J=\frac{\hbar}{2mi}(\psi^\star\vec{\nabla}\psi-\psi\vec{\nabla}\psi^\star)=\frac{\hbar}{m}\Im{\psi^\star\vec{\nabla}\psi}$
+$J=\frac{\hbar}{2mi}(\psi^\star\vec{\nabla}\psi-\psi\vec{\nabla}\psi^\star)=\frac{\hbar}{m}\Im{\psi^\star\vec{\nabla}\psi} = J_1 +J_2$
 
 connectivity: $\frac{d}{dt}|\psi|^2=-\vec{\nabla}\cdot\vec{J}$
 
-$J = J_1 + J_2$. Basis $|j_1 j_2; m_1 m_2\rangle \to |j_1 j_2; j m\rangle$.
+Basis $|j_1 j_2; m_1 m_2\rangle \to |j_1 j_2; j m\rangle$.
 \important{|j_1 j_2; j m\rangle = \sum_{m_1, m_2} C_{m_1 m_2}^{j m} |j_1 j_2; m_1 m_2\rangle}
-Selection: $m = m_1 + m_2, |j_1 - j_2| \le j \le j_1 + j_2$.
+Selection: 
 
-Example: Limit state $|j_1+j_2, j_1+j_2\rangle = |j_1, j_1\rangle |j_2, j_2\rangle$. lower with $J_-$:
+$m = m_1 + m_2, |j_1 - j_2| \le j \le j_1 + j_2$.
+
+Example: Limit state 
+
+$|j_1+j_2, j_1+j_2\rangle = |j_1, j_1\rangle |j_2, j_2\rangle$. 
+
+lower with $J_-$:
+
 $\alpha = \sqrt{\frac{j_1}{j_1+j_2}}, \quad \beta = -\sqrt{\frac{j_2}{j_1+j_2}}$.
 
 \textbf{CG Calculation Algorithm:}
@@ -507,28 +489,47 @@ $A_\mu^{(\lambda)} = [U^{(\lambda_1)} \times V^{(\lambda_2)}]_\mu^\lambda = \sum
 
 \textbf{Wigner-Eckart Thm:} Matrix elements depend on $m$ only via CG coeff.
 \important{\langle n' j' m' | T_k^q | n j m \rangle = \langle j k; m q | j' m' \rangle \frac{\langle n' j' || T_k || n j \rangle}{\sqrt{2j'+1}}}
+
 Selection rules: $\Delta m = q$, Triangle rule for $j, k, j'$.
-Example: $V \propto (x^2-y^2)$ is Tensor $T_2^{\pm 2} \implies \Delta m = \pm 2$.
+
+Example: $V \propto (x^2-y^2)$ is Tensor $T_2^{\pm 2} \implies \Delta m = \pm 2$ (cause $q=\pm2=m$).
+
 Quadrupole: $Q_{ij} = \frac{W_i V_j + W_j V_i}{2} - \frac{\mathbf{W}\cdot\mathbf{V}}{3}\delta_{ij}$ (Traceless Symm Tensor).
+
+\textbf{Selection Rules:} 
+
+$m-1 + m_2 = m, \quad |j_1 - j_2| \le j \le j_1 + j_2$
+
+$j=m+s \quad -j \le m_j \leq j$
 
 \subsection*{Heisenberg Picture, Dynamics}
 \textbf{Schrödinger Eq:} $i\hbar \frac{d}{dt}|\psi\rangle = \mathcal{H}|\psi\rangle$.
 \textbf{Time Independent:} 
 
 $\mathcal{H}|\psi\rangle = E|\psi\rangle$.
+
 \textbf{Heisenberg} $\frac{d}{dt} O_H = \frac{1}{i\hbar} [O_H, \mathcal{H}] + (\frac{\partial O}{\partial t})_H$.
 \important{\frac{d}{dt}\langle O \rangle = \frac{1}{i\hbar}\langle [O, \mathcal{H}] \rangle + \langle \frac{\partial O}{\partial t} \rangle}
 
-\textbf{Probability Current:} $\vec{J} = \frac{\hbar}{m}\text{Im}(\psi^*\nabla\psi) - \frac{q}{m}\vec{A}|\psi|^2$.
+\textbf{Probability Current:} 
 
-Definition: $O_H(t) = e^{i\mathcal{H}t/\hbar} O_S e^{-i\mathcal{H}t/\hbar}$.
+$\vec{J} = \frac{\hbar}{m}\text{Im}(\psi^*\nabla\psi) - \frac{q}{m}\vec{A}|\psi|^2$.
 
-Operator Calc: $\frac{d}{dt}e^{At} = A e^{At}, \quad \frac{d}{dt}(AB) = \dot{A}B + A\dot{B}$.
+Definition: 
+
+$O_H(t) = e^{i\mathcal{H}t/\hbar} O_S e^{-i\mathcal{H}t/\hbar}$
+
+Operator Calc: 
+
+$\frac{d}{dt}e^{At} = A e^{At}, \quad \frac{d}{dt}(AB) = \dot{A}B + A\dot{B}$
 
 Example: Free particle $\dot{x} = p/m, \dot{p} = 0 \implies x(t) = x(0) + p(0)t/m$.
 
-HO Solution: $x(t) = x(0)\cos(\omega t) + \frac{p(0)}{m\omega}\sin(\omega t)$.
-$p(t) = p(0)\cos(\omega t) - m\omega x(0)\sin(\omega t)$.
+HO Solution: 
+
+$x(t) = x(0)\cos(\omega t) + \frac{p(0)}{m\omega}\sin(\omega t)$
+
+$p(t) = p(0)\cos(\omega t) - m\omega x(0)\sin(\omega t)$
 
 \subsection*{Spherical Potentials}
 Radial Eq: $u'' + [k^2 - \frac{l(l+1)}{r^2} - U(r)]u = 0$.
@@ -540,12 +541,19 @@ $l=0$ states: $j_0(x) = \sin(x)/x \implies \sin(kR)=0 \implies k_n = n\pi/R$.
 \subsection*{Atom in Magnetic Field}
 \textbf{Gauge Invariance:} $\vec{A} \to \vec{A} + \nabla\Lambda, \phi \to \phi - \partial_t\Lambda$.
 $\psi' = e^{iq\Lambda/\hbar}\psi$. Observables unchanged.
+
 \textbf{Aharonov-Bohm:} Phase shift $\Delta\varphi = \frac{q}{\hbar} \oint \vec{A}\cdot d\vec{l} = \frac{q\Phi}{\hbar}$.
+
 Interference shifts even if $\vec{B}=0$ on path (only $\vec{A} \neq 0$).
+
 \textbf{Landau Level Degeneracy:} $N = \Phi / \Phi_0 = BA / (h/e)$.
 
 $\mathcal{H} = \frac{1}{2m}(\mathbf{p} + e\mathbf{A})^2 - e\phi$. 
-Gauge \textbf{Coulomb:} $\nabla \cdot \mathbf{A} = 0$. $\mathbf{A} = \frac{1}{2}\mathbf{B} \times \mathbf{r}$.
+
+Gauge \textbf{Coulomb:} 
+
+$\nabla \cdot \mathbf{A} = 0$. $\mathbf{A} = \frac{1}{2}\mathbf{B} \times \mathbf{r}$.
+
 $\mathcal{H} \approx \mathcal{H}_0 + \mathcal{H}_P + \mathcal{H}_D$.
 
 \textbf{Paramagnetic (Zeeman):}
@@ -829,7 +837,8 @@ $Y_l^m(\hat{n}') = \sum_{m'} D_{m'm}^{(l)}(R) Y_l^{m'}(\hat{n})$
 
 \important{\langle n' j' m' | T_\lambda^\mu | n j m \rangle = \langle j \lambda; m \mu | j' m' \rangle \frac{\langle n' j' || T_\lambda || n j \rangle}{\sqrt{2j'+1}}}
 
-\textbf{Selection Rules:} $m + \mu = m', \quad |j - \lambda| \le j' \le j + \lambda$
+Example: $V \propto (x^2-y^2)$ is Tensor $T_2^{\pm 2} \implies \Delta m = \pm 2$ (cause $q=\pm2=m$).
+
 
 \textbf{Projection Theorem:}
 
@@ -1089,6 +1098,47 @@ $\sinh' = \cosh, \cosh' = \sinh$
 \textbf{Probability:} 
 $P(\vec{r}) = |\psi(\vec{r})|^2 = |c_i|^2 = \int r dr / \int dr $
 
+\subsection*{Hydrogen Atom Explicit Wavefunctions:}
+
+$\psi_{100} = \frac{1}{\sqrt{\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} e^{-\frac{r}{a_0}}$
+
+$\psi_{200} = \frac{1}{\sqrt{32\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(2 - \frac{r}{a_0}\right) e^{-\frac{r}{2a_0}}$
+
+$\psi_{210} = \frac{1}{\sqrt{32\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \frac{r}{a_0} e^{-\frac{r}{2a_0}} \cos\theta$
+
+$\psi_{21\pm1} = \mp \frac{1}{\sqrt{64\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \frac{r}{a_0} e^{-\frac{r}{2a_0}} \sin\theta e^{\pm i\phi}$
+
+$\psi_{300} = \frac{1}{81\sqrt{3\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(27 - 18\frac{r}{a_0} + 2\left(\frac{r}{a_0}\right)^2\right) e^{-\frac{r}{3a_0}}$
+
+$\psi_{310} = \frac{1}{81}\sqrt{\frac{2}{\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(6\frac{r}{a_0} - \left(\frac{r}{a_0}\right)^2\right) e^{-\frac{r}{3a_0}} \cos\theta$
+
+$\psi_{31\pm1} = \mp \frac{1}{81\sqrt{\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(6\frac{r}{a_0} - \left(\frac{r}{a_0}\right)^2\right) e^{-\frac{r}{3a_0}} \sin\theta e^{\pm i\phi}$
+
+$\psi_{320} = \frac{1}{81\sqrt{6\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(\frac{r}{a_0}\right)^2 e^{-\frac{r}{3a_0}} (3\cos^2\theta - 1)$
+
+$\psi_{32\pm1} = \mp \frac{1}{81\sqrt{\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(\frac{r}{a_0}\right)^2 e^{-\frac{r}{3a_0}} \sin\theta \cos\theta e^{\pm i\phi}$
+
+$\psi_{32\pm2} = \frac{1}{162\sqrt{\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(\frac{r}{a_0}\right)^2 e^{-\frac{r}{3a_0}} \sin^2\theta e^{\pm 2i\phi}$
+
+
+\subsection*{Spherical Harmonics $Y_l^m(\theta,\phi)$:}
+
+Conjugate: $Y_l^m{}^* = (-1)^m Y_l^{-m}$. 
+
+Orthogonality: $\int d\Omega Y_{l'}^{m'*} Y_l^m = \delta_{ll'} \delta_{mm'}$.
+
+Explicit:
+$Y_0^0 = \sqrt{\frac{1}{4\pi}}$
+
+$Y_1^0 = \sqrt{\frac{3}{4\pi}}\cos\theta = \sqrt{\frac{3}{4\pi}}\frac{z}{r}$
+
+$Y_1^{\pm 1} = \mp\sqrt{\frac{3}{8\pi}}e^{\pm i\phi}\sin\theta = \mp\sqrt{\frac{3}{8\pi}}\frac{x\pm iy}{r}$
+
+$Y_2^0 = \sqrt{\frac{5}{16\pi}}(3\cos^2\theta-1) = \sqrt{\frac{5}{16\pi}}\frac{3z^2-r^2}{r^2}$
+
+$Y_2^{\pm 1} = \mp\sqrt{\frac{15}{8\pi}}e^{\pm i\phi}\sin\theta\cos\theta = \mp\sqrt{\frac{15}{8\pi}}\frac{(x\pm iy)z}{r^2}$
+
+$Y_2^{\pm 2} = \sqrt{\frac{15}{32\pi}}e^{\pm 2i\phi}\sin^2\theta = \sqrt{\frac{15}{32\pi}}\frac{(x\pm iy)^2}{r^2}$
 
 \end{multicols*}
 

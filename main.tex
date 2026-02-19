@@ -188,9 +188,14 @@ $\mathcal{H}_{rel}$ is effectively a 1-body problem with mass $\mu$.
 \textbf{2. Radial Eq:} Dimensionless $\rho = \frac{2Z}{na_0}r$, $a_0 = \frac{4\pi\epsilon_0\hbar^2}{\mu e^2}$.
 \important{u''(\rho) + \left[ \frac{n}{\rho} - \frac{1}{4} - \frac{l(l+1)}{\rho^2} \right] u(\rho) = 0}
 
-\textbf{3. Asymptotics:} $\rho \to 0: u \sim \rho^{l+1}$. $\rho \to \infty: u \sim e^{-\rho/2}$.
+\textbf{3. Asymptotics:} 
 
-\textbf{4. Ansatz:} $u(\rho) = \rho^{l+1} e^{-\rho/2} w(\rho)$.
+$\rho \to 0: u \sim \rho^{l+1}$. $\rho \to \infty: u \sim e^{-\rho/2}$.
+
+\textbf{4. Ansatz:}
+
+$u(\rho) = \rho^{l+1} e^{-\rho/2} w(\rho)$.
+
 Kummer's Eq for $w(\rho)$: $\rho w'' + (2l+2-\rho)w' + (n-l-1)w = 0$.
 
 \textbf{5. Series Solution:} $w(\rho) = \sum a_k \rho^k$. Recurrence relation:
@@ -214,19 +219,28 @@ $H_{MV} = -\frac{p^4}{8m_e^3c^2} \approx -\frac{1}{2mc^2}(E_n^{(0)} + \frac{Ze^2
 Energy Shift: $\Delta E_{MV} = -\frac{E_n^2}{2mc^2} \left[ \frac{4n}{l+1/2} - 3 \right]$.
 
 \textbf{2. Spin-Orbit Coupling ($H_{SO}$):}
+
 $H_{SO} = \frac{e^2}{8\pi\epsilon_0 m^2c^2 r^3} \mathbf{L} \cdot \mathbf{S}$.
+
 Shift: $\Delta E_{SO} = \frac{E_n^2}{2mc^2} \frac{n(j(j+1)-l(l+1)-3/4)}{l(l+1/2)(l+1)}$.
 
 \textbf{3. Darwin Term ($H_D$):} (Only for $l=0$)
+
 $H_D = \frac{\pi\hbar^2}{2m^2c^2} \frac{Ze^2}{4\pi\epsilon_0} \delta(\mathbf{r})$.
+
 Shift: $\Delta E_D = \frac{2n E_n^2}{mc^2}$.
 
-\textbf{Total Fine Structure:} $\Delta E_{FS} = \frac{E_n^2}{2mc^2} \left( 3 - \frac{4n}{j+1/2} \right)$.
+\textbf{Total Fine Structure:} 
+
+$\Delta E_{FS} = 
+\frac{E_n^2}{2mc^2} \left( 3 - \frac{4n}{j+1/2} \right)$.
 
 \textbf{4. Diamagnetic Term (B-field):}
+
 $H_{Dia} = \frac{e^2 B^2}{8 m_e} r^2 \sin^2 \theta$. (Quadratic B-field).
 
 \subsection*{Hydrogen-like Half-Space}
+
 $V(z) = -Ze^2/z (z>0), \infty (z<0)$.
 
 Solving SE gives Rydberg states for odd parity (wavefunc must vanish at $z=0$).
@@ -284,7 +298,9 @@ Matrices for basis vectors (possibly defining specific rep):
 $T_{123} = \begin{pmatrix} 0 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0 \end{pmatrix}$
 $T_{12} = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}$
 
-Eigenvalues of $T(123)$: $\det(T - \lambda I) = -\lambda^3 + 1 = 0 \implies \lambda = 1, e^{\pm i 2\pi/3}$.
+Eigenvalues of $T(123)$: 
+
+$\det(T - \lambda I) = -\lambda^3 + 1 = 0 \implies \lambda = 1, e^{\pm i 2\pi/3}$.
 
 Vectors: $|1\rangle = \frac{1}{\sqrt{3}}(1,1,1)^T$ (invariant).
 
@@ -405,7 +421,7 @@ Rotation of Spinor: $D^{(1/2)}(\hat{n}, \theta) = e^{-i\theta \hat{n}\cdot\vec{S
 $e^{-\frac{i}{\hbar} J_y \beta} = 1 - \left(\frac{J_y}{\hbar}\right)^2 (1 - \cos\beta) - i \frac{J_y}{\hbar} \sin\beta$
 
 \section*{Angular Momentum}
-\subsection*{L}
+\subsection*{Regular angular momentum L}
 \textbf{Definitions:} $\vec{L} = \vec{r} \times \vec{p}$, $\vec{J} = \vec{L} + \vec{S} \\ L_i=\epsilon_{ijk}X_jP_k$
 
 Rotation Generator: $R(\hat{n}, \theta) = e^{-i\theta \hat{n}\cdot\vec{J}/\hbar}$
@@ -532,6 +548,16 @@ $j=m+s \quad -j \le m_j \leq j$
 \textbf{Degeneracy}
 
 $j_D=2j+1, \quad Energy_D=\sum_i2j_i+1$
+
+\subsection*{Jacobi Transformation}
+S first to one before last row is distance between particles, last row in distance between particle of center of mass.
+example: first row is distance between the first pair, second row is distance between the third and the two first and so forth, last is to center of mass
+
+$\eta_A=R=\frac{1}{\sqrt{A}}\sum_{i=1}^A r_i$
+
+\important{\eta_k=\sqrt{\frac{k}{k+1}}(r_{k+1}-\frac{1}{k}\sum^k_{i=1}r_i)}
+
+values of row k, set $r_i$ to be distances to the relavant particles (first pair use only $r_1,r_2$, third and first $r_3,r_1$ rest are zero)
 
 \section*{Dynamics}
 \textbf{Schrödinger Eq:} $i\hbar \frac{d}{dt}|\psi\rangle = \mathcal{H}|\psi\rangle$.
@@ -666,9 +692,13 @@ $E^{(2)} = -\frac{9}{4}a_0^3 \mathcal{E}^2$.
 (Example of Darwin-type term where interaction is at nucleus).
 
 \textbf{Ex 11 Q1: General Equations (Degenerate Subspace $d$):}
+
 Average Energy: $\langle E_a \rangle = \frac{1}{d} \sum_{i=1}^{d} E_{ai}$
+
 Variance: $(\Delta E_a)^2 = \frac{1}{d} \sum_{i=1}^{d} (E_{ai} - \langle E_a \rangle)^2$
+
 Shift: $\epsilon_a \equiv \langle E_a \rangle - E_a^{(0)}$
+
 First Order Corrections:
 $\epsilon_a^{(1)} = \frac{1}{d} \text{tr}(V^D)$
 $(\Delta E_a^{(1)})^2 = \frac{1}{d} \text{tr}((V^D - \epsilon_a^{(1)})^2)$
@@ -679,6 +709,7 @@ $(\Delta E_a^{(1)})^2 = \frac{1}{d} \text{tr}((V^D - \epsilon_a^{(1)})^2)$
 $|\psi(t)\rangle = \sum_n c_n(t) e^{-i E_n t/\hbar} |n\rangle$.
 
 Coefficient evolution:
+
 $\dot{c}_n(t) = -\frac{i}{\hbar} \sum_k e^{i\omega_{nk}t} V_{nk}(t) c_k(t)$.
 
 Integral Form (for iteration):
@@ -689,6 +720,8 @@ c_n(t) &= c_n(t_0) - \frac{i}{\hbar} \\ &\sum_k \int_{t_0}^t dt' e^{i\omega_{nk}
 \textbf{Iterative Expansion (Dyson Series):}
 
 $\omega_{nm}=\frac{E_n-E_m}{\hbar}$
+
+$V_{nm}=\langle n|V|m\rangle$
 \begin{align*}
 c_n&(t) = \underbrace{c_n(t_0)}_{c_n^{(0)}} - \\ &\underbrace{\frac{i}{\hbar} \sum_m c_m(t_0) \int_{t_0}^t dt' e^{i\omega_{nm}t'} V_{nm}(t')}_{c_n^{(1)}(t)} \\
 - &\frac{1}{\hbar^2} \sum_{m,m'} c_{m'}(t_0) \int_{t_0}^t dt' \int_{t_0}^{t'}  e^{i\omega_{nm}t'} \\ & \underbrace{\dots V_{nm}(t') e^{i\omega_{mm'}t''} V_{mm'}(t'')dt''}_{c_n^{(2)}(t)} + \dots
@@ -810,15 +843,64 @@ Splitting: $E = E^{(0)} + J \pm K$.
 - Orthohelium (Triplet, Sym spin): $E = E^{(0)} + J - K$ (Lower Energy).
 
 
-\subsection*{Jacobi Transformation}
-S first to one before last row is distance between particles, last row in distance between particle of center of mass.
-example: first row is distance between the first pair, second row is distance between the third and the two first and so forth, last is to center of mass
+\section*{Scattering}
+\textbf{Definitions:}
+Differential Cross-section: 
 
-$\eta_A=R=\frac{1}{\sqrt{A}}\sum_{i=1}^A r_i$
+$\frac{d\sigma}{d\Omega} = |f(\theta)|^2$.
 
-\important{\eta_k=\sqrt{\frac{k}{k+1}}(r_{k+1}-\frac{1}{k}\sum^k_{i=1}r_i)}
+Total: $\sigma = \int \frac{d\sigma}{d\Omega} d\Omega$.
 
-values of row k, set $r_i$ to be distances to the relavant particles (first pair use only $r_1,r_2$, third and first $r_3,r_1$ rest are zero)
+Amplitude Definition (Asymptotic): 
+
+$\psi(\mathbf{r}) \sim e^{i\mathbf{k}\cdot\mathbf{r}} + f(\theta) \frac{e^{ikr}}{r}$.
+
+\textbf{Lippmann-Schwinger Eq:}
+
+$|\psi_{\mathbf{k}}\rangle = |\mathbf{k}\rangle + \frac{1}{E - H_0 + i\epsilon} V |\psi_{\mathbf{k}}\rangle$.
+
+Green's Function: 
+
+$G^+(\mathbf{r}) = -\frac{m}{2\pi\hbar^2} \frac{e^{ikr}}{r}$.
+
+\textbf{Born Approximation (1st Order):}
+
+\important{f(\mathbf{q}) = -\frac{m}{2\pi\hbar^2} \int d^3r' V(\mathbf{r}') e^{-i\mathbf{q}\cdot\mathbf{r}'}}
+
+\important{\mathbf{q} = \mathbf{k}_f - \mathbf{k}_i \quad q = 2k\sin(\theta/2) }
+
+Validity: Low energy or weak potential.
+
+\textbf{Form Factor (Finite Size):}
+
+$f(q) = f_{point}(q) F(q^2)$ 
+
+$F(q^2) = \int d^3r \rho(r) e^{i\mathbf{q}\cdot\mathbf{r}}$
+
+RMS Radius: $R^2 = -6 \frac{dF}{dq^2}|_{q=0}$.
+
+\textbf{Yukawa Potential ($V(r) = -V_0 \frac{e^{-\mu r}}{r}$):}
+
+$f(\theta) = \frac{2mV_0}{\hbar^2(\mu^2+q^2)}$.
+
+\textbf{Rutherford Limit ($\mu \to 0$):} Coulomb scattering.
+
+$\frac{d\sigma}{d\Omega} = |f(\theta)|^2 \sim \frac{1}{q^4} \sim \frac{1}{\sin^4(\theta/2)}$.
+
+\textbf{Identical Particles Scattering:}
+
+For Spin 1/2 particles (fermions):
+\begin{align*}
+    \frac{d\sigma}{d\Omega} &= \frac{1}{2} |f(\theta) \pm f(\pi-\theta)|^2 \\
+    &= \frac{1}{2} [ |f(\theta)|^2 + |f(\pi-\theta)|^2 \\ &\pm 2\text{Re}[f(\theta)f^*(\pi-\theta)] ]
+\end{align*}
+- "+" for Singlet (Spin Anti-sym $\implies$ Space Sym).
+
+"-" for Triplet (Spin Sym $\implies$ Space Anti-sym).
+
+Unpolarized Beam: 
+
+$\frac{d\sigma}{d\Omega} = \frac{1}{4}\sigma_{\text{singlet}} + \frac{3}{4}\sigma_{\text{triplet}}$.
 
 
 \section*{MATH}
@@ -992,48 +1074,6 @@ $\Pi_i = m\dot{r} = p_i + \frac{q}{2}\epsilon_{ijk}r_j B_k$
 $[\prod_i,\prod_j] = i\hbar\epsilon_{ijk}B_k$
 
 $\dot{\prod_i} = -\frac{i}{\hbar}[\prod_i,\mathcal{H}] = qv\times V$ Lorentz
-
-
-\section*{Scattering}
-\textbf{Definitions:}
-Differential Cross-section: $\frac{d\sigma}{d\Omega} = |f(\theta)|^2$. \quad Total: $\sigma = \int \frac{d\sigma}{d\Omega} d\Omega$.
-Amplitude Definition (Asymptotic): $\psi(\mathbf{r}) \sim e^{i\mathbf{k}\cdot\mathbf{r}} + f(\theta) \frac{e^{ikr}}{r}$.
-
-\textbf{Lippmann-Schwinger Eq:}
-$|\psi_{\mathbf{k}}\rangle = |\mathbf{k}\rangle + \frac{1}{E - H_0 + i\epsilon} V |\psi_{\mathbf{k}}\rangle$.
-Green's Function: $G^+(\mathbf{r}) = -\frac{m}{2\pi\hbar^2} \frac{e^{ikr}}{r}$.
-
-\textbf{Born Approximation (1st Order):}
-$f(\mathbf{q}) = -\frac{m}{2\pi\hbar^2} \int d^3r' V(\mathbf{r}') e^{-i\mathbf{q}\cdot\mathbf{r}'}$.
-where $\mathbf{q} = \mathbf{k}_f - \mathbf{k}_i$, $q = 2k\sin(\theta/2)$.
-Validity: Low energy or weak potential.
-
-\textbf{Form Factor (Finite Size):}
-$f(q) = f_{point}(q) F(q^2)$ with $F(q^2) = \int d^3r \rho(r) e^{i\mathbf{q}\cdot\mathbf{r}}$.
-RMS Radius: $R^2 = -6 \frac{dF}{dq^2}|_{q=0}$.
-
-\textbf{Yukawa Potential ($V(r) = -V_0 \frac{e^{-\mu r}}{r}$):}
-
-$f(\theta) = \frac{2mV_0}{\hbar^2(\mu^2+q^2)}$.
-
-\textbf{Rutherford Limit ($\mu \to 0$):} Coulomb scattering.
-
-$\frac{d\sigma}{d\Omega} = |f(\theta)|^2 \sim \frac{1}{q^4} \sim \frac{1}{\sin^4(\theta/2)}$.
-
-\textbf{Identical Particles Scattering:}
-
-For Spin 1/2 particles (e.g. electrons):
-
-
-$\frac{d\sigma}{d\Omega} = \frac{1}{2} |f(\theta) \pm f(\pi-\theta)|^2$
-
-$= \frac{1}{2} \left[ |f(\theta)|^2 + |f(\pi-\theta)|^2 \pm 2\text{Re}[f(\theta)f^*(\pi-\theta)] \right]$.
-
-"+" for Singlet (Spin Anti-sym $\implies$ Space Sym).
-
-"-" for Triplet (Spin Sym $\implies$ Space Anti-sym).
-
-Unpolarized Beam: $\frac{d\sigma}{d\Omega} = \frac{1}{4}\sigma_{\text{singlet}} + \frac{3}{4}\sigma_{\text{triplet}}$.
 
 \subsection*{Symmetry Generators}
 Time: $T(t) = e^{-iHt/\hbar}$ (Energy).

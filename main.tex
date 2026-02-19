@@ -143,7 +143,9 @@ Commutators: $[a_L, a_L^\dagger] = [a_R, a_R^\dagger] = 1, [a_L, a_R] = 0$.
 
 $H = \hbar\omega(a_R^\dagger a_R + a_L^\dagger a_L + 1)$.
 
-Angular Momentum: $L = \hbar(a_R^\dagger a_R - a_L^\dagger a_L)$.
+Angular Momentum: 
+
+$L = \hbar(a_R^\dagger a_R - a_L^\dagger a_L)$.
 
 Basis states $|n_L, n_R\rangle$ are eigenstates of $H$ and $L$.
 \subsection*{Thm 13.9.1 Optical Theorem}
@@ -235,14 +237,28 @@ Wavefunction: $\psi_{nlm}(\mathbf{r})$ where $l-|m|$ is odd (node at $z=0$, or o
 \section*{Identical Particles}
 
 \textbf{Symmetry:} $P_{12}\psi(1,2) = \pm \psi(1,2)$.
-$+$: Bosons (integer spin). $-$: Fermions (half-integer spin).
 
-\textbf{Slater Determinant (Fermions):} N-particle state is an antisym product of single-particle states $\phi_\alpha$.
+$+$: Bosons (s=1) symmetry. 
+
+$-$: Fermions (s=1/2) anti symmetry.
+
+\textbf{Slater Determinant (Fermions):} 
+
+N-particle state is an antisym product of single-particle states $\phi_\alpha$.
+
 $\psi(1, \dots, N) = \frac{1}{\sqrt{N!}} \det | \phi_{\alpha_i}(j) |$.
 
-\textbf{2 Particles:} $\Psi = \psi_{space}(\vec{r}_1, \vec{r}_2) \chi_{spin}$.
+\textbf{2 Particles:} 
+\important{\Psi = \psi_{space}(\vec{r}_1, \vec{r}_2) \chi_{spin}}
 Total symmetry = Space sym $\times$ Spin sym.
 
+$J_{max}$ is symmetric.
+
+$J_{max}-odd$ antisymmetric.
+
+$J_{max}-even$ symmetric.
+
+questionS will give you data about two things and you shall have to understand the third, example particles have spin 1/2 thus are anti-symmetric and total spin 
 \textbf{Electrons (Fermions):} Total must be Anti-Sym.
 
 - \textbf{Triplet} ($S=1$, Sym spin): Space must be Anti-Sym ($\psi(r_1, r_2) = -\psi(r_2, r_1)$).
@@ -291,6 +307,9 @@ Transition $0 \to 1$:
 
 \subsection*{Identical Particles}
 Two particles in 1D box. 
+
+$|\psi\rangle=\sqrt{\frac{2}{L}}\sin(\frac{\pi n}{L}x)$
+
 \important{E = \frac{\hbar^2\pi^2}{2mL^2}(n_1^2 + n_2^2)}
 $\Psi(x_1, x_2) = \frac{1}{\sqrt{2}} [\psi_{n_1}(x_1)\psi_{n_2}(x_2) \pm \psi_{n_1}(x_2)\psi_{n_2}(x_1)] \chi_{spin}$.
 
@@ -330,19 +349,27 @@ Hamiltonian $H = \sum p_i \dot{q}_i - L$.
 usage: $T^\dagger A T=A_{reversed}$
 
 \textbf{Parity ($\pi, P, \prod$):} Unitary, $\pi^\dagger = \pi^{-1} = \pi$.
+
 Action: $\mathbf{r} \to -\mathbf{r}, \quad \mathbf{p} \to -\mathbf{p}$.
+
 $\mathbf{L} = \mathbf{r} \times \mathbf{p} \to (-\mathbf{r}) \times (-\mathbf{p}) = \mathbf{L}$ (Pseudovector).
+
 Spin $\mathbf{S} \to \mathbf{S}$.
+
 Eigenvalues $\pm 1$. Limits: $\pi |l,m\rangle = (-1)^l |l,m\rangle$.
 
 \textbf{Time Reversal ($\Theta$ or $T$):} Anti-unitary ($T i T^{-1} = -i$).
+
 Action: $t \to -t, \quad \mathbf{r} \to \mathbf{r}, \quad \mathbf{p} \to -\mathbf{p}$.
+
 $\mathbf{L} \to -\mathbf{L}, \quad \mathbf{S} \to -\mathbf{S}$.
+
 Kramers Degeneracy: For half-integer $j$, $T^2 = -1 \implies$ degeneracy.
 
 \textbf{Rotation Group $SO(3)$:} 
 
 $R^T R = I, \det R = 1$.
+
 Preserves inner product $\mathbf{v} \cdot \mathbf{u}$.
 
 Generator of rotation is Angular Momentum $\mathbf{L}$.
@@ -377,7 +404,8 @@ Rotation of Spinor: $D^{(1/2)}(\hat{n}, \theta) = e^{-i\theta \hat{n}\cdot\vec{S
 \textbf{Finite Rotation (Vector/Spin-1):}
 $e^{-\frac{i}{\hbar} J_y \beta} = 1 - \left(\frac{J_y}{\hbar}\right)^2 (1 - \cos\beta) - i \frac{J_y}{\hbar} \sin\beta$
 
-\subsection*{Angular Momentum}
+\section*{Angular Momentum}
+\subsection*{L}
 \textbf{Definitions:} $\vec{L} = \vec{r} \times \vec{p}$, $\vec{J} = \vec{L} + \vec{S} \\ L_i=\epsilon_{ijk}X_jP_k$
 
 Rotation Generator: $R(\hat{n}, \theta) = e^{-i\theta \hat{n}\cdot\vec{J}/\hbar}$
@@ -412,14 +440,7 @@ Y_l^m(\theta,\phi) \propto P_l^m(\cos\theta) e^{im\phi}$.
 
 Parity: $Y_{l}^m(\hat{n}) = (-1)^l Y_l^m(-\hat{n})$
 
-\textbf{Radial Hamiltonian (3D):}
-$H = -\frac{\hbar^2}{2\mu} \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 \frac{\partial}{\partial r} \right) + \frac{L^2}{2\mu r^2} + V(r)$.
-
-Schrödinger Eq:
-$-\frac{\hbar^2}{2\mu} \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 \frac{\partial \Psi}{\partial r} \right) + \frac{L^2}{2\mu r^2}\Psi + V(r)\Psi = E\Psi$.
-
-
-\subsection*{Addition of Angular Momentum}
+\subsection*{Total Angular Momentum J}
 $J=\frac{\hbar}{2mi}(\psi^\star\vec{\nabla}\psi-\psi\vec{\nabla}\psi^\star)=\frac{\hbar}{m}\Im{\psi^\star\vec{\nabla}\psi} = J_1 +J_2$
 
 connectivity: $\frac{d}{dt}|\psi|^2=-\vec{\nabla}\cdot\vec{J}$
@@ -508,14 +529,23 @@ $m-1 + m_2 = m, \quad |j_1 - j_2| \le j \le j_1 + j_2$
 
 $j=m+s \quad -j \le m_j \leq j$
 
-\subsection*{Heisenberg Picture, Dynamics}
+\textbf{Degeneracy}
+
+$j_D=2j+1, \quad Energy_D=\sum_i2j_i+1$
+
+\section*{Dynamics}
 \textbf{Schrödinger Eq:} $i\hbar \frac{d}{dt}|\psi\rangle = \mathcal{H}|\psi\rangle$.
 \textbf{Time Independent:} 
-
-$\mathcal{H}|\psi\rangle = E|\psi\rangle$.
-
+\important{\mathcal{H}|\psi\rangle = E|\psi\rangle}
 \textbf{Heisenberg} $\frac{d}{dt} O_H = \frac{1}{i\hbar} [O_H, \mathcal{H}] + (\frac{\partial O}{\partial t})_H$.
 \important{\frac{d}{dt}\langle O \rangle = \frac{1}{i\hbar}\langle [O, \mathcal{H}] \rangle + \langle \frac{\partial O}{\partial t} \rangle}
+
+\textbf{Radial Hamiltonian (3D):}
+
+$H = -\frac{\hbar^2}{2\mu} \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 \frac{\partial}{\partial r} \right) + \frac{L^2}{2\mu r^2} + V(r)$.
+
+Schrödinger Eq:
+\important{-\left(\frac{\hbar^2}{2\mu} \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 \frac{\partial}{\partial r} \right) + \frac{L^2}{2\mu r^2} + V\right) \Psi \\ = E\Psi}
 
 \textbf{Probability Current:} 
 
@@ -574,7 +604,7 @@ $\mathcal{H}_D = \frac{e^2}{8m} (\mathbf{r} \times \mathbf{B})^2$
 
 $\vec{A}' = \vec{A} + \nabla\chi, \quad \phi' = \phi - \partial_t\chi, \quad \psi' = e^{iq\chi/\hbar}\psi$.
 
-\subsection*{Perturbation Theory}
+\section*{Perturbation Theory}
 \subsection*{Approximation Methods}
 \textbf{Non-Degenerate:} $H = H_0 + V$.
 First Order Energy: \important{E_n^{(1)} = \langle n^{(0)} | V | n^{(0)} \rangle = V_{nn}}
@@ -642,13 +672,13 @@ Coefficient evolution:
 $\dot{c}_n(t) = -\frac{i}{\hbar} \sum_k e^{i\omega_{nk}t} V_{nk}(t) c_k(t)$.
 
 Integral Form (for iteration):
-
-$c_n(t) = c_n(t_0) - \frac{i}{\hbar} \sum_k \int_{t_0}^t dt' e^{i\omega_{nk}t'} V_{nk}(t') c_k(t')$.
+\begin{align*}
+c_n(t) &= c_n(t_0) - \frac{i}{\hbar} \\ &\sum_k \int_{t_0}^t dt' e^{i\omega_{nk}t'} V_{nk}(t') c_k(t')
+\end{align*}
 
 \textbf{Iterative Expansion (Dyson Series):}
 
 $\omega_{nm}=\frac{E_n-E_m}{\hbar}$
-
 \begin{align*}
 c_n&(t) = \underbrace{c_n(t_0)}_{c_n^{(0)}} - \\ &\underbrace{\frac{i}{\hbar} \sum_m c_m(t_0) \int_{t_0}^t dt' e^{i\omega_{nm}t'} V_{nm}(t')}_{c_n^{(1)}(t)} \\
 - &\frac{1}{\hbar^2} \sum_{m,m'} c_{m'}(t_0) \int_{t_0}^t dt' \int_{t_0}^{t'}  e^{i\omega_{nm}t'} \\ & \underbrace{\dots V_{nm}(t') e^{i\omega_{mm'}t''} V_{mm'}(t'')dt''}_{c_n^{(2)}(t)} + \dots
@@ -692,18 +722,28 @@ $c(t) = -\frac{i A}{\hbar} \frac{1}{1/\tau - i\omega_{21}} (1 - e^{-(1/\tau - i\
 $P(\infty) = |c(\infty)|^2 = \frac{|A|^2}{\hbar^2} \frac{1}{(1/\tau)^2 + \omega_{21}^2} = \frac{|A|^2 \tau^2}{\hbar^2 (1 + \omega_{21}^2 \tau^2)}$.
 
 \textbf{Quantum Quench ($V(t \to -\infty) = 0, \quad V(t \to \infty) = V_0$):}
-Initially in state $|i\rangle$. Perturbation turns on to constant $V_0$.
+
+Initially in state $|i\rangle$. 
+
+Perturbation turns on to constant $V_0$.
+
 Coefficients ($n=i$): $c_i(t) \approx 1 - \frac{i}{\hbar} t (V_0)_{ii} + \dots$
+
 Coefficients ($f \neq i$):
 $c_f(t) \approx -\frac{(V_0)_{fi}}{\hbar \omega_{fi}} e^{i\omega_{fi}t} + \int_{-\infty}^t dt' \frac{\dot{V}_{fi}(t')}{\hbar \omega_{fi}} e^{i\omega_{fi}t'}$.
+
 If quench is instantaneous ($t=0$):
-$|\psi(t)\rangle \approx e^{-iE_i t/\hbar} \left[ \left( 1 - \frac{i}{\hbar}t [V_0]_{ii} \right) |i\rangle + \sum_{f\neq i} \frac{[V_0]_{fi}}{E_i - E_f} (1 - e^{i\omega_{fi}t}) |f\rangle \right]$.
+\begin{align*}
+    |\psi(t)\rangle &\approx e^{-iE_i t/\hbar} [ \left( 1 - \frac{i}{\hbar}t [V_0]_{ii} \right) |i\rangle  \\ &+ \sum_{f\neq i} \frac{[V_0]_{fi}}{E_i - E_f} (1 - e^{i\omega_{fi}t}) |f\rangle ]
+\end{align*}
 Long time limit ($t \to \infty$): Recovers Time-Independent Perturbation result (shifted energy/state).
+
 State stays "frozen" in old basis for sudden change: $P_n = |\langle n_{new} | \psi_{old} \rangle|^2$.
 
 \subsection*{Identical Particles}
 
 \textbf{Exchange Symmetry:} $P_{12}\psi(1,2) = \eta\psi(2,1) = \eta\psi(1,2)$.
+
 $\eta=1$ (Bosons, Int Spin), $\eta=-1$ (Fermions, Half-Int Spin).
 
 \textbf{Pauli Exclusion:} 2 Fermions cannot occupy same state.
@@ -735,7 +775,9 @@ Ground state ($1s^2$): $E^{(0)} = 2 \times (-13.6 Z^2) = -108.8$ eV (for $Z=2$).
 
 $\Delta E = \langle \Psi^{(0)} | \frac{e^2}{r_{12}} | \Psi^{(0)} \rangle = \int d^3r_1 d^3r_2 |\psi_{100}(1)|^2 |\psi_{100}(2)|^2 \frac{e^2}{r_{12}}$.
 
-Calculation yields: $\Delta E = \frac{5}{8} Z \frac{e^2}{a_0} = \frac{5}{4} Z R_\infty$.
+Calculation yields: 
+
+$\Delta E = \frac{5}{8} Z \frac{e^2}{a_0} = \frac{5}{4} Z R_\infty$.
 
 For He ($Z=2$): $\Delta E \approx 34$ eV.
 
@@ -743,9 +785,13 @@ Total Energy: $E \approx -108.8 + 34 = -74.8$ eV (Exp: -79.0 eV).
 
 \textbf{Excited States ($1s2s$):}
 
-Direct ($J$): Coulomb repulsion. $J = \int |\psi_a(1)|^2 |\psi_b(2)|^2 V_{12}$.
+Direct ($J$): Coulomb repulsion. 
 
-Exchange ($K$): Quantum overlap. $K = \int \psi_a^*(1)\psi_b^*(2) V_{12} \psi_a(2)\psi_b(1)$.
+$J = \int |\psi_a(1)|^2 |\psi_b(2)|^2 V_{12}$.
+
+Exchange ($K$): Quantum overlap. 
+
+$K = \int \psi_a^*(1)\psi_b^*(2) V_{12} \psi_a(2)\psi_b(1)$.
 
 Splitting: $E = E^{(0)} + J \pm K$.
 
@@ -1131,14 +1177,15 @@ $\langle x'|x\rangle=\delta_{xx'}$
 \textbf{Volume Elements:} $dV_{cyl} = \rho d\rho d\theta dz$. $dV_{sph} = r^2 \sin\theta dr d\theta d\phi$.
 
 \textbf{Integrals:}
+
 $\int_{-\infty}^\infty e^{-ax^2+bx} dx = \sqrt{\frac{\pi}{a}}e^{b^2/4a} \\
-\int \sin^2(ax) dx = \frac{x}{2} - \frac{\sin(2ax)}{4a}, \quad \int \cos^2(ax) dx = \frac{x}{2} + \frac{\sin(2ax)}{4a} \\ 
+\int \sin^2(ax) dx = \frac{x}{2} - \frac{\sin(2ax)}{4a}, \\ \int \cos^2(ax) dx = \frac{x}{2} + \frac{\sin(2ax)}{4a} \\ 
 \int_0^\infty x^n e^{-ax} dx = n!/a^{n+1} \\
-\int x \sin(ax) dx = \frac{\sin(ax)}{a^2} - \frac{x\cos(ax)}{a}, \quad \int x \cos(ax) dx = \frac{\cos(ax)}{a^2} + \frac{x\sin(ax)}{a} \\
-\int \sin^3 x dx = -\frac{3}{4}\cos x + \frac{1}{12}\cos 3x, \quad \int \sin^4 x dx = \frac{3x}{8} - \frac{\sin 2x}{4} + \frac{\sin 4x}{32} \\
+\int x \sin(ax) dx = \frac{\sin(ax)}{a^2} - \frac{x\cos(ax)}{a} \\ \int x \cos(ax) dx = \frac{\cos(ax)}{a^2} + \frac{x\sin(ax)}{a} \\
+\int \sin^3 x dx = -\frac{3}{4}\cos x + \frac{1}{12}\cos 3x \\ \int \sin^4 x dx = \frac{3x}{8} - \frac{\sin 2x}{4} + \frac{\sin 4x}{32} \\
 \int x^2 \sin(ax) dx = \frac{2x}{a^2}\sin(ax) - (\frac{x^2}{a} - \frac{2}{a^3})\cos(ax) \\
 \int x^2 \cos(ax) dx = \frac{2x}{a^2}\cos(ax) + (\frac{x^2}{a} - \frac{2}{a^3})\sin(ax) \\
-\int \frac{dx}{1+x^2} = \tan^{-1}x, \quad \int \frac{dx}{\sqrt{1-x^2}} = \sin^{-1}x, \quad \int \frac{dx}{a^2-x^2} = \frac{1}{2a}\ln|\frac{x+a}{x-a}|$
+\int \frac{dx}{1+x^2} = \tan^{-1}x \\ \int \frac{dx}{\sqrt{1-x^2}} = \sin^{-1}x, \int \frac{dx}{a^2-x^2} = \frac{1}{2a}\ln|\frac{x+a}{x-a}|$
 
 
 \textbf{Derivatives:} 
@@ -1148,7 +1195,14 @@ $(\tanh x)' = \text{sech}^2 x, (\coth x)' = -\text{csch}^2 x \\$
 $\sinh' = \cosh, \cosh' = \sinh$
 
 \textbf{Probability:} 
+
 $P(\vec{r}) = |\psi(\vec{r})|^2 = |c_i|^2 = \int r dr / \int dr $
+
+\textbf{Trace:}
+
+$tr(V)=\sum_i^{\dim V}V_{ii}$
+
+if diagonalized then equal to sum of self values
 
 \subsection*{Hydrogen Atom Explicit Wavefunctions:}
 
@@ -1166,7 +1220,7 @@ $\psi_{310} = \frac{1}{81}\sqrt{\frac{2}{\pi}} \left(\frac{Z}{a_0}\right)^{\frac
 
 $\psi_{31\pm1} = \mp \frac{1}{81\sqrt{\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(6\frac{r}{a_0} - \left(\frac{r}{a_0}\right)^2\right) e^{-\frac{r}{3a_0}} \sin\theta e^{\pm i\phi}$
 
-$\psi_{320} = \frac{1}{81\sqrt{6\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(\frac{r}{a_0}\right)^2 e^{-\frac{r}{3a_0}} (3\cos^2\theta - 1)$
+$\psi_{320} = \frac{1}{81\sqrt{6\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(\frac{r}{a_0}\right)^2 e^{-\frac{r}{3a_0}} (3\cos^2\theta-1)$
 
 $\psi_{32\pm1} = \mp \frac{1}{81\sqrt{\pi}} \left(\frac{Z}{a_0}\right)^{\frac{3}{2}} \left(\frac{r}{a_0}\right)^2 e^{-\frac{r}{3a_0}} \sin\theta \cos\theta e^{\pm i\phi}$
 

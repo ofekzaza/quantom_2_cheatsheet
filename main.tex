@@ -610,6 +610,8 @@ $\vec{A}' = \vec{A} + \nabla\chi, \quad \phi' = \phi - \partial_t\chi, \quad \ps
 First Order Energy: \important{E_n^{(1)} = \langle n^{(0)} | V | n^{(0)} \rangle = V_{nn}}
 Second Order Energy: \important{E_n^{(2)} = \sum_{k \neq n} \frac{|V_{kn}|^2}{E_n^{(0)} - E_k^{(0)}}}
 First Order State: \important{|\psi_n^{(1)}\rangle = \sum_{k \neq n} \frac{V_{kn}}{E_n^{(0)} - E_k^{(0)}} |k^{(0)}\rangle}
+
+Example (Delta): $V(\vec{r}) = \alpha\delta(\vec{r}) \implies E^{(1)} = \alpha |\psi(0)|^2$ (Only $s$-waves).
 Validity: $|V_{kn}| \ll |E_n^{(0)} - E_k^{(0)}|$.
 
 \textbf{Degenerate:} States $|n^0\rangle, \dots, |m^0\rangle$ with same $E^{(0)}$.
@@ -807,42 +809,6 @@ Splitting: $E = E^{(0)} + J \pm K$.
 
 - Orthohelium (Triplet, Sym spin): $E = E^{(0)} + J - K$ (Lower Energy).
 
-\subsection*{Scattering Theory}
-
-Lippmann-Schwinger: $|\psi\rangle = |\phi\rangle + G_0^+ V |\psi\rangle$.
-
-Green's Function: \important{G^+(\mathbf{r}) = -\frac{m}{2\pi\hbar^2} \frac{e^{ikr}}{r}}
-
-\textbf{Born Approximation ($|\psi\rangle \approx |\phi\rangle$):}
-
-Scattering Amplitude: $f(\theta) = -\frac{m}{2\pi\hbar^2} \int d^3r' e^{-i\mathbf{q}\cdot\mathbf{r}'} V(\mathbf{r}')$.
-
-Momentum Transfer: $\mathbf{q} = \mathbf{k}_f - \mathbf{k}_i$, $q = 2k\sin(\theta/2)$.
-
-Spherically Symmetric $V(r)$:
-\important{f(\theta) = -\frac{2m}{q\hbar^2} \int_0^\infty r V(r) \sin(qr) dr}
-
-\textbf{Example: Yukawa Potential (Tirgul 13):}
-
-$V(r) = -V_0 \frac{e^{-\mu r}}{r}$.
-
-$f(\theta) = \frac{2mV_0}{\hbar^2(\mu^2+q^2)}$.
-
-Validity: Low energy or weak potential.
-
-Coulomb Limit ($\mu \to 0$): $f(\theta) \propto \frac{1}{q^2} \propto \frac{1}{\sin^2(\theta/2)}$ (Rutherford).
-
-\textbf{Form Factor (Finite Size):}
-
-$f(q) = f_{point}(q) F(q^2)$.
-
-$F(q^2) = \int d^3r \rho(r) e^{i\mathbf{q}\cdot\mathbf{r}}$ (Fourier of charge density).
-
-RMS Radius: $R^2 = -6 \frac{dF}{dq^2}|_{q=0}$.
-
-\textbf{Delta Perturbation:} 
-
-$V(\vec{r}) = \alpha\delta(\vec{r}) \implies \Delta E = \alpha |\psi(0)|^2$ (Only $s$-waves).
 
 \subsection*{Jacobi Transformation}
 S first to one before last row is distance between particles, last row in distance between particle of center of mass.
@@ -1028,35 +994,46 @@ $[\prod_i,\prod_j] = i\hbar\epsilon_{ijk}B_k$
 $\dot{\prod_i} = -\frac{i}{\hbar}[\prod_i,\mathcal{H}] = qv\times V$ Lorentz
 
 
-\subsection*{Scattering}
+\section*{Scattering}
+\textbf{Definitions:}
+Differential Cross-section: $\frac{d\sigma}{d\Omega} = |f(\theta)|^2$. \quad Total: $\sigma = \int \frac{d\sigma}{d\Omega} d\Omega$.
+Amplitude Definition (Asymptotic): $\psi(\mathbf{r}) \sim e^{i\mathbf{k}\cdot\mathbf{r}} + f(\theta) \frac{e^{ikr}}{r}$.
 
-\textbf{Born Approximation:} 
+\textbf{Lippmann-Schwinger Eq:}
+$|\psi_{\mathbf{k}}\rangle = |\mathbf{k}\rangle + \frac{1}{E - H_0 + i\epsilon} V |\psi_{\mathbf{k}}\rangle$.
+Green's Function: $G^+(\mathbf{r}) = -\frac{m}{2\pi\hbar^2} \frac{e^{ikr}}{r}$.
 
-$f(\theta) = -\frac{2m}{\hbar^2 q} \int_0^\infty r V(r) \sin(qr) dr$, 
+\textbf{Born Approximation (1st Order):}
+$f(\mathbf{q}) = -\frac{m}{2\pi\hbar^2} \int d^3r' V(\mathbf{r}') e^{-i\mathbf{q}\cdot\mathbf{r}'}$.
+where $\mathbf{q} = \mathbf{k}_f - \mathbf{k}_i$, $q = 2k\sin(\theta/2)$.
+Validity: Low energy or weak potential.
 
-where $q = 2k\sin(\theta/2)$
+\textbf{Form Factor (Finite Size):}
+$f(q) = f_{point}(q) F(q^2)$ with $F(q^2) = \int d^3r \rho(r) e^{i\mathbf{q}\cdot\mathbf{r}}$.
+RMS Radius: $R^2 = -6 \frac{dF}{dq^2}|_{q=0}$.
 
-Cross-section: $\frac{d\sigma}{d\Omega} = |f(\theta)|^2$.
+\textbf{Yukawa Potential ($V(r) = -V_0 \frac{e^{-\mu r}}{r}$):}
 
-\textbf{Yukawa Potential:} 
+$f(\theta) = \frac{2mV_0}{\hbar^2(\mu^2+q^2)}$.
 
-$V(r) = -V_0 \frac{e^{-\mu r}}{r}$.
+\textbf{Rutherford Limit ($\mu \to 0$):} Coulomb scattering.
 
-Amplitude: $f(\theta) = \frac{2mV_0}{\hbar^2(\mu^2+q^2)}$
+$\frac{d\sigma}{d\Omega} = |f(\theta)|^2 \sim \frac{1}{q^4} \sim \frac{1}{\sin^4(\theta/2)}$.
 
-Limit $\mu \to 0$ (Coulomb): $f(\theta) \propto \frac{1}{\sin^2(\theta/2)}$.
+\textbf{Identical Particles Scattering:}
 
-\textbf{Identical Particles Interaction:}
+For Spin 1/2 particles (e.g. electrons):
 
-Triplet ($S=1$, Anti-sym Space):
 
-$\frac{d\sigma}{d\Omega} \propto |f(\theta) - f(\pi-\theta)|^2$.
+$\frac{d\sigma}{d\Omega} = \frac{1}{2} |f(\theta) \pm f(\pi-\theta)|^2$
 
-Singlet ($S=0$, Sym Space): 
+$= \frac{1}{2} \left[ |f(\theta)|^2 + |f(\pi-\theta)|^2 \pm 2\text{Re}[f(\theta)f^*(\pi-\theta)] \right]$.
 
-$\frac{d\sigma}{d\Omega} \propto |f(\theta) + f(\pi-\theta)|^2$.
+"+" for Singlet (Spin Anti-sym $\implies$ Space Sym).
 
-Unpolarized (Average): $\frac{1}{4}\sigma_{singlet} + \frac{3}{4}\sigma_{triplet} = |f(\theta)|^2 + |f(\pi-\theta)|^2 + \text{Re}[f(\theta)f^*(\pi-\theta)]$.
+"-" for Triplet (Spin Sym $\implies$ Space Anti-sym).
+
+Unpolarized Beam: $\frac{d\sigma}{d\Omega} = \frac{1}{4}\sigma_{\text{singlet}} + \frac{3}{4}\sigma_{\text{triplet}}$.
 
 \subsection*{Symmetry Generators}
 Time: $T(t) = e^{-iHt/\hbar}$ (Energy).
@@ -1075,6 +1052,15 @@ Total angular momentum $\vec{J} = \vec{L} + \vec{S}$.
 Commutators: 
 
 $[S_i, S_j] = i\hbar \epsilon_{ijk} S_k, \quad [S^2, S_i] = 0$.
+
+Definitions: $S_\pm = S_x \pm iS_y$.
+Action: $S_+ |\downarrow\rangle = \hbar |\uparrow\rangle, S_+ |\uparrow\rangle = 0$. \quad $S_- |\uparrow\rangle = \hbar |\downarrow\rangle, S_- |\downarrow\rangle = 0$.
+$S_\pm |s, m\rangle = \hbar\sqrt{s(s+1) - m(m\pm 1)} |s, m\pm 1\rangle$.
+
+\textbf{Examples (Composite Systems):}
+$S_{\text{tot}}^\pm = \sum_i S_i^\pm$.
+1. $S_+ |\uparrow \uparrow \downarrow\rangle = (S_{1+} + S_{2+} + S_{3+}) |\uparrow \uparrow \downarrow\rangle = 0 + 0 + \hbar |\uparrow \uparrow \uparrow\rangle = \hbar |\uparrow \uparrow \uparrow\rangle$.
+2. $S_- |\uparrow \uparrow \uparrow\rangle = (S_{1-} + S_{2-} + S_{3-}) |\uparrow \uparrow \uparrow\rangle = \hbar (|\downarrow \uparrow \uparrow\rangle + |\uparrow \downarrow \uparrow\rangle + |\uparrow \uparrow \downarrow\rangle)$.
 
 Relation to Pauli: $\vec{S} = \frac{\hbar}{2}\vec{\sigma}$.
 
